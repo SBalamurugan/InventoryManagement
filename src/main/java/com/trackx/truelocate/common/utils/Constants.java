@@ -35,5 +35,7 @@ public class Constants {
 	
 	public String home_pageTitle = "Trackx-GAME";
 	
+	public String add_identifiertype_successmsg = "Identifier Type added successfully";
+	
 	
 }
