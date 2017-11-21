@@ -13,23 +13,24 @@ import org.testng.annotations.Test;
 import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
-import com.trackx.truelocate.pagecomponents.RbcreateUser;
+import com.trackx.truelocate.pagecomponents.CommonElements;
+import com.trackx.truelocate.pagecomponents.IMItemClassElements;
 import com.trackx.truelocate.pagecomponents.Truelocatelogin;
 
-public class UserDeleteFlow extends GeneralActions{
+public class IMItemClassCreateFlow extends GeneralActions{
 	WebDriver driver;
 	Truelocatelogin truelocatelogin;
-	RbcreateUser rbCreateUser;
+	CommonElements commonElements;
+	IMItemClassElements itemClassElements;
 	Constants constants = new Constants();
 	String className = this.getClass().getSimpleName();
 	
-	// Logger log4jlogger =Logger.getLogger("devpinoyLogger");
-
 	@BeforeClass
 	public void setUp() throws IOException {
 		driver = GeneralActions.launchBrowser(driver, "chrome");
 		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
-		rbCreateUser = PageFactory.initElements(driver, RbcreateUser.class);
+		itemClassElements = PageFactory.initElements(driver, IMItemClassElements.class);
+		commonElements = PageFactory.initElements(driver, CommonElements.class);
 		ReusableActions.loadPropFileValues();
 		ReusableActions.openUrl(driver, ReusableActions.getPropFileValues("Url"));
 	}
@@ -58,46 +59,32 @@ public class UserDeleteFlow extends GeneralActions{
 	}
 
 	/*
-	 * User Edit
+	 * Identifier Type Creat
 	 */
-	@Test(priority = 2, dataProvider = "deletedata")
-	public void userEditFlow(String sEmail)throws Exception {
+	@Test(priority = 2, dataProvider = "createData")
+	public void identifierTypeCreateFlow(String sCode, String sName, String sDescription)throws Exception {
 		try {
-			rbCreateUser.userMenuClick();
-			Thread.sleep(10000);
+			itemClassElements.menuClick();
 			ReusableActions.takeSnapshot(driver, className);
-			rbCreateUser.globalSearch(sEmail);
-			Thread.sleep(1000);
+			commonElements.clickCreatebutton();
+			itemClassElements.enterItemClassInfo(sCode, sName, sDescription);
+			commonElements.clickCreateOrUpdatebutton();
 			ReusableActions.takeSnapshot(driver, className);
-			Thread.sleep(10000);
-			rbCreateUser.clickUser(sEmail);
-			Thread.sleep(10000);
-			ReusableActions.takeSnapshot(driver, className);
-			rbCreateUser.deleteUser();
-			Thread.sleep(1000);
-			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = rbCreateUser.alertMessage();
-			System.out.println("&&&&&&&&&&&&&&&" + alertMessage);
-			Assert.assertEquals(alertMessage, constants.delete_user_successmsg);
-			if (alertMessage.equalsIgnoreCase(constants.delete_user_successmsg)) {
-				TestNGResults.put("3", new Object[] { "User screen",
-						"User deleted successfully", "Pass" });
-				Assert.assertTrue(true);
+			String alertMessage = commonElements.alertMessage();
+			if (alertMessage.equalsIgnoreCase(constants.add_itemclass_successmsg)) {
+				TestNGResults.put("4", new Object[] { "Item Class screen",
+						"Item Class created successfully", "Pass" });
+				Assert.assertEquals(alertMessage, constants.add_itemclass_successmsg);
 			} else {
-				TestNGResults.put("3", new Object[] { "User screen",
-						"User not deleted", "Fail" });
-				Assert.assertTrue(false);
+				TestNGResults.put("4", new Object[] { "Item Class screen",
+						"Item Class not created", "Fail" });
+				Assert.assertEquals(alertMessage, constants.add_itemclass_successmsg);
 			}
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 
 		}
-	}
-	
-	@DataProvider
-	public static Object[][] deletedata() {
-		return GeneralActions.getData("DeleteUser");
 	}
 	
 	@AfterClass
@@ -109,4 +96,10 @@ public class UserDeleteFlow extends GeneralActions{
 			e.printStackTrace();
 		}
 	}
+	
+	@DataProvider
+	public static Object[][] createData() {
+		return GeneralActions.getData("Itemclass");
+	}
+
 }

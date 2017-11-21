@@ -14,14 +14,14 @@ import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
 import com.trackx.truelocate.pagecomponents.CommonElements;
-import com.trackx.truelocate.pagecomponents.ItemClassElements;
+import com.trackx.truelocate.pagecomponents.IMItemTypeElements;
 import com.trackx.truelocate.pagecomponents.Truelocatelogin;
 
-public class ItemClassCreateFlow extends GeneralActions{
+public class IMItemTypeCreateFlow extends GeneralActions{
 	WebDriver driver;
 	Truelocatelogin truelocatelogin;
+	IMItemTypeElements itemTypeElements;
 	CommonElements commonElements;
-	ItemClassElements itemClassElements;
 	Constants constants = new Constants();
 	String className = this.getClass().getSimpleName();
 	
@@ -29,7 +29,7 @@ public class ItemClassCreateFlow extends GeneralActions{
 	public void setUp() throws IOException {
 		driver = GeneralActions.launchBrowser(driver, "chrome");
 		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
-		itemClassElements = PageFactory.initElements(driver, ItemClassElements.class);
+		itemTypeElements = PageFactory.initElements(driver, IMItemTypeElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);
 		ReusableActions.loadPropFileValues();
 		ReusableActions.openUrl(driver, ReusableActions.getPropFileValues("Url"));
@@ -59,25 +59,27 @@ public class ItemClassCreateFlow extends GeneralActions{
 	}
 
 	/*
-	 * Identifier Type Creat
+	 * Item Class Create
 	 */
 	@Test(priority = 2, dataProvider = "createData")
-	public void identifierTypeCreateFlow(String sCode, String sName, String sDescription)throws Exception {
+	public void itemTypeCreateFlow(String sCode, String sName, String sDescription)throws Exception {
 		try {
-			itemClassElements.menuClick();
+			itemTypeElements.menuClick();
+			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
 			commonElements.clickCreatebutton();
-			itemClassElements.enterItemClassInfo(sCode, sName, sDescription);
+			itemTypeElements.enterItemTypeInfo(sCode, sName, sDescription);
 			commonElements.clickCreateOrUpdatebutton();
 			ReusableActions.takeSnapshot(driver, className);
 			String alertMessage = commonElements.alertMessage();
-			Assert.assertEquals(alertMessage, constants.add_itemclass_successmsg);
-			if (alertMessage.equalsIgnoreCase(constants.add_itemclass_successmsg)) {
-				TestNGResults.put("3", new Object[] { "Item Class screen",
-						"Item Class added successfully", "Pass" });
+			if (alertMessage.equalsIgnoreCase(constants.add_itemtype_successmsg)) {
+				TestNGResults.put("5", new Object[] { "Item Type screen",
+						"Item Type added successfully", "Pass" });
+				Assert.assertEquals(alertMessage, constants.add_itemtype_successmsg);
 			} else {
-				TestNGResults.put("3", new Object[] { "User screen",
-						"User not deleted", "Fail" });
+				TestNGResults.put("5", new Object[] { "Item Type screen",
+						"Item Type not created", "Fail" });
+				Assert.assertEquals(alertMessage, constants.add_itemtype_successmsg);
 			}
 		}
 		catch (Exception e) {
@@ -98,7 +100,7 @@ public class ItemClassCreateFlow extends GeneralActions{
 	
 	@DataProvider
 	public static Object[][] createData() {
-		return GeneralActions.getData("Itemclass");
+		return GeneralActions.getData("ItemType");
 	}
 
 }

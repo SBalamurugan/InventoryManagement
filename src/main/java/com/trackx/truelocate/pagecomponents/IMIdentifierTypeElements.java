@@ -15,14 +15,14 @@ import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
 
-public class IdentifierTypeElements {
+public class IMIdentifierTypeElements {
 	WebDriver driver;
 	String Title, Value;
 	ReusableActions inAction = new ReusableActions();
 	GeneralActions genAction = new GeneralActions();
 	Constants constants = new Constants();
 	CommonElements commonElements = new CommonElements();
-	public Logger log4jlogger = Logger.getLogger("devpinoyLogger");
+	
 	
 	/**
 	 * Create screen Elements
@@ -33,8 +33,11 @@ public class IdentifierTypeElements {
 	@FindBy(id="createName")
 	WebElement txt_name;
 	
+	@FindBy(xpath="//*[@id='edit-form']/fieldset[1]/div/section[3]/span/label")
+	WebElement togglebutton_label;
 	
-	@FindBy(xpath="//*[@id=\"isRfid-checkbox\"]")
+	
+	@FindBy(className="onoffswitch-switch")
 	WebElement togglebutton_RFID;
 	
 	@FindBy(id = "select2-chosen-2")
@@ -59,6 +62,8 @@ public class IdentifierTypeElements {
 	WebElement label_description;
 
 	
+	
+	
 	/**
 	 * Menu Elements
 	 */
@@ -71,7 +76,7 @@ public class IdentifierTypeElements {
 	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/ul/li[4]/ul/li[3]/a")
 	WebElement menu_identifierType;
 	
-	public IdentifierTypeElements(WebDriver driver) {
+	public IMIdentifierTypeElements(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -107,15 +112,12 @@ public class IdentifierTypeElements {
 					"Enter sCode : " + sCode);
 			inAction.waitForVisibilityOfElement(driver,txt_name);
 			inAction.inputText(driver, txt_name, sName,
-					"Enter sFirstname : " + sName);
-			System.out.println("SREDSDASDadADAS" + sRFID);
-			if(sRFID.equalsIgnoreCase("Yes")){
+					"Enter sFirstname : " + sName);	
+			System.out.println("CheckRFIDStatus" + sRFID);	
+			
+			if(sRFID.equalsIgnoreCase("Yes")){		
 				clickToggleButton();
-				//inAction.waitForVisibilityOfElement(driver, togglebutton_RFID);
-				//inAction.buttonClick(driver, togglebutton_RFID, 
-					//s	"Click button : togglebutton_RFID");
-				//Thread.sleep(1000);
-				//togglebutton_RFID.click();
+				Thread.sleep(1000);
 				selectProtocol(sProtocol);
 			}
 		} catch (Exception e) {
@@ -123,10 +125,14 @@ public class IdentifierTypeElements {
 		}
 	}
 	
+	
 	public void clickToggleButton() {
 		inAction.waitForVisibilityOfElement(driver, togglebutton_RFID);
 		inAction.buttonClick(driver, togglebutton_RFID, 
-			"Click button : togglebutton_RFID");	}
+				"Click button : togglebutton_RFID");	
+		}
+	
+
 	/**
 	 * This method used to select the protocol
 	 * 

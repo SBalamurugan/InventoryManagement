@@ -1,9 +1,6 @@
 package com.trackx.truelocate.pagecomponents;
 
-import java.util.List;
-
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,14 +10,14 @@ import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
 
-public class ItemTypeElements {
+public class IMItemClassElements {
 	WebDriver driver;
 	String Title, Value;
 	ReusableActions inAction = new ReusableActions();
 	GeneralActions genAction = new GeneralActions();
 	Constants constants = new Constants();
 	CommonElements commonElements = new CommonElements();
-	public Logger log4jlogger = Logger.getLogger("devpinoyLogger");
+	
 	
 	/**
 	 * Create screen Elements
@@ -45,7 +42,7 @@ public class ItemTypeElements {
 	
 	@FindBy(id = "viewDescription")
 	WebElement label_description;
-
+	
 	/**
 	 * Menu Elements
 	 */
@@ -55,10 +52,10 @@ public class ItemTypeElements {
 	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/ul/li[4]/a")
 	WebElement menu_masterData;
 	
-	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/ul/li[4]/ul/li[2]/a")
-	WebElement menu_itemType;
+	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/ul/li[4]/ul/li[1]/a")
+	WebElement menu_itemClass;
 	
-	public ItemTypeElements(WebDriver driver) {
+	public IMItemClassElements(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -72,7 +69,7 @@ public class ItemTypeElements {
 					"Click button : menu_inventory");
 			inAction.buttonClick(driver, menu_masterData, 
 					"Click button : menu_masterData");
-			inAction.buttonClick(driver, menu_itemType, 
+			inAction.buttonClick(driver, menu_itemClass, 
 					"Click button : menu_itemClass");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -80,13 +77,13 @@ public class ItemTypeElements {
 	}
 	
 	/**
-	 * This method used to create item type
+	 * This method used to create item class
 	 * 
 	 * @param sCode
 	 * @param sName
 	 * @param sDescription
 	 */
-	public void enterItemTypeInfo(String sCode, String sName, String sDescription) {
+	public void enterItemClassInfo(String sCode, String sName, String sDescription) {
 		try {
 			inAction.waitForVisibilityOfElement(driver, txt_code);
 			inAction.inputText(driver, txt_code, sCode,

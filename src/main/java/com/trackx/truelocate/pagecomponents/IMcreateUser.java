@@ -16,14 +16,13 @@ import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
 
-public class RbcreateUser {
+public class IMcreateUser {
 	WebDriver driver;
 	String Title, Value;
 	ReusableActions inAction = new ReusableActions();
 	GeneralActions genAction = new GeneralActions();
 	Constants constants = new Constants();
-	public Logger log4jlogger = Logger.getLogger("devpinoyLogger");
-
+	
 	@FindBy(xpath = "//*[@id='left-panel']/nav/ul[5]/li/a")
 	WebElement menu_securityclick;
 
@@ -129,7 +128,7 @@ public class RbcreateUser {
 	@FindBy(id = "bot2-Msg1")
 	WebElement btn_accpetAlertMsg;
 	
-	public RbcreateUser(WebDriver driver) {
+	public IMcreateUser(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

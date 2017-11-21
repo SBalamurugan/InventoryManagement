@@ -31,75 +31,98 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">TrackX.truelocate1 test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi_attn">2</td><td class="numi">70.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">TrackX.truelocate test</td><td class="numi">8</td><td class="numi">8</td><td class="numi">0</td><td class="numi">0</td><td class="numi">179.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">TrackX.truelocate1 test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="2">com.trackx.truelocate.flow.IdentifierCreateFlow</td><td><a href="#m1"><b>itemTypeCreateFlow</b>  </a></td><td class="numi">2</td><td>1511162594276</td><td class="numi">19675</td></tr><tr class="failedodd"><td><a href="#m2"><b>itemTypeCreateFlow</b>  </a></td><td class="numi">2</td><td>1511162594276</td><td class="numi">19675</td></tr>
-<tr><th colspan="4">TrackX.truelocate1 test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="1">com.trackx.truelocate.flow.IdentifierCreateFlow</td><td><a href="#m3"><b>userclickflow</b>  </a></td><td class="numi">1</td><td>1511162568013</td><td class="numi">26259</td></tr>
+<tr><th colspan="4">TrackX.truelocate test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="2">com.trackx.truelocate.flow.IMRegionCreateFlow</td><td><a href="#m1"><b>userclickflow</b>  </a></td><td class="numi">1</td><td>1511260981162</td><td class="numi">15923</td></tr><tr class="passedodd"><td><a href="#m2"><b>regionCreateFlow</b>  </a></td><td class="numi">1</td><td>1511260997090</td><td class="numi">11051</td></tr>
+<tr class="passedeven"><td rowspan="2">com.trackx.truelocate.flow.IMItemClassCreateFlow</td><td><a href="#m3"><b>userclickflow</b>  </a></td><td class="numi">1</td><td>1511261021941</td><td class="numi">16943</td></tr><tr class="passedeven"><td><a href="#m4"><b>identifierTypeCreateFlow</b>  </a></td><td class="numi">1</td><td>1511261038891</td><td class="numi">11101</td></tr>
+<tr class="passedodd"><td rowspan="2">com.trackx.truelocate.flow.IMItemTypeCreateFlow</td><td><a href="#m5"><b>userclickflow</b>  </a></td><td class="numi">1</td><td>1511261064183</td><td class="numi">16889</td></tr><tr class="passedodd"><td><a href="#m6"><b>itemTypeCreateFlow</b>  </a></td><td class="numi">1</td><td>1511261081077</td><td class="numi">12604</td></tr>
+<tr class="passedeven"><td rowspan="2">com.trackx.truelocate.flow.IMIdentifierCreateFlow</td><td><a href="#m7"><b>userclickflow</b>  </a></td><td class="numi">1</td><td>1511261107692</td><td class="numi">15867</td></tr><tr class="passedeven"><td><a href="#m8"><b>itemTypeCreateFlow</b>  </a></td><td class="numi">1</td><td>1511261123571</td><td class="numi">21085</td></tr>
 </table>
-<h1>TrackX.truelocate1 test</h1>
-<h2 id="m1">com.trackx.truelocate.flow.IdentifierCreateFlow:itemTypeCreateFlow</h2>
+<h1>TrackX.truelocate test</h1>
+<h2 id="m1">com.trackx.truelocate.flow.IMItemClassCreateFlow:userclickflow</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>Jothish@gmail.com</td>
+<td>Test@123</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">com.trackx.truelocate.flow.IMItemTypeCreateFlow:itemTypeCreateFlow</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>test31232</td>
+<td>test23542</td>
+<td>test43123122</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="3">
+Success : Element is  visible<br/>
+Success : Element is  visible<br/>
+Success : Element is  visible<br/>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">com.trackx.truelocate.flow.IMItemClassCreateFlow:identifierTypeCreateFlow</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>test673342</td>
+<td>test66122</td>
+<td>test633232</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="3">
+Success : Element is  visible<br/>
+Success : Element is  visible<br/>
+Success : Element is  visible<br/>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">com.trackx.truelocate.flow.IMRegionCreateFlow:userclickflow</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>Jothish@gmail.com</td>
+<td>Test@123</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">com.trackx.truelocate.flow.IMIdentifierCreateFlow:itemTypeCreateFlow</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr>
-<tr class="param stripe"><td>test3</td>
-<td>test3</td>
+<tr class="param stripe"><td>test23165432</td>
+<td>test351343242</td>
 <td>Yes</td>
 <td>RFCODE</td>
 </tr>
 <tr><td style="padding-left:3em" colspan="4">
-<h3>Test Messages</h3>
-Failed : Element is not Clickable<br/>
 Success : Element is  visible<br/>
 Success : Element is  visible<br/>
-Failed : Element is not visible<br/>
-Failed : Element is not Clickable<br/>
-Failed : Element is not visible<br/>
-<h3>Failure</h3>
-<p>expected [Item Type added successfully] but found []</p>
-org.testng.Assert.fail(Assert.java:94)
-<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
-<br/>at org.testng.Assert.assertEquals(Assert.java:123)
-<br/>at org.testng.Assert.assertEquals(Assert.java:176)
-<br/>at org.testng.Assert.assertEquals(Assert.java:186)
-<br/>at com.trackx.truelocate.flow.IdentifierCreateFlow.itemTypeCreateFlow(IdentifierCreateFlow.java:75)
-<br/>25 lines not shown
+Success : Element is  visible<br/>
+Success : Element is  Clickable<br/>
+Success : DropdownSelection<br/>
 </td></tr>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">com.trackx.truelocate.flow.IdentifierCreateFlow:itemTypeCreateFlow</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr>
-<tr class="param stripe"><td>test4</td>
-<td>test4</td>
-<td>No</td>
-<td></td>
-</tr>
-<tr><td style="padding-left:3em" colspan="4">
-<h3>Test Messages</h3>
-Failed : Element is not Clickable<br/>
-Success : Element is  visible<br/>
-Success : Element is  visible<br/>
-Failed : Element is not Clickable<br/>
-Failed : Element is not visible<br/>
-<h3>Failure</h3>
-<p>expected [Item Type added successfully] but found [Code already in use, Please enter Unique Code]</p>
-org.testng.Assert.fail(Assert.java:94)
-<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
-<br/>at org.testng.Assert.assertEquals(Assert.java:123)
-<br/>at org.testng.Assert.assertEquals(Assert.java:176)
-<br/>at org.testng.Assert.assertEquals(Assert.java:186)
-<br/>at com.trackx.truelocate.flow.IdentifierCreateFlow.itemTypeCreateFlow(IdentifierCreateFlow.java:75)
-<br/>25 lines not shown
-</td></tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">com.trackx.truelocate.flow.IdentifierCreateFlow:userclickflow</h2>
+<h2 id="m6">com.trackx.truelocate.flow.IMIdentifierCreateFlow:userclickflow</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>rb.admin@gmail.com</td>
+<tr class="param stripe"><td>Jothish@gmail.com</td>
+<td>Test@123</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m7">com.trackx.truelocate.flow.IMRegionCreateFlow:regionCreateFlow</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>Region989432</td>
+<td>Name657672</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m8">com.trackx.truelocate.flow.IMItemTypeCreateFlow:userclickflow</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>Jothish@gmail.com</td>
 <td>Test@123</td>
 </tr>
 </table>

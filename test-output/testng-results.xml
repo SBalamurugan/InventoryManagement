@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" total="8" passed="8">
   <reporter-output>
     <line>
-      <![CDATA[Failed : Element is not Clickable]]>
+      <![CDATA[Success : Element is  visible]]>
+    </line>
+    <line>
+      <![CDATA[Success : Element is  visible]]>
     </line>
     <line>
       <![CDATA[Success : Element is  visible]]>
@@ -11,16 +14,10 @@
       <![CDATA[Success : Element is  visible]]>
     </line>
     <line>
-      <![CDATA[Failed : Element is not visible]]>
+      <![CDATA[Success : Element is  visible]]>
     </line>
     <line>
-      <![CDATA[Failed : Element is not Clickable]]>
-    </line>
-    <line>
-      <![CDATA[Failed : Element is not visible]]>
-    </line>
-    <line>
-      <![CDATA[Failed : Element is not Clickable]]>
+      <![CDATA[Success : Element is  visible]]>
     </line>
     <line>
       <![CDATA[Success : Element is  visible]]>
@@ -29,30 +26,29 @@
       <![CDATA[Success : Element is  visible]]>
     </line>
     <line>
-      <![CDATA[Failed : Element is not Clickable]]>
+      <![CDATA[Success : Element is  visible]]>
     </line>
     <line>
-      <![CDATA[Failed : Element is not visible]]>
+      <![CDATA[Success : Element is  Clickable]]>
+    </line>
+    <line>
+      <![CDATA[Success : DropdownSelection]]>
     </line>
   </reporter-output>
-  <suite name="TrackX.truelocate1 Suite" duration-ms="70553" started-at="2017-11-20T07:22:29Z" finished-at="2017-11-20T07:23:39Z">
+  <suite name="TrackX.truelocate Suite" duration-ms="179910" started-at="2017-11-21T10:42:50Z" finished-at="2017-11-21T10:45:50Z">
     <groups>
     </groups>
-    <test name="TrackX.truelocate1 test" duration-ms="70553" started-at="2017-11-20T07:22:29Z" finished-at="2017-11-20T07:23:39Z">
-      <class name="com.trackx.truelocate.flow.IdentifierCreateFlow">
-        <test-method status="PASS" signature="excelCreation()[pri:0, instance:com.trackx.truelocate.flow.IdentifierCreateFlow@2accdbb5]" name="excelCreation" is-config="true" duration-ms="106" started-at="2017-11-20T12:52:29Z" finished-at="2017-11-20T12:52:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- excelCreation -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.IdentifierCreateFlow@2accdbb5]" name="setUp" is-config="true" duration-ms="18582" started-at="2017-11-20T12:52:29Z" finished-at="2017-11-20T12:52:47Z">
+    <test name="TrackX.truelocate test" duration-ms="179910" started-at="2017-11-21T10:42:50Z" finished-at="2017-11-21T10:45:50Z">
+      <class name="com.trackx.truelocate.flow.IMItemTypeCreateFlow">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.IMItemTypeCreateFlow@29e495ff]" name="setUp" is-config="true" duration-ms="8226" started-at="2017-11-21T16:14:15Z" finished-at="2017-11-21T16:14:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="userclickflow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IdentifierCreateFlow@2accdbb5]" name="userclickflow" duration-ms="26259" started-at="2017-11-20T12:52:48Z" data-provider="getData" finished-at="2017-11-20T12:53:14Z">
+        <test-method status="PASS" signature="userclickflow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMItemTypeCreateFlow@29e495ff]" name="userclickflow" duration-ms="16889" started-at="2017-11-21T16:14:24Z" data-provider="getData" finished-at="2017-11-21T16:14:41Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[rb.admin@gmail.com]]>
+                <![CDATA[Jothish@gmail.com]]>
               </value>
             </param>
             <param index="1">
@@ -64,16 +60,118 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userclickflow -->
-        <test-method status="FAIL" signature="itemTypeCreateFlow(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IdentifierCreateFlow@2accdbb5]" name="itemTypeCreateFlow" duration-ms="16669" started-at="2017-11-20T12:53:14Z" data-provider="createData" finished-at="2017-11-20T12:53:30Z">
+        <test-method status="PASS" signature="itemTypeCreateFlow(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMItemTypeCreateFlow@29e495ff]" name="itemTypeCreateFlow" duration-ms="12604" started-at="2017-11-21T16:14:41Z" data-provider="createData" finished-at="2017-11-21T16:14:53Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[test3]]>
+                <![CDATA[test31232]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[test3]]>
+                <![CDATA[test23542]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test43123122]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Success : Element is  visible]]>
+            </line>
+            <line>
+              <![CDATA[Success : Element is  visible]]>
+            </line>
+            <line>
+              <![CDATA[Success : Element is  visible]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- itemTypeCreateFlow -->
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.IMItemTypeCreateFlow@29e495ff]" name="quitDriver" is-config="true" duration-ms="6026" started-at="2017-11-21T16:14:53Z" finished-at="2017-11-21T16:14:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- com.trackx.truelocate.flow.IMItemTypeCreateFlow -->
+      <class name="com.trackx.truelocate.flow.IMRegionCreateFlow">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.IMRegionCreateFlow@53976f5c]" name="setUp" is-config="true" duration-ms="10291" started-at="2017-11-21T16:12:50Z" finished-at="2017-11-21T16:13:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="userclickflow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMRegionCreateFlow@53976f5c]" name="userclickflow" duration-ms="15923" started-at="2017-11-21T16:13:01Z" data-provider="getData" finished-at="2017-11-21T16:13:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Jothish@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userclickflow -->
+        <test-method status="PASS" signature="regionCreateFlow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMRegionCreateFlow@53976f5c]" name="regionCreateFlow" duration-ms="11051" started-at="2017-11-21T16:13:17Z" data-provider="createData" finished-at="2017-11-21T16:13:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Region989432]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Name657672]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- regionCreateFlow -->
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.IMRegionCreateFlow@53976f5c]" name="quitDriver" is-config="true" duration-ms="6438" started-at="2017-11-21T16:13:28Z" finished-at="2017-11-21T16:13:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+      </class> <!-- com.trackx.truelocate.flow.IMRegionCreateFlow -->
+      <class name="com.trackx.truelocate.flow.IMIdentifierCreateFlow">
+        <test-method status="PASS" signature="excelCreation()[pri:0, instance:com.trackx.truelocate.flow.IMIdentifierCreateFlow@2e55dd0c]" name="excelCreation" is-config="true" duration-ms="157" started-at="2017-11-21T16:12:50Z" finished-at="2017-11-21T16:12:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- excelCreation -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.IMIdentifierCreateFlow@2e55dd0c]" name="setUp" is-config="true" duration-ms="7980" started-at="2017-11-21T16:14:59Z" finished-at="2017-11-21T16:15:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="userclickflow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMIdentifierCreateFlow@2e55dd0c]" name="userclickflow" duration-ms="15867" started-at="2017-11-21T16:15:07Z" data-provider="getData" finished-at="2017-11-21T16:15:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Jothish@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userclickflow -->
+        <test-method status="PASS" signature="itemTypeCreateFlow(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMIdentifierCreateFlow@2e55dd0c]" name="itemTypeCreateFlow" duration-ms="21085" started-at="2017-11-21T16:15:23Z" data-provider="createData" finished-at="2017-11-21T16:15:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test23165432]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test351343242]]>
               </value>
             </param>
             <param index="2">
@@ -87,155 +185,89 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Item Type added successfully] but found []]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Item Type added successfully] but found []
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:176)
-	at org.testng.Assert.assertEquals(Assert.java:186)
-	at com.trackx.truelocate.flow.IdentifierCreateFlow.itemTypeCreateFlow(IdentifierCreateFlow.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
             <line>
-              <![CDATA[Failed : Element is not Clickable]]>
-            </line>
-            <line>
               <![CDATA[Success : Element is  visible]]>
             </line>
             <line>
               <![CDATA[Success : Element is  visible]]>
             </line>
             <line>
-              <![CDATA[Failed : Element is not visible]]>
+              <![CDATA[Success : Element is  visible]]>
             </line>
             <line>
-              <![CDATA[Failed : Element is not Clickable]]>
+              <![CDATA[Success : Element is  Clickable]]>
             </line>
             <line>
-              <![CDATA[Failed : Element is not visible]]>
+              <![CDATA[Success : DropdownSelection]]>
             </line>
           </reporter-output>
         </test-method> <!-- itemTypeCreateFlow -->
-        <test-method status="FAIL" signature="itemTypeCreateFlow(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IdentifierCreateFlow@2accdbb5]" name="itemTypeCreateFlow" duration-ms="3004" started-at="2017-11-20T12:53:30Z" data-provider="createData" finished-at="2017-11-20T12:53:33Z">
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.IMIdentifierCreateFlow@2e55dd0c]" name="quitDriver" is-config="true" duration-ms="6069" started-at="2017-11-21T16:15:44Z" finished-at="2017-11-21T16:15:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitDriver -->
+        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.trackx.truelocate.flow.IMIdentifierCreateFlow@2e55dd0c]" name="suiteTearDown" is-config="true" duration-ms="216" started-at="2017-11-21T16:15:50Z" finished-at="2017-11-21T16:15:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteTearDown -->
+      </class> <!-- com.trackx.truelocate.flow.IMIdentifierCreateFlow -->
+      <class name="com.trackx.truelocate.flow.IMItemClassCreateFlow">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.IMItemClassCreateFlow@2bfc268b]" name="setUp" is-config="true" duration-ms="7354" started-at="2017-11-21T16:13:34Z" finished-at="2017-11-21T16:13:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="userclickflow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMItemClassCreateFlow@2bfc268b]" name="userclickflow" duration-ms="16943" started-at="2017-11-21T16:13:41Z" data-provider="getData" finished-at="2017-11-21T16:13:58Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[test4]]>
+                <![CDATA[Jothish@gmail.com]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[test4]]>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userclickflow -->
+        <test-method status="PASS" signature="identifierTypeCreateFlow(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMItemClassCreateFlow@2bfc268b]" name="identifierTypeCreateFlow" duration-ms="11101" started-at="2017-11-21T16:13:58Z" data-provider="createData" finished-at="2017-11-21T16:14:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test673342]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test66122]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[No]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
+                <![CDATA[test633232]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Item Type added successfully] but found [Code already in use, Please enter Unique Code]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Item Type added successfully] but found [Code already in use, Please enter Unique Code]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:176)
-	at org.testng.Assert.assertEquals(Assert.java:186)
-	at com.trackx.truelocate.flow.IdentifierCreateFlow.itemTypeCreateFlow(IdentifierCreateFlow.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
             <line>
-              <![CDATA[Failed : Element is not Clickable]]>
-            </line>
-            <line>
               <![CDATA[Success : Element is  visible]]>
             </line>
             <line>
               <![CDATA[Success : Element is  visible]]>
             </line>
             <line>
-              <![CDATA[Failed : Element is not Clickable]]>
-            </line>
-            <line>
-              <![CDATA[Failed : Element is not visible]]>
+              <![CDATA[Success : Element is  visible]]>
             </line>
           </reporter-output>
-        </test-method> <!-- itemTypeCreateFlow -->
-        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.IdentifierCreateFlow@2accdbb5]" name="quitDriver" is-config="true" duration-ms="6006" started-at="2017-11-20T12:53:33Z" finished-at="2017-11-20T12:53:39Z">
+        </test-method> <!-- identifierTypeCreateFlow -->
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.IMItemClassCreateFlow@2bfc268b]" name="quitDriver" is-config="true" duration-ms="5959" started-at="2017-11-21T16:14:09Z" finished-at="2017-11-21T16:14:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.trackx.truelocate.flow.IdentifierCreateFlow@2accdbb5]" name="suiteTearDown" is-config="true" duration-ms="31" started-at="2017-11-20T12:53:39Z" finished-at="2017-11-20T12:53:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- suiteTearDown -->
-      </class> <!-- com.trackx.truelocate.flow.IdentifierCreateFlow -->
-    </test> <!-- TrackX.truelocate1 test -->
-  </suite> <!-- TrackX.truelocate1 Suite -->
+      </class> <!-- com.trackx.truelocate.flow.IMItemClassCreateFlow -->
+    </test> <!-- TrackX.truelocate test -->
+  </suite> <!-- TrackX.truelocate Suite -->
 </testng-results>

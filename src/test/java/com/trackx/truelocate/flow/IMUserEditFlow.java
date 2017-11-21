@@ -13,14 +13,14 @@ import org.openqa.selenium.support.PageFactory;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
 import com.trackx.truelocate.pagecomponents.Truelocatelogin;
-import com.trackx.truelocate.pagecomponents.RbcreateUser;
+import com.trackx.truelocate.pagecomponents.IMcreateUser;
 
 
-public class UserEditFlow extends GeneralActions{
+public class IMUserEditFlow extends GeneralActions{
 	WebDriver driver;
 
 	Truelocatelogin truelocatelogin;
-	RbcreateUser rbCreateUser;
+	IMcreateUser rbCreateUser;
 
 	// Logger log4jlogger =Logger.getLogger("devpinoyLogger");
 
@@ -28,7 +28,7 @@ public class UserEditFlow extends GeneralActions{
 	public void setUp() throws IOException {
 		driver = GeneralActions.launchBrowser(driver, "chrome");
 		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
-		rbCreateUser = PageFactory.initElements(driver, RbcreateUser.class);
+		rbCreateUser = PageFactory.initElements(driver, IMcreateUser.class);
 		ReusableActions.loadPropFileValues();
 		ReusableActions.openUrl(driver, ReusableActions.getPropFileValues("Url"));
 	}

@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [TrackX.truelocate Suite]">
+<suite name="Failed suite [TrackX.truelocate Suite]">
   <test name="TrackX.truelocate test(failed)">
     <classes>
-      <class name="com.trackx.truelocate.flow.SiteEditFlow">
+      <class name="com.trackx.truelocate.flow.IMIdentifierCreateFlow">
         <methods>
-          <include name="LoginFlow"/>
+          <include name="setUp"/>
           <include name="suiteTearDown"/>
           <include name="excelCreation"/>
-          <include name="setUp"/>
-          <include name="siteEditFlow"/>
+          <include name="itemTypeCreateFlow" invocation-numbers="0"/>
+          <include name="quitDriver"/>
         </methods>
-      </class> <!-- com.trackx.truelocate.flow.SiteEditFlow -->
+      </class> <!-- com.trackx.truelocate.flow.IMIdentifierCreateFlow -->
+      <class name="com.trackx.truelocate.flow.IMRegionCreateFlow">
+        <methods>
+          <include name="quitDriver"/>
+          <include name="setUp"/>
+          <include name="regionCreateFlow" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.trackx.truelocate.flow.IMRegionCreateFlow -->
+      <class name="com.trackx.truelocate.flow.IMItemClassCreateFlow">
+        <methods>
+          <include name="identifierTypeCreateFlow" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="quitDriver"/>
+        </methods>
+      </class> <!-- com.trackx.truelocate.flow.IMItemClassCreateFlow -->
+      <class name="com.trackx.truelocate.flow.IMItemTypeCreateFlow">
+        <methods>
+          <include name="quitDriver"/>
+          <include name="itemTypeCreateFlow" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.trackx.truelocate.flow.IMItemTypeCreateFlow -->
     </classes>
   </test> <!-- TrackX.truelocate test(failed) -->
 </suite> <!-- Failed suite [TrackX.truelocate Suite] -->

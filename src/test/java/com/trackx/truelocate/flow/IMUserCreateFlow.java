@@ -14,13 +14,13 @@ import org.testng.annotations.Test;
 import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
-import com.trackx.truelocate.pagecomponents.RbcreateUser;
+import com.trackx.truelocate.pagecomponents.IMcreateUser;
 import com.trackx.truelocate.pagecomponents.Truelocatelogin;
 
-public class UserCreateFlow extends GeneralActions {
+public class IMUserCreateFlow extends GeneralActions {
 	static WebDriver driver;
 	Truelocatelogin truelocatelogin;
-	RbcreateUser rbCreateUser;
+	IMcreateUser rbCreateUser;
 	Constants constants;
 
 	Logger log4jlogger = Logger.getLogger("devpinoyLogger");
@@ -30,7 +30,7 @@ public class UserCreateFlow extends GeneralActions {
 		  driver = GeneralActions.launchBrowser(driver, "Chrome");
 		  
 		  truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
-		  rbCreateUser = PageFactory.initElements(driver, RbcreateUser.class);
+		  rbCreateUser = PageFactory.initElements(driver, IMcreateUser.class);
 		  ReusableActions.loadPropFileValues();
 		  ReusableActions.openUrl(driver,ReusableActions.getPropFileValues("Url"));
 	}
@@ -60,7 +60,7 @@ public class UserCreateFlow extends GeneralActions {
 	/*
 	 * User creation script
 	 */
-	 @Test( priority = 2, dataProviderClass=RbcreateUser.class, dataProvider="getData")
+	 @Test( priority = 2, dataProviderClass=IMcreateUser.class, dataProvider="getData")
 	public void userCreationFlow(String sEmail, String sFirstname,
 			String sLastname, String sMobile, String sLanguage,
 			String sPassword, String sConfirmpassword, String sPortal,
