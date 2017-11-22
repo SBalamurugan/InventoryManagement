@@ -18,7 +18,7 @@ public class Truelocatelogin {
 	ReusableActions inAction = new ReusableActions();
 	GeneralActions genAction = new GeneralActions();
 	Constants constants = new Constants();
-	public Logger log4jlogger = Logger.getLogger("devpinoyLogger");
+	
 
 	@FindBy(xpath = "//*[@id='email']")
 	WebElement txt_username;
@@ -60,7 +60,6 @@ public class Truelocatelogin {
 
 	public boolean pageTitleValidation() throws InterruptedException {
 		System.out.println("Msg:" + driver.getTitle());
-
 		Thread.sleep(1000);
 		String pageTitle = driver.getTitle();
 		if (pageTitle.equalsIgnoreCase(constants.home_pageTitle)) {
@@ -72,8 +71,9 @@ public class Truelocatelogin {
 		}
 	}
 
-	@DataProvider
-	public static Object[][] getData() {
-		return GeneralActions.getData("Login");
-	}
+@DataProvider
+public static Object[][] getData() {
+	return GeneralActions.getData("Login");
 }
+}
+	

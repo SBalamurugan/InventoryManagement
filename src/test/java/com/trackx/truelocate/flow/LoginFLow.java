@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -42,27 +43,19 @@ public class LoginFLow extends GeneralActions {
 	
 	@Test(priority=1,dataProviderClass=Truelocatelogin.class, dataProvider="getData")
 	public void LoginFlow(String sUsername,String sPassword) throws Exception {
-		
-		
-		
 		try{
-			
 			 truelocatelogin.enterUsernamepassword(sUsername, sPassword);
-		     Thread.sleep(1000);
-		      Reporter.log("##########-------Login application-------##########");
-		      Reporter.log("##########-------Login Successfully,----------############");
-		      TestNGResults.put("2", new Object[] {  "Login screen", "Login successful", "Pass" });
-		      Assert.assertTrue(true);
-			 }
-	
-			 catch(Exception e){
-				 
-			TestNGResults.put("2", new Object[] { "Login screen screen", "Login not successful", "Fail" });
-			Assert.assertTrue(false);
-			 }
-			//e.printStackTrace();
-			
-	
+		     Thread.sleep(1000);	
+			if (truelocatelogin.pageTitleValidation()) {
+				TestNGResults.put("2", new Object[] { "Login screen",
+						"Login successful", "Pass" });
+			}else {
+				TestNGResults.put("2", new Object[] { "Login screen",
+						"Login Failed", "Fail" });
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
@@ -77,9 +70,8 @@ public class LoginFLow extends GeneralActions {
 		 e.printStackTrace();
 		 }
 	
-
-	
+	}
 }
-
 	
-}
+
+

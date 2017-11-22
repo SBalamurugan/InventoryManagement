@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [TrackX.truelocate1 Suite]">
-  <test name="TrackX.truelocate1 test(failed)">
+<suite name="Failed suite [TrackX.truelocate Suite]">
+  <test name="TrackX.truelocate test(failed)">
     <classes>
-      <class name="com.trackx.truelocate.flow.IdentifierCreateFlow">
+      <class name="com.trackx.truelocate.flow.IMRegionCreateFlow">
         <methods>
           <include name="quitDriver"/>
-          <include name="itemTypeCreateFlow" invocation-numbers="0 1"/>
+          <include name="setUp"/>
+          <include name="regionCreateFlow" invocation-numbers="0"/>
           <include name="suiteTearDown"/>
           <include name="excelCreation"/>
-          <include name="setUp"/>
         </methods>
-      </class> <!-- com.trackx.truelocate.flow.IdentifierCreateFlow -->
+      </class> <!-- com.trackx.truelocate.flow.IMRegionCreateFlow -->
     </classes>
-  </test> <!-- TrackX.truelocate1 test(failed) -->
-</suite> <!-- Failed suite [TrackX.truelocate1 Suite] -->
+  </test> <!-- TrackX.truelocate test(failed) -->
+</suite> <!-- Failed suite [TrackX.truelocate Suite] -->

@@ -31,75 +31,38 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">TrackX.truelocate1 test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi_attn">2</td><td class="numi">70.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">TrackX.truelocate test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">58.3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">TrackX.truelocate1 test &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="2">com.trackx.truelocate.flow.IdentifierCreateFlow</td><td><a href="#m1"><b>itemTypeCreateFlow</b>  </a></td><td class="numi">2</td><td>1511162594276</td><td class="numi">19675</td></tr><tr class="failedodd"><td><a href="#m2"><b>itemTypeCreateFlow</b>  </a></td><td class="numi">2</td><td>1511162594276</td><td class="numi">19675</td></tr>
-<tr><th colspan="4">TrackX.truelocate1 test &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="1">com.trackx.truelocate.flow.IdentifierCreateFlow</td><td><a href="#m3"><b>userclickflow</b>  </a></td><td class="numi">1</td><td>1511162568013</td><td class="numi">26259</td></tr>
+<tr><th colspan="4">TrackX.truelocate test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="1">com.trackx.truelocate.flow.IMRegionCreateFlow</td><td><a href="#m1"><b>regionCreateFlow</b>  </a></td><td class="numi">1</td><td>1511330568631</td><td class="numi">26590</td></tr>
+<tr><th colspan="4">TrackX.truelocate test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.trackx.truelocate.flow.IMRegionCreateFlow</td><td><a href="#m2"><b>userclickflow</b>  </a></td><td class="numi">1</td><td>1511330553766</td><td class="numi">14858</td></tr>
 </table>
-<h1>TrackX.truelocate1 test</h1>
-<h2 id="m1">com.trackx.truelocate.flow.IdentifierCreateFlow:itemTypeCreateFlow</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr>
-<tr class="param stripe"><td>test3</td>
-<td>test3</td>
-<td>Yes</td>
-<td>RFCODE</td>
-</tr>
-<tr><td style="padding-left:3em" colspan="4">
-<h3>Test Messages</h3>
-Failed : Element is not Clickable<br/>
-Success : Element is  visible<br/>
-Success : Element is  visible<br/>
-Failed : Element is not visible<br/>
-Failed : Element is not Clickable<br/>
-Failed : Element is not visible<br/>
-<h3>Failure</h3>
-<p>expected [Item Type added successfully] but found []</p>
-org.testng.Assert.fail(Assert.java:94)
-<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
-<br/>at org.testng.Assert.assertEquals(Assert.java:123)
-<br/>at org.testng.Assert.assertEquals(Assert.java:176)
-<br/>at org.testng.Assert.assertEquals(Assert.java:186)
-<br/>at com.trackx.truelocate.flow.IdentifierCreateFlow.itemTypeCreateFlow(IdentifierCreateFlow.java:75)
-<br/>25 lines not shown
-</td></tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">com.trackx.truelocate.flow.IdentifierCreateFlow:itemTypeCreateFlow</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr>
-<tr class="param stripe"><td>test4</td>
-<td>test4</td>
-<td>No</td>
-<td></td>
-</tr>
-<tr><td style="padding-left:3em" colspan="4">
-<h3>Test Messages</h3>
-Failed : Element is not Clickable<br/>
-Success : Element is  visible<br/>
-Success : Element is  visible<br/>
-Failed : Element is not Clickable<br/>
-Failed : Element is not visible<br/>
-<h3>Failure</h3>
-<p>expected [Item Type added successfully] but found [Code already in use, Please enter Unique Code]</p>
-org.testng.Assert.fail(Assert.java:94)
-<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
-<br/>at org.testng.Assert.assertEquals(Assert.java:123)
-<br/>at org.testng.Assert.assertEquals(Assert.java:176)
-<br/>at org.testng.Assert.assertEquals(Assert.java:186)
-<br/>at com.trackx.truelocate.flow.IdentifierCreateFlow.itemTypeCreateFlow(IdentifierCreateFlow.java:75)
-<br/>25 lines not shown
-</td></tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">com.trackx.truelocate.flow.IdentifierCreateFlow:userclickflow</h2>
+<h1>TrackX.truelocate test</h1>
+<h2 id="m1">com.trackx.truelocate.flow.IMRegionCreateFlow:regionCreateFlow</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
-<tr class="param stripe"><td>rb.admin@gmail.com</td>
+<tr class="param stripe"><td>Region9894323</td>
+<td>Name6576724</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="2">
+<p>expected [Region added successfully] but found [Required field missing]</p>
+org.testng.Assert.fail(Assert.java:94)
+<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
+<br/>at org.testng.Assert.assertEquals(Assert.java:123)
+<br/>at org.testng.Assert.assertEquals(Assert.java:176)
+<br/>at org.testng.Assert.assertEquals(Assert.java:186)
+<br/>at com.trackx.truelocate.flow.IMRegionCreateFlow.regionCreateFlow(IMRegionCreateFlow.java:83)
+<br/>25 lines not shown
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">com.trackx.truelocate.flow.IMRegionCreateFlow:userclickflow</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>Jothish@gmail.com</td>
 <td>Test@123</td>
 </tr>
 </table>

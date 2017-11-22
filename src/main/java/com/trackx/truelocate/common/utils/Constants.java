@@ -20,9 +20,12 @@ public class Constants {
 	
 	
 	//Messages :  
-	public String Error_ChargeType="Site already exists";
+	
+	
 	public String Success_Type="Site created successfully";
+	
 	public String success_addtype ="Done!";
+	
 	public String User_Success_Type="User created successfully";
 	
 	public String success_usermsg="User updated successfully";
@@ -33,7 +36,13 @@ public class Constants {
 	
 	public String add_itemtype_successmsg = "Item Type added successfully";
 	
+	public String add_identifier_type_successmsg = "Identifier Type added successfully";
+	
+	public String add_region_successmsg = "Region added successfully";
+	
 	public String home_pageTitle = "Trackx-GAME";
+	
+	public String add_locationlist_successmsg = "Location created successfully";
 	
 	
 }
