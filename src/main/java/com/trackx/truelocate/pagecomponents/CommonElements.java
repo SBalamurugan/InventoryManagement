@@ -7,7 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
@@ -18,7 +17,7 @@ public class CommonElements {
 	ReusableActions inAction = new ReusableActions();
 	GeneralActions genAction = new GeneralActions();
 	Constants constants = new Constants();
-	public Logger log4jlogger = Logger.getLogger("devpinoyLogger");
+	//public Logger log4jlogger = Logger.getLogger("devpinoyLogger");
 	
 	@FindBy(xpath = "//*[@id=\"filterSlider\"]/header/button")
 	WebElement btn_create;
@@ -97,7 +96,7 @@ public class CommonElements {
 	 */
 	public void clickCreatebutton() {
 		try {
-			inAction.waitForElementToBeClickable(driver, btn_create);
+			//inAction.waitForElementToBeClickable(driver, btn_create);
 			inAction.buttonClick(driver, btn_create, 
 					"Click button : btn_create");
 		} catch (Exception e) {
@@ -110,7 +109,7 @@ public class CommonElements {
 	 */
 	public void clickCreateOrUpdatebutton() {
 		try {
-			inAction.waitForElementToBeClickable(driver, btn_createorupdate);
+			//inAction.waitForElementToBeClickable(driver, btn_createorupdate);
 			inAction.buttonClick(driver, btn_createorupdate, 
 					"Click button : btn_createorupdate");
 		} catch (Exception e) {
@@ -135,7 +134,7 @@ public class CommonElements {
 	 * @return alert message
 	 */
 	public String alertMessage() {
-		inAction.waitForVisibilityOfElement(driver, txt_alertmsg);
+		//inAction.waitForVisibilityOfElement(driver, txt_alertmsg);
 		String alertMessage = txt_alertmsg.getText();
 		return alertMessage;
 	}

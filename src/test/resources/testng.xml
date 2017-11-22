@@ -1,12 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TrackX.truelocate1 Suite">
-	<test name="TrackX.truelocate1 test">
-		<classes>
-			<class name="com.trackx.truelocate.flow.LoginFLow" />
-			<class name="com.trackx.truelocate.flow.ItemTypeCreateFlow" />
-			<class name="com.trackx.truelocate.flow.ItemClassCreateFlow"/>
-			<class name="com.trackx.truelocate.flow.IdentifierCreateFlow"/>
-			<class name="com.trackx.truelocate.flow.FacilityCreateFlow"/>
-		</classes>
-	</test>
+<suite name="TrackX.truelocate Suite">
+
+<test name="TrackX.truelocate test">
+    <classes>
+        <class name="com.trackx.truelocate.flow.IMRegionCreateFlow"/> 
+       <!--   <class name="com.trackx.truelocate.flow.IMItemClassCreateFlow"/>  -->
+         <!-- <class name="com.trackx.truelocate.flow.IMItemTypeCreateFlow"/> 
+          <class name="com.trackx.truelocate.flow.IMIdentifierCreateFlow"/>  -->
+          <class name="com.trackx.truelocate.flow.IMLocationListCreateFlow"/> 
+    </classes>
+    </test>   
 </suite>

@@ -11,7 +11,6 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -669,7 +668,7 @@ public class ReusableActions {
 	}
 	public static void takeSnapshot(WebDriver driver, String name){
 		try {
-			String fileName = "D:\\Screenshot\\" + name + "\\";
+			String fileName = "E:\\SeleniumWorkspace_IM\\TrackXtrueLocate\\test-output\\Screenshot\\" + name + "\\";
 			File file = new File(fileName);
 			  if (!file.exists())
 			   file.mkdirs();
@@ -680,7 +679,5 @@ public class ReusableActions {
 		}
 	}
 	
-	public void mouseMove(WebDriver driver, WebElement element){
-		
-	}
+	
 }
