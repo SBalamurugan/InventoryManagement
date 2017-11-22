@@ -74,8 +74,7 @@ public class IMRegionElements {
 	 * This method used to create Region
 	 * 
 	 * @param sCode
-	 * @param sName
-	 * @param sDescription
+	 * @param sName 
 	 */
 	public void enterRegionInfo(String sCode, String sName) {
 		try {

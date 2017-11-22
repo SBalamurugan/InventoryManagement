@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
+    <line>
+      <![CDATA[Success : DropdownSelection]]>
+    </line>
+    <line>
+      <![CDATA[Success : DropdownSelection]]>
+    </line>
   </reporter-output>
-  <suite name="TrackX.truelocate Suite" duration-ms="58316" started-at="2017-11-22T06:02:23Z" finished-at="2017-11-22T06:03:21Z">
+  <suite name="TrackX.truelocate Suite" duration-ms="57111" started-at="2017-11-22T08:05:28Z" finished-at="2017-11-22T08:06:25Z">
     <groups>
     </groups>
-    <test name="TrackX.truelocate test" duration-ms="58316" started-at="2017-11-22T06:02:23Z" finished-at="2017-11-22T06:03:21Z">
-      <class name="com.trackx.truelocate.flow.IMRegionCreateFlow">
-        <test-method status="PASS" signature="excelCreation()[pri:0, instance:com.trackx.truelocate.flow.IMRegionCreateFlow@3d1cfad4]" name="excelCreation" is-config="true" duration-ms="161" started-at="2017-11-22T11:32:23Z" finished-at="2017-11-22T11:32:23Z">
+    <test name="TrackX.truelocate test" duration-ms="57111" started-at="2017-11-22T08:05:28Z" finished-at="2017-11-22T08:06:25Z">
+      <class name="com.trackx.truelocate.flow.IMLocationListCreateFlow">
+        <test-method status="PASS" signature="excelCreation()[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="excelCreation" is-config="true" duration-ms="232" started-at="2017-11-22T13:35:28Z" finished-at="2017-11-22T13:35:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- excelCreation -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.IMRegionCreateFlow@3d1cfad4]" name="setUp" is-config="true" duration-ms="10452" started-at="2017-11-22T11:32:23Z" finished-at="2017-11-22T11:32:33Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="setUp" is-config="true" duration-ms="10123" started-at="2017-11-22T13:35:28Z" finished-at="2017-11-22T13:35:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="userclickflow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMRegionCreateFlow@3d1cfad4]" name="userclickflow" duration-ms="14858" started-at="2017-11-22T11:32:33Z" data-provider="getData" finished-at="2017-11-22T11:32:48Z">
+        <test-method status="PASS" signature="userclickflow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="userclickflow" duration-ms="16205" started-at="2017-11-22T13:35:38Z" data-provider="getData" finished-at="2017-11-22T13:35:54Z">
           <params>
             <param index="0">
               <value>
@@ -31,70 +37,62 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userclickflow -->
-        <test-method status="FAIL" signature="regionCreateFlow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMRegionCreateFlow@3d1cfad4]" name="regionCreateFlow" duration-ms="26590" started-at="2017-11-22T11:32:48Z" data-provider="createData" finished-at="2017-11-22T11:33:15Z">
+        <test-method status="PASS" signature="locationListCreateFlow(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="locationListCreateFlow" duration-ms="24186" started-at="2017-11-22T13:35:54Z" data-provider="createData" finished-at="2017-11-22T13:36:19Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Region9894323]]>
+                <![CDATA[Test23123]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Name6576724]]>
+                <![CDATA[Namer4343]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[test]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[ACM]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[ACM]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[DOCK]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DOCK]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Region added successfully] but found [Required field missing]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Region added successfully] but found [Required field missing]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:176)
-	at org.testng.Assert.assertEquals(Assert.java:186)
-	at com.trackx.truelocate.flow.IMRegionCreateFlow.regionCreateFlow(IMRegionCreateFlow.java:83)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
+            <line>
+              <![CDATA[Success : DropdownSelection]]>
+            </line>
+            <line>
+              <![CDATA[Success : DropdownSelection]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- regionCreateFlow -->
-        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.IMRegionCreateFlow@3d1cfad4]" name="quitDriver" is-config="true" duration-ms="6332" started-at="2017-11-22T11:33:15Z" finished-at="2017-11-22T11:33:21Z">
+        </test-method> <!-- locationListCreateFlow -->
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="quitDriver" is-config="true" duration-ms="6516" started-at="2017-11-22T13:36:19Z" finished-at="2017-11-22T13:36:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.trackx.truelocate.flow.IMRegionCreateFlow@3d1cfad4]" name="suiteTearDown" is-config="true" duration-ms="109" started-at="2017-11-22T11:33:21Z" finished-at="2017-11-22T11:33:21Z">
+        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="suiteTearDown" is-config="true" duration-ms="127" started-at="2017-11-22T13:36:25Z" finished-at="2017-11-22T13:36:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteTearDown -->
-      </class> <!-- com.trackx.truelocate.flow.IMRegionCreateFlow -->
+      </class> <!-- com.trackx.truelocate.flow.IMLocationListCreateFlow -->
     </test> <!-- TrackX.truelocate test -->
   </suite> <!-- TrackX.truelocate Suite -->
 </testng-results>

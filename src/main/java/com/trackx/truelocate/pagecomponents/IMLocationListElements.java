@@ -37,7 +37,7 @@ public class IMLocationListElements {
 	@FindBy(id = "select2-chosen-2")
 	WebElement dropdown_facility;
 	
-	@FindBy(id = "//*[@id='s2id_autogen2_search']")
+	@FindBy(id = "s2id_autogen2_search")
 	WebElement txt_faciltiy;
 	
 	@FindBy(xpath = "//*[@id=\"select2-results-2\"]/li")
@@ -46,7 +46,7 @@ public class IMLocationListElements {
 	@FindBy(id = "select2-chosen-3")
 	WebElement dropdown_locationtype;
 	
-	@FindBy(id = "//*[@id='s2id_autogen3_search']")
+	@FindBy(id = "s2id_autogen3_search")
 	WebElement txt_locationtype;
 	
 	@FindBy(xpath = "//*[@id=\"select2-results-3\"]/li")
@@ -95,13 +95,20 @@ public class IMLocationListElements {
 	}
 	
 	/**
-	 * This method used to create Region
+	 * This method used to create Locationlist
 	 * 
 	 * @param sCode
 	 * @param sName
 	 * @param sDescription
+	 * @param sFacility
+	 * @param sFacility
+	 * @param sDescription
+	 * @param sLoactiontype
+	 * @param sLoactiontype
+	 * sLocationTypedropdown
 	 */
-	public void enterLocationListInfo(String sCode, String sName, String sFacility,String sFacilitydropdown,String sLoactiontype, String sLocationTypedropdown) {
+	
+	public void enterLocationListInfo(String sCode, String sName,String sDescription, String sFacility,String sFacilitydropdown,String sLoactiontype, String sLocationTypedropdown) {
 		try {
 			//inAction.waitForVisibilityOfElement(driver, txt_code);
 			inAction.inputText(driver, txt_code, sCode,
@@ -109,6 +116,8 @@ public class IMLocationListElements {
 			//inAction.waitForVisibilityOfElement(driver, txt_name);
 			inAction.inputText(driver, txt_name, sName,
 					"Enter sFirstname : " + sName);
+			inAction.inputText(driver, txt_description, sDescription,
+					"Enter sDescription : " + sDescription);
 			inAction.buttonClick(driver, dropdown_facility, 
 					"Click button : dropdown_faciltiy");
 			inAction.inputText(driver, txt_faciltiy, sFacility,
@@ -118,7 +127,7 @@ public class IMLocationListElements {
 					"Click button : dropdown_locationtype");
 			inAction.inputText(driver, txt_locationtype, sLoactiontype,
 					"Enter sLocationtype : " + sLoactiontype);
-			inAction.selectByTextInDropdown(driver, list_facility, sLocationTypedropdown);
+			inAction.selectByTextInDropdown(driver, list_locationtype, sLocationTypedropdown);
 					
 		
 		} catch (Exception e) {
