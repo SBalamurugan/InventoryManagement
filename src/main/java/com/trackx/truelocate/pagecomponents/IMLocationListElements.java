@@ -1,16 +1,19 @@
 package com.trackx.truelocate.pagecomponents;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+
 import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
 
-public class IMRegionElements {
+public class IMLocationListElements {
 	WebDriver driver;
 	String Title, Value;
 	ReusableActions inAction = new ReusableActions();
@@ -28,6 +31,26 @@ public class IMRegionElements {
 	@FindBy(id="createName")
 	WebElement txt_name;
 	
+	@FindBy(id="createDescription")
+	WebElement txt_description;
+	
+	@FindBy(id = "select2-chosen-2")
+	WebElement dropdown_facility;
+	
+	@FindBy(id = "//*[@id='s2id_autogen2_search']")
+	WebElement txt_faciltiy;
+	
+	@FindBy(xpath = "//*[@id=\"select2-results-2\"]/li")
+	List<WebElement> list_facility;
+	
+	@FindBy(id = "select2-chosen-3")
+	WebElement dropdown_locationtype;
+	
+	@FindBy(id = "//*[@id='s2id_autogen3_search']")
+	WebElement txt_locationtype;
+	
+	@FindBy(xpath = "//*[@id=\"select2-results-3\"]/li")
+	List<WebElement> list_locationtype;
 	
 	
 	/**
@@ -43,14 +66,15 @@ public class IMRegionElements {
 	/**
 	 * Menu Elements
 	 */
-	@FindBy(xpath = "//*[@id='menuField']/ul[11]/li/a/span")
-	WebElement menu_administration;
 
+
+	@FindBy(xpath = "//*[@id='menuField']/ul[6]/li/a/span")
+	WebElement menu_location;
 	
-	@FindBy(linkText = "Region")
-	WebElement menu_region;
+	@FindBy(linkText="Location List")
+	WebElement menu_locationlist;
 	
-	public IMRegionElements(WebDriver driver) {
+	public IMLocationListElements(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -60,9 +84,9 @@ public class IMRegionElements {
 	 */
 	public void menuClick() {
 		try {
-			inAction.buttonClick(driver, menu_administration, 
+			inAction.buttonClick(driver, menu_location, 
 					"Click button : menu_inventory");
-			inAction.buttonClick(driver, menu_region, 
+			inAction.buttonClick(driver, menu_locationlist, 
 					"Click button : menu_masterData");
 			
 		} catch (Exception e) {
@@ -77,7 +101,7 @@ public class IMRegionElements {
 	 * @param sName
 	 * @param sDescription
 	 */
-	public void enterRegionInfo(String sCode, String sName) {
+	public void enterLocationListInfo(String sCode, String sName, String sFacility,String sFacilitydropdown,String sLoactiontype, String sLocationTypedropdown) {
 		try {
 			//inAction.waitForVisibilityOfElement(driver, txt_code);
 			inAction.inputText(driver, txt_code, sCode,
@@ -85,6 +109,17 @@ public class IMRegionElements {
 			//inAction.waitForVisibilityOfElement(driver, txt_name);
 			inAction.inputText(driver, txt_name, sName,
 					"Enter sFirstname : " + sName);
+			inAction.buttonClick(driver, dropdown_facility, 
+					"Click button : dropdown_faciltiy");
+			inAction.inputText(driver, txt_faciltiy, sFacility,
+					"Enter sFacilityanme : " + sFacility);
+			inAction.selectByTextInDropdown(driver, list_facility, sFacilitydropdown);
+			inAction.buttonClick(driver, dropdown_locationtype, 
+					"Click button : dropdown_locationtype");
+			inAction.inputText(driver, txt_locationtype, sLoactiontype,
+					"Enter sLocationtype : " + sLoactiontype);
+			inAction.selectByTextInDropdown(driver, list_facility, sLocationTypedropdown);
+					
 		
 		} catch (Exception e) {
 			e.printStackTrace();

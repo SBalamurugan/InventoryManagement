@@ -42,5 +42,7 @@ public class Constants {
 	
 	public String home_pageTitle = "Trackx-GAME";
 	
+	public String add_locationlist_successmsg = "Location created successfully";
+	
 	
 }
