@@ -3,13 +3,11 @@ package com.trackx.truelocate.pagecomponents;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
@@ -100,25 +98,25 @@ public class FacilityElements {
 	@FindBy(xpath = "//*[@id=\"address_detailsCreate\"]/div[2]/div[1]/div[2]/section/label[2]/textarea")
 	WebElement txt_geoFence;
 	
-	@FindBy(id="verifiedAddress")
+	@FindBy(xpath="//*[@id=\"address_detailsCreate\"]/div[2]/div[1]/div[3]/section/span/label/span[2]")
 	WebElement togglebtn_verifiedAddress;
 	
 	/**
 	 * Configuration Section
 	 */
-	@FindBy(id="inventoryManaged")
+	@FindBy(xpath="//*[@id=\"configuration_detailsCreate\"]/div/section[1]/span/label/span[2]")
 	WebElement togglebtn_inventoryMgd;
 	
-	@FindBy(id="billTo")
+	@FindBy(xpath="//*[@id=\"configuration_detailsCreate\"]/div/section[2]/span/label/span[2]")
 	WebElement togglebtn_billTo;
 	
-	@FindBy(id="shipTo")
+	@FindBy(xpath="//*[@id=\"configuration_detailsCreate\"]/div/section[4]/span/label/span[2]")
 	WebElement togglebtn_shipTo;
 	
-	@FindBy(id="shipFrom")
+	@FindBy(xpath="//*[@id=\"configuration_detailsCreate\"]/div/section[5]/span/label/span[2]")
 	WebElement togglebtn_shipFrom;
 	
-	@FindBy(id="crossDock")
+	@FindBy(xpath="//*[@id=\"configuration_detailsCreate\"]/div/section[6]/span/label/span[2]")
 	WebElement togglebtn_crossDock;
 	
 	@FindBy(id="select2-chosen-6")
@@ -391,10 +389,8 @@ public class FacilityElements {
 	 */
 	public void clickVerifiedAddress(String sVerifiedAddress){
 		if (sVerifiedAddress.equalsIgnoreCase("Yes")) {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
-			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("verifiedAddress")));
-/*			inAction.selectedRadioButton(driver, togglebtn_verifiedAddress,
-					"click toggle button: togglebtn_verifiedAddress");*/
+			ReusableActions.selectedRadioButton(driver, togglebtn_verifiedAddress,
+					"click toggle button: togglebtn_verifiedAddress");
 		}
 	}
 	
@@ -404,7 +400,8 @@ public class FacilityElements {
 	 */
 	public void clickInventoryManaged(String sInventoryManaged){
 		if (sInventoryManaged.equalsIgnoreCase("Yes")) {
-			inAction.selectedRadioButton(driver, togglebtn_inventoryMgd, 
+			inAction.waitForVisibilityOfElement(driver, togglebtn_inventoryMgd);
+			ReusableActions.selectedRadioButton(driver, togglebtn_inventoryMgd, 
 					"click toggle button: togglebtn_inventoryMgd");
 		}
 	}
@@ -416,10 +413,10 @@ public class FacilityElements {
 	 */
 	public void clickBillTo(String sBillTo, String sBillToFacility){
 		if (sBillTo.equalsIgnoreCase("Yes")) {
-			inAction.selectedRadioButton(driver, togglebtn_billTo, 
-					"click toggle button: togglebtn_billTo");
-		} else {
 			selectBillToFacility(sBillToFacility);
+		} else {
+			ReusableActions.selectedRadioButton(driver, togglebtn_billTo, 
+					"click toggle button: togglebtn_billTo");
 		}
 	}
 	
@@ -429,7 +426,7 @@ public class FacilityElements {
 	 */
 	public void clickShipTo(String sShipTo){
 		if (sShipTo.equalsIgnoreCase("Yes")) {
-			inAction.selectedRadioButton(driver, togglebtn_shipTo, 
+			ReusableActions.selectedRadioButton(driver, togglebtn_shipTo, 
 					"click toggle button: togglebtn_shipTo");
 		}
 	}
@@ -440,7 +437,7 @@ public class FacilityElements {
 	 */
 	public void clickShipFrom(String sShipFrom){
 		if (sShipFrom.equalsIgnoreCase("Yes")) {
-			inAction.selectedRadioButton(driver, togglebtn_shipFrom, 
+			ReusableActions.selectedRadioButton(driver, togglebtn_shipFrom, 
 					"click toggle button: togglebtn_shipFrom");
 		}
 	}
@@ -451,7 +448,7 @@ public class FacilityElements {
 	 */
 	public void clickCrossDock(String sCrossDock){
 		if (sCrossDock.equalsIgnoreCase("Yes")) {
-			inAction.selectedRadioButton(driver, togglebtn_crossDock, 
+			ReusableActions.selectedRadioButton(driver, togglebtn_crossDock, 
 					"click toggle button: togglebtn_crossDock");
 		}
 	}

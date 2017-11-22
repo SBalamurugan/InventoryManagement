@@ -60,11 +60,9 @@ public class IdentifierTypeElements {
 	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/a/span")
 	WebElement menu_inventory;
 
-	//@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/ul/li[4]/a")
 	@FindBy(linkText="Master Data")
 	WebElement menu_masterData;
 
-	//@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/ul/li[4]/ul/li[3]/a")
 	@FindBy(linkText="Identifier Type")
 	WebElement menu_identifierType;
 	

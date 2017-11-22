@@ -65,6 +65,22 @@ public class GeneralActions {
 							+ "test" + fsep + "resources" + fsep + "geckodriver.exe"));
 			FirefoxProfile profile = new FirefoxProfile();
 			profile.setEnableNativeEvents(true);
+			// Set Location to store files after downloading.
+			profile.setPreference("browser.download.dir",
+					"D:\\Screenshot");
+			profile.setPreference("browser.download.folderList", 2);
+			// Set Preference to not show file download confirmation dialogue
+			// using MIME types Of different file extension types.
+			profile.setPreference(
+					"browser.helperApps.neverAsk.saveToDisk",
+					"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;"// MIME types Of MS Excel File.
+					+ "application/pdf;" // MIME types Of PDF File.
+					+ "application/vnd.openxmlformats-officedocument.wordprocessingml.document;" // MIME types Of MS doc File.							
+					+ "text/plain;" // MIME types Of text File.
+					+ "text/csv"); // MIME types Of CSV File.
+			profile.setPreference("browser.download.manager.showWhenStarting",
+					false);
+			profile.setPreference("pdfjs.disabled", true);
 
 			driver = new FirefoxDriver(profile);
 			driver.manage().window().maximize();

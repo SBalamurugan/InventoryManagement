@@ -39,7 +39,7 @@ public class FacilityCreateFlow extends GeneralActions {
 	 * Login Script
      */
 	@Test(priority = 1, dataProviderClass = Truelocatelogin.class, dataProvider = "getData")
-	public void userclickflow(String sUsername, String sPassword)
+	public void userLogin(String sUsername, String sPassword)
 			throws Exception {
 		try {
 
@@ -87,13 +87,13 @@ public class FacilityCreateFlow extends GeneralActions {
 			commonElements.clickCreateOrUpdatebutton();
 			ReusableActions.takeSnapshot(driver, className);
 			String alertMessage = commonElements.alertMessage();
-			Assert.assertEquals(alertMessage, constants.add_identifiertype_successmsg);
-			if (alertMessage.equalsIgnoreCase(constants.add_identifiertype_successmsg)) {
-				TestNGResults.put("3", new Object[] { "Item Type screen",
-						"Item Type added successfully", "Pass" });
+			Assert.assertEquals(alertMessage, constants.add_facility_successmsg);
+			if (alertMessage.equalsIgnoreCase(constants.add_facility_successmsg)) {
+				TestNGResults.put("3", new Object[] { "Facility screen",
+						"Facility added successfully", "Pass" });
 			} else {
-				TestNGResults.put("3", new Object[] { "Item Type screen",
-						"Item Type not created", "Fail" });
+				TestNGResults.put("3", new Object[] { "Facility screen",
+						"Facility not created", "Fail" });
 			}
 		}
 		catch (Exception e) {

@@ -37,5 +37,7 @@ public class Constants {
 	
 	public String add_identifiertype_successmsg = "Identifier Type added successfully";
 	
+	public String add_facility_successmsg = "Facility added successfully";
+	
 	
 }

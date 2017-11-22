@@ -39,7 +39,7 @@ public class ItemTypeCreateFlow extends GeneralActions{
 	 * Login Script
      */
 	@Test(priority = 1, dataProviderClass = Truelocatelogin.class, dataProvider = "getData")
-	public void userclickflow(String sUsername, String sPassword)
+	public void userLogin(String sUsername, String sPassword)
 			throws Exception {
 		try {
 
@@ -58,7 +58,7 @@ public class ItemTypeCreateFlow extends GeneralActions{
 		}
 	}
 
-	/*
+	/**
 	 * Item Class Create
 	 */
 	@Test(priority = 2, dataProvider = "createData")
@@ -74,10 +74,10 @@ public class ItemTypeCreateFlow extends GeneralActions{
 			String alertMessage = commonElements.alertMessage();
 			Assert.assertEquals(alertMessage, constants.add_itemtype_successmsg);
 			if (alertMessage.equalsIgnoreCase(constants.add_itemtype_successmsg)) {
-				TestNGResults.put("3", new Object[] { "Item Type screen",
+				TestNGResults.put("2", new Object[] { "Item Type screen",
 						"Item Type added successfully", "Pass" });
 			} else {
-				TestNGResults.put("3", new Object[] { "Item Type screen",
+				TestNGResults.put("2", new Object[] { "Item Type screen",
 						"Item Type not created", "Fail" });
 			}
 		}

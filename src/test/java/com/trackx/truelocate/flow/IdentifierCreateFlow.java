@@ -39,7 +39,7 @@ public class IdentifierCreateFlow extends GeneralActions {
 	 * Login Script
      */
 	@Test(priority = 1, dataProviderClass = Truelocatelogin.class, dataProvider = "getData")
-	public void userclickflow(String sUsername, String sPassword)
+	public void userLogin(String sUsername, String sPassword)
 			throws Exception {
 		try {
 
@@ -62,7 +62,7 @@ public class IdentifierCreateFlow extends GeneralActions {
 	 * Item Class Create
 	 */
 	@Test(priority = 2, dataProvider = "createData")
-	public void itemTypeCreateFlow(String sCode, String sName, String sRFID, String sProtocol)throws Exception {
+	public void identifierTypeCreateFlow(String sCode, String sName, String sRFID, String sProtocol)throws Exception {
 		try {
 			identifierTypeElements.menuClick();
 			Thread.sleep(1000);
@@ -74,11 +74,11 @@ public class IdentifierCreateFlow extends GeneralActions {
 			String alertMessage = commonElements.alertMessage();
 			Assert.assertEquals(alertMessage, constants.add_identifiertype_successmsg);
 			if (alertMessage.equalsIgnoreCase(constants.add_identifiertype_successmsg)) {
-				TestNGResults.put("3", new Object[] { "Item Type screen",
-						"Item Type added successfully", "Pass" });
+				TestNGResults.put("4", new Object[] { "Identifier Type screen",
+						"Identifier Type added successfully", "Pass" });
 			} else {
-				TestNGResults.put("3", new Object[] { "Item Type screen",
-						"Item Type not created", "Fail" });
+				TestNGResults.put("4", new Object[] { "Identifier Type screen",
+						"Identifier Type not created", "Fail" });
 			}
 		}
 		catch (Exception e) {
