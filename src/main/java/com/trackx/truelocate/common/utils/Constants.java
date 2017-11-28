@@ -42,7 +42,19 @@ public class Constants {
 	
 	public String home_pageTitle = "Trackx-GAME";
 	
+	public String add_identifiertype_successmsg = "Identifier Type added successfully";
+	
 	public String add_locationlist_successmsg = "Location created successfully";
+	
+	public String add_facility_successmsg = "Facility added successfully";
+	
+	public String add_item_successmsg = "Item added successfully";
+	
+	public String add_provision_successmsg="Provision added successfully";
+	
+	public String edit_region_successmsg="Region updated successfully";
+	
+
 	
 	
 }

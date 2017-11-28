@@ -575,6 +575,7 @@ public class ReusableActions {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, timeoutsec);
 			wait.until(ExpectedConditions.visibilityOf(e));
+			System.out.println("*%^$%#$@#!@!#$@%$^$%$" + ExpectedConditions.visibilityOf(e));
 			//Thread.sleep(5000);
 			Reporter.log("Success : Element is  visible");
 		} catch (Throwable t) {

@@ -3,13 +3,10 @@ package com.trackx.truelocate.pagecomponents;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
@@ -33,9 +30,7 @@ public class IMIdentifierTypeElements {
 	@FindBy(id="createName")
 	WebElement txt_name;
 	
-	@FindBy(xpath="//*[@id='edit-form']/fieldset[1]/div/section[3]/span/label")
-	WebElement togglebutton_label;
-	
+		
 	
 	@FindBy(className="onoffswitch-switch")
 	WebElement togglebutton_RFID;
@@ -50,7 +45,6 @@ public class IMIdentifierTypeElements {
 	/**
 	 * View Screen Elements
 	 */
-	
 	@FindBy(xpath = "//*[@id=\"view-form\"]/fieldset[1]/div/section[1]/label[2]")
 	WebElement label_code;
 	
@@ -70,10 +64,10 @@ public class IMIdentifierTypeElements {
 	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/a/span")
 	WebElement menu_inventory;
 
-	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/ul/li[4]/a")
+	@FindBy(linkText="Master Data")
 	WebElement menu_masterData;
 
-	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/ul/li[4]/ul/li[3]/a")
+	@FindBy(linkText="Identifier Type")
 	WebElement menu_identifierType;
 	
 	public IMIdentifierTypeElements(WebDriver driver) {
@@ -88,10 +82,15 @@ public class IMIdentifierTypeElements {
 		try {
 			inAction.buttonClick(driver, menu_inventory, 
 					"Click button : menu_inventory");
-			inAction.buttonClick(driver, menu_masterData, 
+			inAction.linkClick(driver, menu_masterData,
+					"Click link:menu_masterData");
+			inAction.linkClick(driver, menu_identifierType, 
+					"Click link: menu_identifierType");
+						
+			/*inAction.buttonClick(driver, menu_masterData, 
 					"Click button : menu_masterData");
 			inAction.buttonClick(driver, menu_identifierType, 
-					"Click button : menu_identifierType");
+					"Click button : menu_identifierType");*/
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -127,7 +126,7 @@ public class IMIdentifierTypeElements {
 	
 	
 	public void clickToggleButton() {
-		inAction.waitForVisibilityOfElement(driver, togglebutton_RFID);
+		inAction.waitForElementToBeClickable(driver, togglebutton_RFID);
 		inAction.buttonClick(driver, togglebutton_RFID, 
 				"Click button : togglebutton_RFID");	
 		}

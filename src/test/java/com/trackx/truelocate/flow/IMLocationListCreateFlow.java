@@ -60,7 +60,7 @@ public class IMLocationListCreateFlow extends GeneralActions {
 	}
 
 	/*
-	 * Item Class Create
+	 * Location List Create
 	 */
 	@Test(priority = 2, dataProvider = "createData")
 	public void locationListCreateFlow(String sCode, String sName,String sDescription, String sFacility,String sFacilitydropdown,String sLoactiontype, String sLocationTypedropdown)throws Exception {

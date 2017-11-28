@@ -43,14 +43,11 @@ public class Truelocatelogin {
 	// Enter Username/password
 	public void enterUsernamepassword(String sUsername, String sPassword) {
 		try {
-
 			inAction.inputText(driver, txt_username, sUsername,
 					"Enter sUsername : " + sUsername);
 			inAction.inputText(driver, txt_password, sPassword,
 					"Enter sPasswordsCompDate : " + sPassword);
-
 			btn_sigin.click();
-
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();

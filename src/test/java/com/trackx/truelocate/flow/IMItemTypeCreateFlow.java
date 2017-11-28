@@ -39,7 +39,7 @@ public class IMItemTypeCreateFlow extends GeneralActions{
 	 * Login Script
      */
 	@Test(priority = 1, dataProviderClass = Truelocatelogin.class, dataProvider = "getData")
-	public void userclickflow(String sUsername, String sPassword)
+	public void userLogin(String sUsername, String sPassword)
 			throws Exception {
 		try {
 
@@ -58,7 +58,7 @@ public class IMItemTypeCreateFlow extends GeneralActions{
 		}
 	}
 
-	/*
+	/**
 	 * Item Class Create
 	 */
 	@Test(priority = 2, dataProvider = "createData")

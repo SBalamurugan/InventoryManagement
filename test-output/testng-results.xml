@@ -2,26 +2,29 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
     <line>
-      <![CDATA[Success : DropdownSelection]]>
+      <![CDATA[Failed : Element is not Clickable]]>
     </line>
     <line>
-      <![CDATA[Success : DropdownSelection]]>
+      <![CDATA[Failed : Element is not visible]]>
+    </line>
+    <line>
+      <![CDATA[Failed : Element is not visible]]>
     </line>
   </reporter-output>
-  <suite name="TrackX.truelocate Suite" duration-ms="57111" started-at="2017-11-22T08:05:28Z" finished-at="2017-11-22T08:06:25Z">
+  <suite name="TrackX.truelocate Suite" duration-ms="76097" started-at="2017-11-27T14:09:46Z" finished-at="2017-11-27T14:11:02Z">
     <groups>
     </groups>
-    <test name="TrackX.truelocate test" duration-ms="57111" started-at="2017-11-22T08:05:28Z" finished-at="2017-11-22T08:06:25Z">
-      <class name="com.trackx.truelocate.flow.IMLocationListCreateFlow">
-        <test-method status="PASS" signature="excelCreation()[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="excelCreation" is-config="true" duration-ms="232" started-at="2017-11-22T13:35:28Z" finished-at="2017-11-22T13:35:28Z">
+    <test name="TrackX.truelocate test" duration-ms="76097" started-at="2017-11-27T14:09:46Z" finished-at="2017-11-27T14:11:02Z">
+      <class name="com.trackx.truelocate.flow.IMRegionEditFlow">
+        <test-method status="PASS" signature="excelCreation()[pri:0, instance:com.trackx.truelocate.flow.IMRegionEditFlow@a3d8174]" name="excelCreation" is-config="true" duration-ms="112" started-at="2017-11-27T19:39:46Z" finished-at="2017-11-27T19:39:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- excelCreation -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="setUp" is-config="true" duration-ms="10123" started-at="2017-11-22T13:35:28Z" finished-at="2017-11-22T13:35:38Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.IMRegionEditFlow@a3d8174]" name="setUp" is-config="true" duration-ms="8488" started-at="2017-11-27T19:39:46Z" finished-at="2017-11-27T19:39:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="userclickflow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="userclickflow" duration-ms="16205" started-at="2017-11-22T13:35:38Z" data-provider="getData" finished-at="2017-11-22T13:35:54Z">
+        <test-method status="PASS" signature="userclickflow(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMRegionEditFlow@a3d8174]" name="userclickflow" duration-ms="14067" started-at="2017-11-27T19:39:55Z" data-provider="getData" finished-at="2017-11-27T19:40:09Z">
           <params>
             <param index="0">
               <value>
@@ -37,62 +40,45 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userclickflow -->
-        <test-method status="PASS" signature="locationListCreateFlow(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="locationListCreateFlow" duration-ms="24186" started-at="2017-11-22T13:35:54Z" data-provider="createData" finished-at="2017-11-22T13:36:19Z">
+        <test-method status="PASS" signature="regionEditFlow(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.IMRegionEditFlow@a3d8174]" name="regionEditFlow" duration-ms="48443" started-at="2017-11-27T19:40:09Z" data-provider="createData" finished-at="2017-11-27T19:40:57Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Test23123]]>
+                <![CDATA[TESTREGION7070]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Namer4343]]>
+                <![CDATA[Test]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[ACM]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[ACM]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[DOCK]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[DOCK]]>
+                <![CDATA[Test13432]]>
               </value>
             </param>
           </params>
           <reporter-output>
             <line>
-              <![CDATA[Success : DropdownSelection]]>
+              <![CDATA[Failed : Element is not Clickable]]>
             </line>
             <line>
-              <![CDATA[Success : DropdownSelection]]>
+              <![CDATA[Failed : Element is not visible]]>
+            </line>
+            <line>
+              <![CDATA[Failed : Element is not visible]]>
             </line>
           </reporter-output>
-        </test-method> <!-- locationListCreateFlow -->
-        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="quitDriver" is-config="true" duration-ms="6516" started-at="2017-11-22T13:36:19Z" finished-at="2017-11-22T13:36:25Z">
+        </test-method> <!-- regionEditFlow -->
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.IMRegionEditFlow@a3d8174]" name="quitDriver" is-config="true" duration-ms="5001" started-at="2017-11-27T19:40:57Z" finished-at="2017-11-27T19:41:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.trackx.truelocate.flow.IMLocationListCreateFlow@2e55dd0c]" name="suiteTearDown" is-config="true" duration-ms="127" started-at="2017-11-22T13:36:25Z" finished-at="2017-11-22T13:36:25Z">
+        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.trackx.truelocate.flow.IMRegionEditFlow@a3d8174]" name="suiteTearDown" is-config="true" duration-ms="119" started-at="2017-11-27T19:41:02Z" finished-at="2017-11-27T19:41:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteTearDown -->
-      </class> <!-- com.trackx.truelocate.flow.IMLocationListCreateFlow -->
+      </class> <!-- com.trackx.truelocate.flow.IMRegionEditFlow -->
     </test> <!-- TrackX.truelocate test -->
   </suite> <!-- TrackX.truelocate Suite -->
 </testng-results>

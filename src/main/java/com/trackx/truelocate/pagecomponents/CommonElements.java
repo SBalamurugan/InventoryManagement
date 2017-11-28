@@ -177,8 +177,8 @@ public class CommonElements {
 			System.out.println("#@@@@@@@@@@@@@@@@$" + getTotalNumberOfPages());
 			aa:
 			for (int i = 1; i <= getTotalNumberOfPages(); i++) {
-				WebElement htmltable = driver.findElement(By
-					.xpath("//*[@id='filterSlider']/div/div/form[3]/div/div/div/div[2]/table/tbody"));
+				WebElement htmltable = driver.findElement(By.
+						xpath("//*[@id='filterSlider']/div/div/form[3]/div/div/div/div[2]/table/tbody"));
 				List<WebElement> rows = htmltable.findElements(By.tagName("tr"));
 				Thread.sleep(10000);
 				for (WebElement rowElement : rows){

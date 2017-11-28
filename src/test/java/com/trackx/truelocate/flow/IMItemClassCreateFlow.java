@@ -39,7 +39,7 @@ public class IMItemClassCreateFlow extends GeneralActions{
 	 * Login Script
      */
 	@Test(priority = 1, dataProviderClass = Truelocatelogin.class, dataProvider = "getData")
-	public void userclickflow(String sUsername, String sPassword)
+	public void userLogin(String sUsername, String sPassword)
 			throws Exception {
 		try {
 
@@ -59,10 +59,10 @@ public class IMItemClassCreateFlow extends GeneralActions{
 	}
 
 	/*
-	 * Identifier Type Creat
+	 * Identifier Type Create
 	 */
 	@Test(priority = 2, dataProvider = "createData")
-	public void identifierTypeCreateFlow(String sCode, String sName, String sDescription)throws Exception {
+	public void itemClassCreateFlow(String sCode, String sName, String sDescription)throws Exception {
 		try {
 			itemClassElements.menuClick();
 			ReusableActions.takeSnapshot(driver, className);

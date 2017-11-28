@@ -110,10 +110,10 @@ public class IMLocationListElements {
 	
 	public void enterLocationListInfo(String sCode, String sName,String sDescription, String sFacility,String sFacilitydropdown,String sLoactiontype, String sLocationTypedropdown) {
 		try {
-			//inAction.waitForVisibilityOfElement(driver, txt_code);
+			inAction.waitForVisibilityOfElement(driver, txt_code);
 			inAction.inputText(driver, txt_code, sCode,
 					"Enter sCode : " + sCode);
-			//inAction.waitForVisibilityOfElement(driver, txt_name);
+			inAction.waitForVisibilityOfElement(driver, txt_name);
 			inAction.inputText(driver, txt_name, sName,
 					"Enter sFirstname : " + sName);
 			inAction.inputText(driver, txt_description, sDescription,
