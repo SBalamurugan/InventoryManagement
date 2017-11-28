@@ -1,21 +1,15 @@
 package com.trackx.truelocate.pagecomponents;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-=======
->>>>>>> 6446aa86691a975904f87ba2dca47546861fb7cf
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-<<<<<<< HEAD
 import org.testng.Assert;
 
-=======
->>>>>>> 6446aa86691a975904f87ba2dca47546861fb7cf
 import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
@@ -55,12 +49,6 @@ public class IMRegionElements {
 	@FindBy(linkText = "Region")
 	WebElement menu_region;
 
-	public IMRegionElements(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
-
-<<<<<<< HEAD
 	/**
 	 * Edit Elements
 	 */
@@ -71,8 +59,12 @@ public class IMRegionElements {
 	@FindBy(className = "pageNo")
 	WebElement pageCount;
 	
-=======
->>>>>>> 6446aa86691a975904f87ba2dca47546861fb7cf
+
+	public IMRegionElements(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
 	/**
 	 * This method used to click Region menu
 	 */
@@ -87,7 +79,7 @@ public class IMRegionElements {
 			e.printStackTrace();
 		}
 	}
-
+	
 	/**
 	 * This method used to create/edit Region
 	 * 
@@ -96,7 +88,6 @@ public class IMRegionElements {
 	 */
 	public void enterRegionInfo(String sCode, String sName) {
 		try {
-<<<<<<< HEAD
 			inAction.waitForVisibilityOfElement(driver, txt_code);
 			inAction.inputText(driver, txt_code, sCode,
 					"Enter sCode : " + sCode);
@@ -104,116 +95,13 @@ public class IMRegionElements {
 			inAction.inputText(driver, txt_name, sName,
 					"Enter sFirstname : " + sName);
 		
-=======
-			// inAction.waitForVisibilityOfElement(driver, txt_code);
-			inAction.inputText(driver, txt_code, sCode, "Enter sCode : "
-					+ sCode);
-			// inAction.waitForVisibilityOfElement(driver, txt_name);
-			inAction.inputText(driver, txt_name, sName, "Enter sFirstname : "
-					+ sName);
-
->>>>>>> 6446aa86691a975904f87ba2dca47546861fb7cf
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-<<<<<<< HEAD
-	/**
-	 * This method used to fill edit Region feilds
-	 * 
-	 * @param sCode
-	 * @param sName 
-	 */
-	
-public void editsite(String sValue) {
-	try {
-
-		WebElement htmltable = driver.findElement(By.xpath("//*[@id='filterSlider']/div/div/form[3]/div/div/div/div[2]/table/tbody"));
-
-		List<WebElement> rows = htmltable.findElements(By.tagName("tr"));
-		
-		Thread.sleep(1000);
-
-		System.out.println("Number of rows:" + rows.size());
-
-		for (WebElement rowElement : rows)
-
-		{
-			List<WebElement> columns = rowElement.findElements(By.tagName("td"));
-
-			for (WebElement colElement : columns)
-
-			{
-		    if (colElement.getText().equalsIgnoreCase(sValue))
-				
-			{
-			System.out.println("******* Value Found*********** ");
-					
-			System.out.println(colElement.getText() + "******* element value*********** ");
-					
-			Thread.sleep(1000);
-					
-			rowElement.click();
-					
-			Thread.sleep(1000);
-						
-			
-			}
-			}
-		}
-	}
-			catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-public void clickValue(WebDriver driver, String sValue) {
-	
-	try {
-		System.out.println("#@@@@@@@@@@@@@@@@$" + getTotalNumberOfPages());
-		aa:	
-		for (int i = 1; i <= getTotalNumberOfPages(); i++) {
-			WebElement htmltable = driver.findElement(By.
-					xpath("//*[@id='filterSlider']/div/div/form[3]/div/div/div/div[2]/table/tbody"));
-			List<WebElement> rows = htmltable.findElements(By.tagName("tr"));
-			Thread.sleep(10000);
-			for (WebElement rowElement : rows){
-				Thread.sleep(10000);
-				List<WebElement> columns = rowElement.findElements(By
-					.tagName("td"));
-				Thread.sleep(10000);
-		
-				for (WebElement colElement : columns){
-					System.out.println("%%%%%%%%%%%%%%%%%%" + colElement.getText());
-					Thread.sleep(1000);
-					if (colElement.getText().equalsIgnoreCase(sValue)){
-						Thread.sleep(1000);
-						rowElement.click();
-						break aa;
-					}
-				}
-				btn_pageNext.click();
-				Thread.sleep(5000);
-			}
-		}
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
 }
-
-/**
- * This method used to get the total no of pages in the table
- * 
- * @return integer value
- */
-public int getTotalNumberOfPages(){
-	String number = pageCount.getText().replaceAll("/", "").trim();
-	int result = Integer.parseInt(number);
-	return result;
-}	
-}		
+	
 		
 		
 		
@@ -245,6 +133,3 @@ public int getTotalNumberOfPages(){
 		
 	
 
-=======
-}
->>>>>>> 6446aa86691a975904f87ba2dca47546861fb7cf

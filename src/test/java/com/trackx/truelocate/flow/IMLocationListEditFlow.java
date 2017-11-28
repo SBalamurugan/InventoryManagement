@@ -68,13 +68,13 @@ public class IMLocationListEditFlow extends GeneralActions {
 			imregionelements.menuClick();
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickValue(sValue);
-			commonElements.clickEditButton();
+			commonElements.clickValue(driver, sValue);
+			commonElements.clickEditButton(driver);
 			imregionelements.enterRegionInfo(sCode, sName);
-			commonElements.clickCreateOrUpdatebutton();
+			commonElements.clickCreateOrUpdatebutton(driver);
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = commonElements.alertMessage();
+			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.edit_region_successmsg)) {
 				TestNGResults.put("3", new Object[] { "Region edit screen",
 						"Region edited successfully", "Pass" });	

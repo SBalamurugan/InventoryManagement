@@ -68,14 +68,14 @@ public class IMRegionEditFlow extends GeneralActions {
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
 			//commonElements.clickValue(sValue);
-			imregionelements.clickValue(driver,sValue);
+			commonElements.clickValue(driver,sValue);
 			//imregionelements.editsite(sValue);
-			commonElements.clickEditButton();
+			commonElements.clickEditButton(driver);
 			imregionelements.enterRegionInfo(sCode, sName);
-			commonElements.clickCreateOrUpdatebutton();
+			commonElements.clickCreateOrUpdatebutton(driver);
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = commonElements.alertMessage();
+			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.edit_region_successmsg)) {
 				TestNGResults.put("3", new Object[] { "Region edit screen",
 						"Region edited successfully", "Pass" });	

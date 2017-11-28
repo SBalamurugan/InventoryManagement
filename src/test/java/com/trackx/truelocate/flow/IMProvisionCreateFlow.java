@@ -68,11 +68,11 @@ public class IMProvisionCreateFlow extends GeneralActions {
 			improvisionlements.menuClick();
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickCreatebutton();
+			commonElements.clickCreatebutton(driver);
 			improvisionlements.enterProvisionListInfo(sItem, sItemdropdown, sFacilitytype, sFacilitydropdown, sLoactiontype, sLocationTypedropdown, sStocknumber);
-			commonElements.clickCreateOrUpdatebutton();
+			commonElements.clickCreateOrUpdatebutton(driver);
 			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = commonElements.alertMessage();
+			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.add_provision_successmsg)) {
 				TestNGResults.put("7", new Object[] { "Provision  screen",
 						"Provision added successfully", "Pass" });

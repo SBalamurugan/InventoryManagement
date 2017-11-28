@@ -75,14 +75,14 @@ public class IMItemCreateFlow extends GeneralActions {
 			imitemelements.menuClick();
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickCreatebutton();
+			commonElements.clickCreatebutton(driver);
 			imitemelements.enterItemListInfo(sItem, sName, sDescription, sItemclass, sItemclassdropdown, sItemtype, sItemTypedropdown, sMinqty, sMaxqty, sInventorytype, sInventorydropdown, sInventory, sActive, sConsumable);
 			imitemelements.enterIdentificationListInfo(sIdentifierdropdown, sUPC,sCaseUPC, sConveyance, sBatchcode, sUOM, sUOMdropdown);
 			imitemelements.enterMeasurementListInfo(sEachweight, sEachheight, sEachlength, sEachwidth, sCaseweight, sCaseheight, sCaselength, sCasewidth, sQty, sQtylayer, sPallet, sConveyancetype);
 			imitemelements.enterManufactureInfo(sManufacturename, sItemnumber, sMake, sModel, sSupplier, sSuppliernumber);
-			commonElements.clickCreateOrUpdatebutton();
+			commonElements.clickCreateOrUpdatebutton(driver);
 			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = commonElements.alertMessage();
+			String alertMessage = commonElements.alertMessage(driver);
 			
 			if (alertMessage.equalsIgnoreCase(constants.add_item_successmsg)) {
 				TestNGResults.put("8", new Object[] { "Item screen",

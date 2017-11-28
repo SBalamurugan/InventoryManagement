@@ -180,15 +180,11 @@ public class CommonElements {
 			System.out.println("#@@@@@@@@@@@@@@@@$" + getTotalNumberOfPages());
 			aa:
 			for (int i = 1; i <= getTotalNumberOfPages(); i++) {
-<<<<<<< HEAD
-				WebElement htmltable = driver.findElement(By.
-						xpath("//*[@id='filterSlider']/div/div/form[3]/div/div/div/div[2]/table/tbody"));
-=======
+
 				WebElement htmltable = driver.findElement(By
 					.xpath("//*[@id='filterSlider']/div/div/form[3]/div/div/div/div[2]/table/tbody"));
 				WebDriverWait wait = new WebDriverWait(driver, 30);
 				wait.until(ExpectedConditions.visibilityOf(htmltable));
->>>>>>> 6446aa86691a975904f87ba2dca47546861fb7cf
 				List<WebElement> rows = htmltable.findElements(By.tagName("tr"));
 				Thread.sleep(10000);
 				for (WebElement rowElement : rows){
