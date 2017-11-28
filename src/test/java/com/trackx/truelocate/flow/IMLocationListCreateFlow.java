@@ -14,7 +14,6 @@ import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
 import com.trackx.truelocate.pagecomponents.CommonElements;
-import com.trackx.truelocate.pagecomponents.IMIdentifierTypeElements;
 import com.trackx.truelocate.pagecomponents.IMLocationListElements;
 import com.trackx.truelocate.pagecomponents.Truelocatelogin;
 
@@ -25,20 +24,23 @@ public class IMLocationListCreateFlow extends GeneralActions {
 	CommonElements commonElements;
 	Constants constants = new Constants();
 	String className = this.getClass().getSimpleName();
-	
+
 	@BeforeClass
 	public void setUp() throws IOException {
 		driver = GeneralActions.launchBrowser(driver, "chrome");
-		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
-		imlocationlistelements = PageFactory.initElements(driver, IMLocationListElements.class);
+		truelocatelogin = PageFactory.initElements(driver,
+				Truelocatelogin.class);
+		imlocationlistelements = PageFactory.initElements(driver,
+				IMLocationListElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);
 		ReusableActions.loadPropFileValues();
-		ReusableActions.openUrl(driver, ReusableActions.getPropFileValues("Url"));
+		ReusableActions.openUrl(driver,
+				ReusableActions.getPropFileValues("Url"));
 	}
 
 	/**
 	 * Login Script
-     */
+	 */
 	@Test(priority = 1, dataProviderClass = Truelocatelogin.class, dataProvider = "getData")
 	public void userclickflow(String sUsername, String sPassword)
 			throws Exception {
@@ -50,7 +52,7 @@ public class IMLocationListCreateFlow extends GeneralActions {
 			if (truelocatelogin.pageTitleValidation()) {
 				TestNGResults.put("2", new Object[] { "Login screen",
 						"Login successful", "Pass" });
-			}else {
+			} else {
 				TestNGResults.put("2", new Object[] { "Login screen",
 						"Login Failed", "Fail" });
 			}
@@ -59,37 +61,43 @@ public class IMLocationListCreateFlow extends GeneralActions {
 		}
 	}
 
-	/*
+	/**
 	 * Item Class Create
 	 */
 	@Test(priority = 2, dataProvider = "createData")
-	public void locationListCreateFlow(String sCode, String sName, String sFacility,String sFacilitydropdown,String sLoactiontype, String sLocationTypedropdown)throws Exception {
-	
+	public void locationListCreateFlow(String sCode, String sName,
+			String sFacility, String sFacilitydropdown, String sLoactiontype,
+			String sLocationTypedropdown) throws Exception {
+
 		try {
 			imlocationlistelements.menuClick();
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickCreatebutton();
-			imlocationlistelements.enterLocationListInfo(sCode, sName, sFacility, sFacilitydropdown, sLoactiontype, sLocationTypedropdown);
-			commonElements.clickCreateOrUpdatebutton();
+			commonElements.clickCreatebutton(driver);
+			imlocationlistelements.enterLocationListInfo(sCode, sName,
+					sFacility, sFacilitydropdown, sLoactiontype,
+					sLocationTypedropdown);
+			commonElements.clickCreateOrUpdatebutton(driver);
 			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = commonElements.alertMessage();
-			if (alertMessage.equalsIgnoreCase(constants.add_identifier_type_successmsg)) {
+			String alertMessage = commonElements.alertMessage(driver);
+			if (alertMessage
+					.equalsIgnoreCase(constants.add_identifier_type_successmsg)) {
 				TestNGResults.put("7", new Object[] { "Item Type screen",
 						"Item Type added successfully", "Pass" });
-				Assert.assertEquals(alertMessage, constants.add_identifier_type_successmsg);
+				Assert.assertEquals(alertMessage,
+						constants.add_identifier_type_successmsg);
 			} else {
 				TestNGResults.put("7", new Object[] { "Item Type screen",
 						"Item Type not created", "Fail" });
-				Assert.assertEquals(alertMessage, constants.add_identifier_type_successmsg);
+				Assert.assertEquals(alertMessage,
+						constants.add_identifier_type_successmsg);
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 
 		}
 	}
-	
+
 	@AfterClass
 	public void quitDriver() {
 		try {
@@ -99,7 +107,7 @@ public class IMLocationListCreateFlow extends GeneralActions {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@DataProvider
 	public static Object[][] createData() {
 		return GeneralActions.getData("IdentifierType");

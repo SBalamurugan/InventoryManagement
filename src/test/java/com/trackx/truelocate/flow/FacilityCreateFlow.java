@@ -74,7 +74,7 @@ public class FacilityCreateFlow extends GeneralActions {
 			facilityElements.menuClick();
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickCreatebutton();
+			commonElements.clickCreatebutton(driver);
 			
 			facilityElements.enterFacilityInfo(sCode, sName, sDescription, sRegion, 
 					sFacilityType, sApplicationType);
@@ -84,9 +84,9 @@ public class FacilityCreateFlow extends GeneralActions {
 			facilityElements.enterConfigurationInfo(sInventoryManaged, sBillTo, 
 					sBillToFacility, sShipTo, sShipFrom, sCrossDock, sTimeZone, 
 					sSystemofMeasurement);
-			commonElements.clickCreateOrUpdatebutton();
+			commonElements.clickCreateOrUpdatebutton(driver);
 			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = commonElements.alertMessage();
+			String alertMessage = commonElements.alertMessage(driver);
 			Assert.assertEquals(alertMessage, constants.add_facility_successmsg);
 			if (alertMessage.equalsIgnoreCase(constants.add_facility_successmsg)) {
 				TestNGResults.put("3", new Object[] { "Facility screen",

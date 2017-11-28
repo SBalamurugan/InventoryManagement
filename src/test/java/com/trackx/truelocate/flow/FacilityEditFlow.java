@@ -14,14 +14,14 @@ import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
 import com.trackx.truelocate.pagecomponents.CommonElements;
-import com.trackx.truelocate.pagecomponents.IMIdentifierTypeElements;
+import com.trackx.truelocate.pagecomponents.FacilityElements;
 import com.trackx.truelocate.pagecomponents.Truelocatelogin;
 
-public class IMIdentifierCreateFlow extends GeneralActions {
+public class FacilityEditFlow extends GeneralActions{
 	WebDriver driver;
 	Truelocatelogin truelocatelogin;
-	IMIdentifierTypeElements identifierTypeElements;
 	CommonElements commonElements;
+	FacilityElements facilityElements;
 	Constants constants = new Constants();
 	String className = this.getClass().getSimpleName();
 	
@@ -29,12 +29,12 @@ public class IMIdentifierCreateFlow extends GeneralActions {
 	public void setUp() throws IOException {
 		driver = GeneralActions.launchBrowser(driver, "chrome");
 		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
-		identifierTypeElements = PageFactory.initElements(driver, IMIdentifierTypeElements.class);
+		facilityElements = PageFactory.initElements(driver, FacilityElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);
 		ReusableActions.loadPropFileValues();
 		ReusableActions.openUrl(driver, ReusableActions.getPropFileValues("Url"));
 	}
-
+	
 	/**
 	 * Login Script
      */
@@ -57,35 +57,41 @@ public class IMIdentifierCreateFlow extends GeneralActions {
 			e.printStackTrace();
 		}
 	}
-
+	
 	/*
-	 * Item Class Create
+	 * Identifier Type Create
 	 */
 	@Test(priority = 2, dataProvider = "createData")
-	public void identifierTypeCreateFlow(String sCode, String sName, String sRFID, String sProtocol)throws Exception {
-	
+	public void facilityEditFlow(String sCode, String sInventoryManaged, String sBillTo,
+			String sBillToFacility, String sShipTo, String sShipFrom, String sCrossDock,
+			String sTimeZone, String sSystemofMeasurement)throws Exception {
 		try {
-			identifierTypeElements.menuClick();
-			Thread.sleep(1000);
+			facilityElements.menuClick();
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickCreatebutton(driver);
-			identifierTypeElements.enterIdentifierTypeInfo(sCode, sName, sRFID, sProtocol);
+			commonElements.globalSearch(sCode);
+			ReusableActions.takeSnapshot(driver, className);
+			commonElements.clickValue(driver, sCode);
+			ReusableActions.takeSnapshot(driver, className);
+			commonElements.clickEditButton(driver);
+			ReusableActions.takeSnapshot(driver, className);
+			facilityElements.enterConfigurationInfo(sInventoryManaged, sBillTo, sBillToFacility,
+					sShipTo, sShipFrom, sCrossDock, sTimeZone, sSystemofMeasurement);
+			Thread.sleep(1000);
 			commonElements.clickCreateOrUpdatebutton(driver);
 			ReusableActions.takeSnapshot(driver, className);
 			String alertMessage = commonElements.alertMessage(driver);
-			if (alertMessage.equalsIgnoreCase(constants.add_identifier_type_successmsg)) {
-				TestNGResults.put("6", new Object[] { "Item Type screen",
-						"Item Type added successfully", "Pass" });
-				Assert.assertEquals(alertMessage, constants.add_identifier_type_successmsg);
+			if (alertMessage.equalsIgnoreCase(constants.update_facility_successmsg)) {
+				TestNGResults.put("4", new Object[] { "Facility screen",
+						"Facility updated successfully", "Pass" });
+				Assert.assertEquals(alertMessage, constants.update_facility_successmsg);
 			} else {
-				TestNGResults.put("6", new Object[] { "Item Type screen",
-						"Item Type not created", "Fail" });
-				Assert.assertEquals(alertMessage, constants.add_identifier_type_successmsg);
+				TestNGResults.put("4", new Object[] { "Facility screen",
+						"Facility not updated.", "Fail" });
+				Assert.assertEquals(alertMessage, constants.update_facility_successmsg);
 			}
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-
 		}
 	}
 	
@@ -101,7 +107,7 @@ public class IMIdentifierCreateFlow extends GeneralActions {
 	
 	@DataProvider
 	public static Object[][] createData() {
-		return GeneralActions.getData("IdentifierType");
+		return GeneralActions.getData("FacilityEdit");
 	}
 
 }

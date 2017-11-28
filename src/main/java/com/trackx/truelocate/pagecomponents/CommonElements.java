@@ -2,11 +2,13 @@ package com.trackx.truelocate.pagecomponents;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
@@ -25,7 +27,7 @@ public class CommonElements {
 	/**
 	 * Create screen button
 	 */
-	@FindBy(xpath = "//*[@id=\"edit-form\"]/fieldset[2]/div/section[1]/div/button[1]")
+	@FindBy(xpath = "//*[@id=\"edit-form\"]/fieldset[2]/div/section[2]/div/button[1]")
 	WebElement btn_createorupdate;
 	
 	@FindBy(xpath = "//*[@id=\"edit-form\"]/fieldset[2]/div/section[1]/div/button[2]")
@@ -94,9 +96,9 @@ public class CommonElements {
 	/**
 	 * This method used to click create button
 	 */
-	public void clickCreatebutton() {
+	public void clickCreatebutton(WebDriver driver) {
 		try {
-			//inAction.waitForElementToBeClickable(driver, btn_create);
+			inAction.waitForElementToBeClickable(driver, btn_create);
 			inAction.buttonClick(driver, btn_create, 
 					"Click button : btn_create");
 		} catch (Exception e) {
@@ -107,9 +109,9 @@ public class CommonElements {
 	/**
 	 * This method used to click create button
 	 */
-	public void clickCreateOrUpdatebutton() {
+	public void clickCreateOrUpdatebutton(WebDriver driver) {
 		try {
-			//inAction.waitForElementToBeClickable(driver, btn_createorupdate);
+			inAction.waitForElementToBeClickable(driver, btn_createorupdate);
 			inAction.buttonClick(driver, btn_createorupdate, 
 					"Click button : btn_createorupdate");
 		} catch (Exception e) {
@@ -123,6 +125,7 @@ public class CommonElements {
 	 * @return integer value
 	 */
 	public int getTotalNumberOfPages(){
+		inAction.waitForVisibilityOfElement(driver, pageCount);
 		String number = pageCount.getText().replaceAll("/", "").trim();
 		int result = Integer.parseInt(number);
 		return result;
@@ -133,8 +136,8 @@ public class CommonElements {
 	 * 
 	 * @return alert message
 	 */
-	public String alertMessage() {
-		//inAction.waitForVisibilityOfElement(driver, txt_alertmsg);
+	public String alertMessage(WebDriver driver) {
+		inAction.waitForVisibilityOfElement(driver, txt_alertmsg);
 		String alertMessage = txt_alertmsg.getText();
 		return alertMessage;
 	}
@@ -142,7 +145,7 @@ public class CommonElements {
 	/**
 	 * This method used to click the delete button in the view screen
 	 */
-	public void clickDeleteButton(){
+	public void clickDeleteButton(WebDriver driver){
 		try {
 			inAction.waitForElementToBeClickable(driver, btn_viewdelete);
 			inAction.buttonClick(driver, btn_viewdelete,
@@ -158,7 +161,7 @@ public class CommonElements {
 	/**
 	 * This method used to click the edit button in the view screen
 	 */
-	public void clickEditButton(){
+	public void clickEditButton(WebDriver driver){
 		try {
 			inAction.waitForElementToBeClickable(driver, btn_viewedit);
 			inAction.buttonClick(driver, btn_viewedit,
@@ -172,13 +175,15 @@ public class CommonElements {
 	 * This method used to click the entered value in the table 
 	 * @param sValue
 	 */
-	public void clickValue(String sValue) {
+	public void clickValue(WebDriver driver, String sValue) {
 		try {
 			System.out.println("#@@@@@@@@@@@@@@@@$" + getTotalNumberOfPages());
 			aa:
 			for (int i = 1; i <= getTotalNumberOfPages(); i++) {
 				WebElement htmltable = driver.findElement(By
 					.xpath("//*[@id='filterSlider']/div/div/form[3]/div/div/div/div[2]/table/tbody"));
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				wait.until(ExpectedConditions.visibilityOf(htmltable));
 				List<WebElement> rows = htmltable.findElements(By.tagName("tr"));
 				Thread.sleep(10000);
 				for (WebElement rowElement : rows){

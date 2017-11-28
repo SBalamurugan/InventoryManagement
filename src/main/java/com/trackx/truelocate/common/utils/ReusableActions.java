@@ -592,12 +592,16 @@ public class ReusableActions {
 		log4jlogger.info(msg);
 		try {
 			if (element.isSelected() && element.isEnabled()) {
+				Reporter.log("Button is already Selected");
 				log4jlogger.info("Button is already Selected");
 			} else {
+				Reporter.log("Select the respective element");
 				log4jlogger.info("Select the respective element");
 				element.click();
 			}
 		} catch (Exception e) {
+			Reporter.log("Exception encountered while selecting Radio button");
+
 			log4jlogger
 					.error("Exception encountered while selecting Radio button");
 			e.printStackTrace();
@@ -679,5 +683,11 @@ public class ReusableActions {
 		}
 	}
 	
-	
+	/**
+	 * @return Returns true if element is visible, else false.
+	 */
+	public static boolean isElementSelected(WebElement element)
+			throws ElementNotVisibleException {
+		return element.isSelected();
+	}
 }

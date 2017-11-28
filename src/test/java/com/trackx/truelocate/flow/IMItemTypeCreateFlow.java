@@ -67,11 +67,11 @@ public class IMItemTypeCreateFlow extends GeneralActions{
 			itemTypeElements.menuClick();
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickCreatebutton();
+			commonElements.clickCreatebutton(driver);
 			itemTypeElements.enterItemTypeInfo(sCode, sName, sDescription);
-			commonElements.clickCreateOrUpdatebutton();
+			commonElements.clickCreateOrUpdatebutton(driver);
 			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = commonElements.alertMessage();
+			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.add_itemtype_successmsg)) {
 				TestNGResults.put("5", new Object[] { "Item Type screen",
 						"Item Type added successfully", "Pass" });
