@@ -48,6 +48,7 @@ public class Constants {
 	
 	public String add_facility_successmsg = "Facility added successfully";
 	
+<<<<<<< HEAD
 	public String add_item_successmsg = "Item added successfully";
 	
 	public String add_provision_successmsg="Provision added successfully";
@@ -57,4 +58,7 @@ public class Constants {
 
 	
 	
+=======
+	public String update_facility_successmsg = "Facility updated successfully";
+>>>>>>> 6446aa86691a975904f87ba2dca47546861fb7cf
 }

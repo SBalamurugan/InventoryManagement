@@ -3,6 +3,7 @@
 
 <test name="TrackX.truelocate test">
     <classes>
+<<<<<<< HEAD
         <!-- <class name="com.trackx.truelocate.flow.IMRegionCreateFlow"/>  -->
        <!--   <class name="com.trackx.truelocate.flow.IMItemClassCreateFlow"/>  -->
          <!-- <class name="com.trackx.truelocate.flow.IMItemTypeCreateFlow"/> 
@@ -13,5 +14,13 @@
           <!-- <class name="com.trackx.truelocate.flow.FacilityCreateFlow"/>  -->
           <!--  <class name="com.trackx.truelocate.flow.IMProvisionCreateFlow"/>  -->
     </classes>
+=======
+        <class name="com.trackx.truelocate.flow.FacilityEditFlow"/> 
+    <!--  <class name="com.trackx.truelocate.flow.IMItemClassCreateFlow"/> 
+         <class name="com.trackx.truelocate.flow.IMItemTypeCreateFlow"/> 
+          <class name="com.trackx.truelocate.flow.IMIdentifierCreateFlow"/> 
+          <class name="com.trackx.truelocate.flow.IMLocationListCreateFlow"/> 
+    -->  </classes>
+>>>>>>> 6446aa86691a975904f87ba2dca47546861fb7cf
     </test>   
 </suite>

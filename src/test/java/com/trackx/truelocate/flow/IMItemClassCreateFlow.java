@@ -66,11 +66,11 @@ public class IMItemClassCreateFlow extends GeneralActions{
 		try {
 			itemClassElements.menuClick();
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickCreatebutton();
+			commonElements.clickCreatebutton(driver);
 			itemClassElements.enterItemClassInfo(sCode, sName, sDescription);
-			commonElements.clickCreateOrUpdatebutton();
+			commonElements.clickCreateOrUpdatebutton(driver);
 			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = commonElements.alertMessage();
+			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.add_itemclass_successmsg)) {
 				TestNGResults.put("4", new Object[] { "Item Class screen",
 						"Item Class created successfully", "Pass" });

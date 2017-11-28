@@ -17,11 +17,11 @@ import com.trackx.truelocate.pagecomponents.CommonElements;
 import com.trackx.truelocate.pagecomponents.FacilityElements;
 import com.trackx.truelocate.pagecomponents.Truelocatelogin;
 
-public class FacilityCreateFlow extends GeneralActions {
+public class FacilityEditFlow extends GeneralActions{
 	WebDriver driver;
 	Truelocatelogin truelocatelogin;
-	FacilityElements facilityElements;
 	CommonElements commonElements;
+	FacilityElements facilityElements;
 	Constants constants = new Constants();
 	String className = this.getClass().getSimpleName();
 	
@@ -34,7 +34,7 @@ public class FacilityCreateFlow extends GeneralActions {
 		ReusableActions.loadPropFileValues();
 		ReusableActions.openUrl(driver, ReusableActions.getPropFileValues("Url"));
 	}
-
+	
 	/**
 	 * Login Script
      */
@@ -59,50 +59,42 @@ public class FacilityCreateFlow extends GeneralActions {
 	}
 	
 	/*
-	 * Facility Create
+	 * Identifier Type Create
 	 */
 	@Test(priority = 2, dataProvider = "createData")
-	public void facilityCreateFlow(String sCode, String sName, String sDescription,
-			String sRegion, String sFacilityType, String sApplicationType,
-			String sAddressLine1, String sAddressLine2, String sCity, String sState,
-			String sZipCode, String sCountry, String sContactName, String sContact,
-			String sEmail, String sLatitude, String sLongitude, String sGeoFence, 
-			String sVerifiedAddress, String sInventoryManaged, String sBillTo,
+	public void facilityEditFlow(String sCode, String sInventoryManaged, String sBillTo,
 			String sBillToFacility, String sShipTo, String sShipFrom, String sCrossDock,
 			String sTimeZone, String sSystemofMeasurement)throws Exception {
 		try {
 			facilityElements.menuClick();
-			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickCreatebutton(driver);
-			
-			facilityElements.enterFacilityInfo(sCode, sName, sDescription, sRegion, 
-					sFacilityType, sApplicationType);
-			facilityElements.enterAddressInfo(sAddressLine1, sAddressLine2, sCity,
-					sState, sZipCode, sCountry, sContactName, sContact, sEmail,
-					sLatitude, sLongitude, sGeoFence, sVerifiedAddress);
-			facilityElements.enterConfigurationInfo(sInventoryManaged, sBillTo, 
-					sBillToFacility, sShipTo, sShipFrom, sCrossDock, sTimeZone, 
-					sSystemofMeasurement);
+			commonElements.globalSearch(sCode);
+			ReusableActions.takeSnapshot(driver, className);
+			commonElements.clickValue(driver, sCode);
+			ReusableActions.takeSnapshot(driver, className);
+			commonElements.clickEditButton(driver);
+			ReusableActions.takeSnapshot(driver, className);
+			facilityElements.enterConfigurationInfo(sInventoryManaged, sBillTo, sBillToFacility,
+					sShipTo, sShipFrom, sCrossDock, sTimeZone, sSystemofMeasurement);
+			Thread.sleep(1000);
 			commonElements.clickCreateOrUpdatebutton(driver);
 			ReusableActions.takeSnapshot(driver, className);
 			String alertMessage = commonElements.alertMessage(driver);
-			Assert.assertEquals(alertMessage, constants.add_facility_successmsg);
-			if (alertMessage.equalsIgnoreCase(constants.add_facility_successmsg)) {
-				TestNGResults.put("3", new Object[] { "Facility screen",
-						"Facility added successfully", "Pass" });
-				Assert.assertEquals(alertMessage, constants.add_facility_successmsg);
+			if (alertMessage.equalsIgnoreCase(constants.update_facility_successmsg)) {
+				TestNGResults.put("4", new Object[] { "Facility screen",
+						"Facility updated successfully", "Pass" });
+				Assert.assertEquals(alertMessage, constants.update_facility_successmsg);
 			} else {
-				TestNGResults.put("3", new Object[] { "Facility screen",
-						"Facility not created", "Fail" });
-				Assert.assertEquals(alertMessage, constants.add_facility_successmsg);
+				TestNGResults.put("4", new Object[] { "Facility screen",
+						"Facility not updated.", "Fail" });
+				Assert.assertEquals(alertMessage, constants.update_facility_successmsg);
 			}
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-
 		}
 	}
+	
 	@AfterClass
 	public void quitDriver() {
 		try {
@@ -115,6 +107,7 @@ public class FacilityCreateFlow extends GeneralActions {
 	
 	@DataProvider
 	public static Object[][] createData() {
-		return GeneralActions.getData("FacilityCreate");
+		return GeneralActions.getData("FacilityEdit");
 	}
+
 }

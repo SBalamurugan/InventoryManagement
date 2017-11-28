@@ -68,11 +68,11 @@ public class IMIdentifierCreateFlow extends GeneralActions {
 			identifierTypeElements.menuClick();
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickCreatebutton();
+			commonElements.clickCreatebutton(driver);
 			identifierTypeElements.enterIdentifierTypeInfo(sCode, sName, sRFID, sProtocol);
-			commonElements.clickCreateOrUpdatebutton();
+			commonElements.clickCreateOrUpdatebutton(driver);
 			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = commonElements.alertMessage();
+			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.add_identifier_type_successmsg)) {
 				TestNGResults.put("6", new Object[] { "Item Type screen",
 						"Item Type added successfully", "Pass" });

@@ -2,8 +2,9 @@ package com.trackx.truelocate.pagecomponents;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -234,7 +235,29 @@ public class FacilityElements {
 	@FindBy(linkText = "Facility")
 	WebElement menu_Facility;
 	
+	/*
+	 * toggle button
+	 */
+	@FindBy(id="inventoryManaged")
+	WebElement toggleselection_inventory;
 	
+	@FindBy(id="billTo")
+	WebElement toggleselection_billTo;
+	
+	@FindBy(id="shipTo")
+	WebElement toggleselection_shipTo;
+	
+	@FindBy(id="shipFrom")
+	WebElement toggleselection_shipFrom;
+	
+	@FindBy(id="crossDock")
+	WebElement toggleselection_crossDock;
+	
+	/**
+	 * Construtor for this class
+	 * 
+	 * @param driver
+	 */
 	public FacilityElements(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -249,8 +272,6 @@ public class FacilityElements {
 					"Click button : menu_administration");
 			inAction.linkClick(driver, menu_Facility, 
 					"Click link: menu_Facility");
-			/*inAction.buttonClick(driver, menu_Facility, 
-					"Click button : menu_Facility");*/
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -370,7 +391,10 @@ public class FacilityElements {
 			inAction.linkClick(driver, tab_configuration, 
 					"Click link: " + tab_configuration);
 			clickInventoryManaged(sInventoryManaged);
-			clickBillTo(sBillTo, sBillToFacility);
+			clickBillTo(sBillTo);
+			if (sBillTo.equalsIgnoreCase("false")) {
+				selectBillToFacility(sBillToFacility);
+			}
 			clickShipTo(sShipTo);
 			clickShipFrom(sShipFrom);
 			clickCrossDock(sCrossDock);
@@ -389,6 +413,10 @@ public class FacilityElements {
 		if (sVerifiedAddress.equalsIgnoreCase("Yes")) {
 			ReusableActions.selectedRadioButton(driver, togglebtn_verifiedAddress,
 					"click toggle button: togglebtn_verifiedAddress");
+		} else {
+			inAction.waitForVisibilityOfElement(driver, togglebtn_verifiedAddress);
+			ReusableActions.selectedRadioButton(driver, togglebtn_verifiedAddress,
+					"click toggle button: togglebtn_verifiedAddress");
 		}
 	}
 	
@@ -397,11 +425,13 @@ public class FacilityElements {
 	 * @param sInventoryManaged
 	 */
 	public void clickInventoryManaged(String sInventoryManaged){
-		if (sInventoryManaged.equalsIgnoreCase("Yes")) {
+		boolean boovar = ReusableActions.isElementSelected(toggleselection_inventory);
+		String str = String.valueOf(boovar);
+		if(!sInventoryManaged.equalsIgnoreCase(str)& StringUtils.isNotBlank(sInventoryManaged)) {
 			inAction.waitForVisibilityOfElement(driver, togglebtn_inventoryMgd);
 			ReusableActions.selectedRadioButton(driver, togglebtn_inventoryMgd, 
-					"click toggle button: togglebtn_inventoryMgd");
-		}
+					"click toggle button: sInventoryManaged");
+		} 
 	}
 	
 	/**
@@ -409,13 +439,14 @@ public class FacilityElements {
 	 * @param sInventoryManaged
 	 * @param sBillToFacility
 	 */
-	public void clickBillTo(String sBillTo, String sBillToFacility){
-		if (sBillTo.equalsIgnoreCase("Yes")) {
-			selectBillToFacility(sBillToFacility);
-		} else {
+	public void clickBillTo(String sBillTo){
+		boolean boovar = ReusableActions.isElementSelected(toggleselection_billTo);
+		String str = String.valueOf(boovar);
+		if(!sBillTo.equalsIgnoreCase(str)& StringUtils.isNotBlank(sBillTo)) {
+			inAction.waitForVisibilityOfElement(driver, togglebtn_billTo);
 			ReusableActions.selectedRadioButton(driver, togglebtn_billTo, 
 					"click toggle button: togglebtn_billTo");
-		}
+		} 
 	}
 	
 	/**
@@ -423,7 +454,10 @@ public class FacilityElements {
 	 * @param sShipTo
 	 */
 	public void clickShipTo(String sShipTo){
-		if (sShipTo.equalsIgnoreCase("Yes")) {
+		boolean boovar = ReusableActions.isElementSelected(toggleselection_shipTo);
+		String str = String.valueOf(boovar);
+		if(!sShipTo.equalsIgnoreCase(str)& StringUtils.isNotBlank(sShipTo)) {
+			inAction.waitForVisibilityOfElement(driver, togglebtn_shipTo);
 			ReusableActions.selectedRadioButton(driver, togglebtn_shipTo, 
 					"click toggle button: togglebtn_shipTo");
 		}
@@ -434,10 +468,13 @@ public class FacilityElements {
 	 * @param sShipFrom
 	 */
 	public void clickShipFrom(String sShipFrom){
-		if (sShipFrom.equalsIgnoreCase("Yes")) {
+		boolean boovar = ReusableActions.isElementSelected(toggleselection_shipFrom);
+		String str = String.valueOf(boovar);
+		if(!sShipFrom.equalsIgnoreCase(str)& StringUtils.isNotBlank(sShipFrom)) {
+			inAction.waitForVisibilityOfElement(driver, togglebtn_shipFrom);
 			ReusableActions.selectedRadioButton(driver, togglebtn_shipFrom, 
 					"click toggle button: togglebtn_shipFrom");
-		}
+		} 
 	}
 	
 	/**
@@ -445,7 +482,10 @@ public class FacilityElements {
 	 * @param sCrossDock
 	 */
 	public void clickCrossDock(String sCrossDock){
-		if (sCrossDock.equalsIgnoreCase("Yes")) {
+		boolean boovar = ReusableActions.isElementSelected(toggleselection_crossDock);
+		String str = String.valueOf(boovar);
+		if(!sCrossDock.equalsIgnoreCase(str)& StringUtils.isNotBlank(sCrossDock)) {
+			inAction.waitForVisibilityOfElement(driver, togglebtn_crossDock);
 			ReusableActions.selectedRadioButton(driver, togglebtn_crossDock, 
 					"click toggle button: togglebtn_crossDock");
 		}
