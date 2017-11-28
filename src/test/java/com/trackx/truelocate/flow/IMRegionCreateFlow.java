@@ -19,24 +19,27 @@ import com.trackx.truelocate.pagecomponents.Truelocatelogin;
 public class IMRegionCreateFlow extends GeneralActions {
 	WebDriver driver;
 	Truelocatelogin truelocatelogin;
-	IMRegionElements imregionelements ;
+	IMRegionElements imregionelements;
 	CommonElements commonElements;
 	Constants constants = new Constants();
 	String className = this.getClass().getSimpleName();
-	
+
 	@BeforeClass
 	public void setUp() throws IOException {
 		driver = GeneralActions.launchBrowser(driver, "chrome");
-		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
-		imregionelements = PageFactory.initElements(driver, IMRegionElements.class);
+		truelocatelogin = PageFactory.initElements(driver,
+				Truelocatelogin.class);
+		imregionelements = PageFactory.initElements(driver,
+				IMRegionElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);
 		ReusableActions.loadPropFileValues();
-		ReusableActions.openUrl(driver, ReusableActions.getPropFileValues("Url"));
+		ReusableActions.openUrl(driver,
+				ReusableActions.getPropFileValues("Url"));
 	}
 
 	/**
 	 * Login Script
-     */
+	 */
 	@Test(priority = 1, dataProviderClass = Truelocatelogin.class, dataProvider = "getData")
 	public void userclickflow(String sUsername, String sPassword)
 			throws Exception {
@@ -48,7 +51,7 @@ public class IMRegionCreateFlow extends GeneralActions {
 			if (truelocatelogin.pageTitleValidation()) {
 				TestNGResults.put("2", new Object[] { "Login screen",
 						"Login successful", "Pass" });
-			}else {
+			} else {
 				TestNGResults.put("2", new Object[] { "Login screen",
 						"Login Failed", "Fail" });
 			}
@@ -60,35 +63,35 @@ public class IMRegionCreateFlow extends GeneralActions {
 	/*
 	 * Region Create
 	 */
-	
 	@Test(priority = 2, dataProvider = "createData")
-	public void regionCreateFlow(String sCode, String sName)throws Exception {
+	public void regionCreateFlow(String sCode, String sName) throws Exception {
 		try {
 			imregionelements.menuClick();
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			commonElements.clickCreatebutton();
+			commonElements.clickCreatebutton(driver);
 			imregionelements.enterRegionInfo(sCode, sName);
-			commonElements.clickCreateOrUpdatebutton();
+			commonElements.clickCreateOrUpdatebutton(driver);
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-			String alertMessage = commonElements.alertMessage();
+			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.add_region_successmsg)) {
 				TestNGResults.put("3", new Object[] { "Region screen",
-						"Region added successfully", "Pass" });	
-				Assert.assertEquals(alertMessage, constants.add_region_successmsg);
+						"Region added successfully", "Pass" });
+				Assert.assertEquals(alertMessage,
+						constants.add_region_successmsg);
 			} else {
 				TestNGResults.put("3", new Object[] { "Region screen",
 						"Region not created", "Fail" });
-				Assert.assertEquals(alertMessage, constants.add_region_successmsg);
+				Assert.assertEquals(alertMessage,
+						constants.add_region_successmsg);
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 
 		}
 	}
-	
+
 	@AfterClass
 	public void quitDriver() {
 		try {
@@ -98,10 +101,9 @@ public class IMRegionCreateFlow extends GeneralActions {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@DataProvider
 	public static Object[][] createData() {
 		return GeneralActions.getData("Region");
 	}
-
 }

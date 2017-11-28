@@ -23,7 +23,6 @@ public class IMUserDeleteFlow extends GeneralActions{
 	Constants constants = new Constants();
 	String className = this.getClass().getSimpleName();
 	
-	// Logger log4jlogger =Logger.getLogger("devpinoyLogger");
 
 	@BeforeClass
 	public void setUp() throws IOException {
@@ -57,7 +56,7 @@ public class IMUserDeleteFlow extends GeneralActions{
 		}
 	}
 
-	/*
+	/**
 	 * User Edit
 	 */
 	@Test(priority = 2, dataProvider = "deletedata")
@@ -77,7 +76,6 @@ public class IMUserDeleteFlow extends GeneralActions{
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
 			String alertMessage = rbCreateUser.alertMessage();
-			System.out.println("&&&&&&&&&&&&&&&" + alertMessage);
 			Assert.assertEquals(alertMessage, constants.delete_user_successmsg);
 			if (alertMessage.equalsIgnoreCase(constants.delete_user_successmsg)) {
 				TestNGResults.put("3", new Object[] { "User screen",
