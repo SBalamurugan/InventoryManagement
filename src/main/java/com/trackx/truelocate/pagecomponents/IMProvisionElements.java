@@ -93,7 +93,7 @@ public class IMProvisionElements {
 		try {
 			inAction.buttonClick(driver, menu_asset, 
 					"Click button : menu_asset");
-			inAction.buttonClick(driver, menu_provision, 
+			inAction.linkClick(driver, menu_provision, 
 					"Click button : menu_provision");
 			
 		} catch (Exception e) {

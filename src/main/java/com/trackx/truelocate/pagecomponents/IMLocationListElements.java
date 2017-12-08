@@ -43,11 +43,9 @@ public class IMLocationListElements {
 	@FindBy(id = "select2-chosen-3")
 	WebElement dropdown_locationtype;
 
-	
-	//@FindBy(id = "s2id_autogen3_search")
-	@FindBy(id = "//*[@id='s2id_autogen3_search']")
+	@FindBy(id = "s2id_autogen3_search")
 	WebElement txt_locationtype;
-
+	
 	@FindBy(xpath = "//*[@id=\"select2-results-3\"]/li")
 	List<WebElement> list_locationtype;
 
@@ -64,7 +62,7 @@ public class IMLocationListElements {
 	/**
 	 * Menu Elements
 	 */
-	@FindBy(xpath = "//*[@id='menuField']/ul[6]/li/a/span")
+	@FindBy(xpath = "//*[@id='menuField']/ul[5]/li/a/span")
 	WebElement menu_location;
 
 	@FindBy(linkText = "Location List")
@@ -82,8 +80,8 @@ public class IMLocationListElements {
 		try {
 			inAction.buttonClick(driver, menu_location,
 					"Click button : menu_inventory");
-			inAction.buttonClick(driver, menu_locationlist,
-					"Click button : menu_masterData");
+			inAction.linkClick(driver, menu_locationlist,
+					"Click button : menu_locationlist");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -104,7 +102,7 @@ public class IMLocationListElements {
 	 * sLocationTypedropdown
 	 */
 
-	public void enterLocationListInfo(String sCode, String sName,
+	public void enterLocationListInfo(String sCode, String sName,String sDescription,
 			String sFacility, String sFacilitydropdown, String sLoactiontype,
 			String sLocationTypedropdown) {
 		try {
@@ -114,20 +112,41 @@ public class IMLocationListElements {
 			// inAction.waitForVisibilityOfElement(driver, txt_name);
 			inAction.inputText(driver, txt_name, sName, "Enter sFirstname : "
 					+ sName);
+			inAction.inputText(driver, txt_description, sName, "Enter sFirstname : "
+					+ txt_description);
+			sFacilitytype(sFacility,sFacilitydropdown);
+			sLocationtype(sLoactiontype,sLocationTypedropdown);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void sFacilitytype(String sFacility,String sFacilitydropdown) {
+		try {
+			inAction.waitForElementToBeClickable(driver, dropdown_facility);
 			inAction.buttonClick(driver, dropdown_facility,
 					"Click button : dropdown_faciltiy");
 			inAction.inputText(driver, txt_faciltiy, sFacility,
 					"Enter sFacilityanme : " + sFacility);
 			inAction.selectByTextInDropdown(driver, list_facility,
 					sFacilitydropdown);
-			inAction.buttonClick(driver, dropdown_locationtype,
-					"Click button : dropdown_locationtype");
-			inAction.inputText(driver, txt_locationtype, sLoactiontype,
-					"Enter sLocationtype : " + sLoactiontype);
-			inAction.selectByTextInDropdown(driver, list_facility,
-					sLocationTypedropdown);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	public void sLocationtype(String sLoactiontype,String sLocationTypedropdown) {
+		try {
+			inAction.waitForElementToBeClickable(driver, dropdown_locationtype);
+			inAction.buttonClick(driver, dropdown_locationtype,
+					"Click button : dropdown_locationtype");
+			inAction.inputText(driver, txt_locationtype, sLoactiontype,
+					"Enter sLocationtype : " + sLoactiontype);
+			inAction.selectByTextInDropdown(driver, list_locationtype,
+					sLocationTypedropdown);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	
+	}
 }
+

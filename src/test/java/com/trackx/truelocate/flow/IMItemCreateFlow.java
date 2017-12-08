@@ -85,11 +85,11 @@ public class IMItemCreateFlow extends GeneralActions {
 			String alertMessage = commonElements.alertMessage(driver);
 			
 			if (alertMessage.equalsIgnoreCase(constants.add_item_successmsg)) {
-				TestNGResults.put("8", new Object[] { "Item screen",
+				TestNGResults.put("9", new Object[] { "Item screen",
 						"Item added successfully", "Pass" });
 				Assert.assertEquals(alertMessage, constants.add_item_successmsg);
 			} else {
-				TestNGResults.put("8", new Object[] { "Item screen",
+				TestNGResults.put("9", new Object[] { "Item screen",
 						"Item not created", "Fail" });
 				Assert.assertEquals(alertMessage, constants.add_item_successmsg);
 			}

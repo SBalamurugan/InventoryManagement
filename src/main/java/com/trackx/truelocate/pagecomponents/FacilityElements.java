@@ -228,12 +228,11 @@ public class FacilityElements {
 	/**
 	 * Menu Elements
 	 */
-	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[11]/li/a/span")
+	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[10]/li/a/span")
 	WebElement menu_administration;
 
-	//@FindBy(xpath = "//*[@id=\"menuField\"]/ul[11]/li/ul/li[3]/a")
-	@FindBy(linkText = "Facility")
-	WebElement menu_Facility;
+	@FindBy(linkText = "Site")
+	WebElement menu_site;
 	
 	/*
 	 * toggle button
@@ -270,8 +269,8 @@ public class FacilityElements {
 		try {
 			inAction.buttonClick(driver, menu_administration, 
 					"Click button : menu_administration");
-			inAction.linkClick(driver, menu_Facility, 
-					"Click link: menu_Facility");
+			inAction.linkClick(driver, menu_site, 
+					"Click link: menu_site");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -355,13 +354,13 @@ public class FacilityElements {
 			inAction.inputText(driver, txt_email, sEmail,
 					"Enter sEmail : " + sEmail);
 			
-			inAction.waitForVisibilityOfElement(driver, txt_latitude);
+			/*inAction.waitForVisibilityOfElement(driver, txt_latitude);
 			inAction.inputText(driver, txt_latitude, sLatitude,
 					"Enter sLatitude : " + sLatitude);
 			
 			inAction.waitForVisibilityOfElement(driver, txt_longitude);
 			inAction.inputText(driver, txt_longitude, sLongitude,
-					"Enter sLongitude : " + sLongitude);
+					"Enter sLongitude : " + sLongitude);*/
 			
 			inAction.waitForVisibilityOfElement(driver, txt_geoFence);
 			inAction.inputText(driver, txt_geoFence, sGeoFence,
@@ -410,14 +409,10 @@ public class FacilityElements {
 	 * @param sVerifiedAddress
 	 */
 	public void clickVerifiedAddress(String sVerifiedAddress){
-		if (sVerifiedAddress.equalsIgnoreCase("Yes")) {
+		if (sVerifiedAddress.equalsIgnoreCase("No")) {
 			ReusableActions.selectedRadioButton(driver, togglebtn_verifiedAddress,
 					"click toggle button: togglebtn_verifiedAddress");
-		} else {
-			inAction.waitForVisibilityOfElement(driver, togglebtn_verifiedAddress);
-			ReusableActions.selectedRadioButton(driver, togglebtn_verifiedAddress,
-					"click toggle button: togglebtn_verifiedAddress");
-		}
+		} 
 	}
 	
 	/**

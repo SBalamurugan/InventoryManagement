@@ -74,11 +74,11 @@ public class IMProvisionCreateFlow extends GeneralActions {
 			ReusableActions.takeSnapshot(driver, className);
 			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.add_provision_successmsg)) {
-				TestNGResults.put("7", new Object[] { "Provision  screen",
+				TestNGResults.put("10", new Object[] { "Provision  screen",
 						"Provision added successfully", "Pass" });
 				Assert.assertEquals(alertMessage, constants.add_provision_successmsg);
 			} else {
-				TestNGResults.put("7", new Object[] { "Provision screen",
+				TestNGResults.put("10", new Object[] { "Provision screen",
 						"Provision not created", "Fail" });
 				Assert.assertEquals(alertMessage, constants.add_provision_successmsg);
 			}

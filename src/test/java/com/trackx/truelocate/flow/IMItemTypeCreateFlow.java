@@ -73,11 +73,11 @@ public class IMItemTypeCreateFlow extends GeneralActions{
 			ReusableActions.takeSnapshot(driver, className);
 			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.add_itemtype_successmsg)) {
-				TestNGResults.put("5", new Object[] { "Item Type screen",
+				TestNGResults.put("15", new Object[] { "Item Type screen",
 						"Item Type added successfully", "Pass" });
 				Assert.assertEquals(alertMessage, constants.add_itemtype_successmsg);
 			} else {
-				TestNGResults.put("5", new Object[] { "Item Type screen",
+				TestNGResults.put("15", new Object[] { "Item Type screen",
 						"Item Type not created", "Fail" });
 				Assert.assertEquals(alertMessage, constants.add_itemtype_successmsg);
 			}

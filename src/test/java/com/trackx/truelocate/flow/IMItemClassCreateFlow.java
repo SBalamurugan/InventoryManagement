@@ -27,7 +27,7 @@ public class IMItemClassCreateFlow extends GeneralActions{
 	
 	@BeforeClass
 	public void setUp() throws IOException {
-		driver = GeneralActions.launchBrowser(driver, "chrome");
+		driver = GeneralActions.launchBrowser(driver, "ie");
 		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
 		itemClassElements = PageFactory.initElements(driver, IMItemClassElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);
@@ -72,11 +72,11 @@ public class IMItemClassCreateFlow extends GeneralActions{
 			ReusableActions.takeSnapshot(driver, className);
 			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.add_itemclass_successmsg)) {
-				TestNGResults.put("4", new Object[] { "Item Class screen",
+				TestNGResults.put("14", new Object[] { "Item Class screen",
 						"Item Class created successfully", "Pass" });
 				Assert.assertEquals(alertMessage, constants.add_itemclass_successmsg);
 			} else {
-				TestNGResults.put("4", new Object[] { "Item Class screen",
+				TestNGResults.put("14", new Object[] { "Item Class screen",
 						"Item Class not created", "Fail" });
 				Assert.assertEquals(alertMessage, constants.add_itemclass_successmsg);
 			}

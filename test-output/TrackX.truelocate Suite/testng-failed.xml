@@ -3,27 +3,15 @@
 <suite name="Failed suite [TrackX.truelocate Suite]">
   <test name="TrackX.truelocate test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.trackx.truelocate.flow.IMRegionEditFlow">
+      <class name="com.trackx.truelocate.flow.IMRegionCreateFlow">
         <methods>
           <include name="quitDriver"/>
-          <include name="suiteTearDown"/>
-          <include name="regionEditFlow" invocation-numbers="0"/>
           <include name="setUp"/>
+          <include name="regionCreateFlow" invocation-numbers="0"/>
+          <include name="suiteTearDown"/>
           <include name="excelCreation"/>
         </methods>
-      </class> <!-- com.trackx.truelocate.flow.IMRegionEditFlow -->
-=======
-      <class name="com.trackx.truelocate.flow.FacilityEditFlow">
-        <methods>
-          <include name="facilityEditFlow" invocation-numbers="0"/>
-          <include name="setUp"/>
-          <include name="suiteTearDown"/>
-          <include name="quitDriver"/>
-          <include name="excelCreation"/>
-        </methods>
-      </class> <!-- com.trackx.truelocate.flow.FacilityEditFlow -->
->>>>>>> 6446aa86691a975904f87ba2dca47546861fb7cf
+      </class> <!-- com.trackx.truelocate.flow.IMRegionCreateFlow -->
     </classes>
   </test> <!-- TrackX.truelocate test(failed) -->
 </suite> <!-- Failed suite [TrackX.truelocate Suite] -->

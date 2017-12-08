@@ -20,14 +20,14 @@ public class Truelocatelogin {
 	Constants constants = new Constants();
 	
 
-	@FindBy(xpath = "//*[@id='email']")
+	@FindBy(id="email")
 	WebElement txt_username;
 
-	@FindBy(xpath = "//*[@id='password']")
+	@FindBy(id= "password")
 	WebElement txt_password;
 
-	@FindBy(xpath = "//*[@id='login']/div[2]/div[1]/div[2]/form/div/button")
-	WebElement btn_sigin;
+	@FindBy(xpath = "//*[@id='login']/div[2]/div[1]/div[3]/div/form/div[2]/button")
+	WebElement btn_login;
 
 	@FindBy(xpath = "//*[@id='logout']/span/a")
 	WebElement btn_logout;
@@ -43,11 +43,15 @@ public class Truelocatelogin {
 	// Enter Username/password
 	public void enterUsernamepassword(String sUsername, String sPassword) {
 		try {
+			inAction.waitForVisibilityOfElement(driver, txt_username);
 			inAction.inputText(driver, txt_username, sUsername,
 					"Enter sUsername : " + sUsername);
+			inAction.waitForVisibilityOfElement(driver, txt_password);
 			inAction.inputText(driver, txt_password, sPassword,
 					"Enter sPasswordsCompDate : " + sPassword);
-			btn_sigin.click();
+			inAction.waitForElementToBeClickable(driver, btn_login);
+			inAction.buttonClick(driver, btn_login, 
+					"Click button : btn_login");
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			e.printStackTrace();

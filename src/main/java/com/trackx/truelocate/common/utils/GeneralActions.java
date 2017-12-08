@@ -9,6 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -19,10 +20,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
+import org.openqa.selenium.remote.DesiredCapabilities; 
 
 
 public class GeneralActions {
@@ -78,8 +81,7 @@ public class GeneralActions {
 			profile.setPreference("browser.download.manager.showWhenStarting",
 					false);
 			profile.setPreference("pdfjs.disabled", true);
-
-			driver = new FirefoxDriver(profile);
+			driver = new FirefoxDriver(); 
 			driver.manage().window().maximize();
 			log4jlogger.debug("Browser launched is firefox and maximized..");
 		}
@@ -89,7 +91,10 @@ public class GeneralActions {
 					"webdriver.ie.driver",
 					(System.getProperty("user.dir") + fsep + "src" + fsep
 							+ "test" + fsep + "resources" + fsep + "IEDriverServer.exe"));
-			driver = new InternetExplorerDriver();
+			DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+			capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+			capabilities.setCapability("requireWindowFocus", true);
+			driver = new InternetExplorerDriver(capabilities);
 			driver.manage().window().maximize();
 			log4jlogger.debug("Browser launched is IE and maximized..");
 			log4jlogger.debug("launching the " + browserType + " browser");

@@ -14,13 +14,13 @@ import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
 import com.trackx.truelocate.pagecomponents.CommonElements;
-import com.trackx.truelocate.pagecomponents.IMRegionElements;
+import com.trackx.truelocate.pagecomponents.IMLocationListElements;
 import com.trackx.truelocate.pagecomponents.Truelocatelogin;
 
 public class IMLocationListEditFlow extends GeneralActions {
 	WebDriver driver;
 	Truelocatelogin truelocatelogin;
-	IMRegionElements imregionelements ;
+	IMLocationListElements  imLocationlistelements;
 	CommonElements commonElements;
 	Constants constants = new Constants();
 	String className = this.getClass().getSimpleName();
@@ -29,7 +29,7 @@ public class IMLocationListEditFlow extends GeneralActions {
 	public void setUp() throws IOException {
 		driver = GeneralActions.launchBrowser(driver, "chrome");
 		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
-		imregionelements = PageFactory.initElements(driver, IMRegionElements.class);
+		imLocationlistelements = PageFactory.initElements(driver, IMLocationListElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);
 		ReusableActions.loadPropFileValues();
 		ReusableActions.openUrl(driver, ReusableActions.getPropFileValues("Url"));
@@ -63,26 +63,32 @@ public class IMLocationListEditFlow extends GeneralActions {
 	 */
 	
 	@Test(priority = 2, dataProvider = "createData")
-	public void locationListEditFlow(String sValue,String sCode,String sName)throws Exception {
+	public void locationListEditFlow(String sValue,String sCode,String sName,
+			String sDescription,String sFacility,String sFacilitydropdown,
+			String sLoactiontype,String sLocationTypedropdown)throws Exception {
 		try {
-			imregionelements.menuClick();
+			imLocationlistelements.menuClick();
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
+			commonElements.globalSearch(sValue);
 			commonElements.clickValue(driver, sValue);
+			ReusableActions.takeSnapshot(driver, className);
 			commonElements.clickEditButton(driver);
-			imregionelements.enterRegionInfo(sCode, sName);
-			commonElements.clickCreateOrUpdatebutton(driver);
+			imLocationlistelements.enterLocationListInfo(sCode, sName,sDescription, 
+					sFacility, sFacilitydropdown, sLoactiontype, sLocationTypedropdown);
+			//commonElements.clickCreateOrUpdatebutton(driver);
+			commonElements.clickUpdatebutton(driver);
 			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
 			String alertMessage = commonElements.alertMessage(driver);
-			if (alertMessage.equalsIgnoreCase(constants.edit_region_successmsg)) {
-				TestNGResults.put("3", new Object[] { "Region edit screen",
-						"Region edited successfully", "Pass" });	
-				Assert.assertEquals(alertMessage, constants.edit_region_successmsg);
+			if (alertMessage.equalsIgnoreCase(constants.edit_locationlist_successmsg)) {
+				TestNGResults.put("13", new Object[] { "LocationList edit screen",
+						"LocationList edited successfully", "Pass" });	
+				Assert.assertEquals(alertMessage, constants.edit_locationlist_successmsg);
 			} else {
-				TestNGResults.put("3", new Object[] { "Region edit screen",
-						"Region not edited", "Fail" });
-				Assert.assertEquals(alertMessage, constants.edit_region_successmsg);
+				TestNGResults.put("13", new Object[] { "LocationList edit screen",
+						"LocationList not edited", "Fail" });
+				Assert.assertEquals(alertMessage, constants.edit_locationlist_successmsg);
 			}
 		}
 		catch (Exception e) {
@@ -103,7 +109,7 @@ public class IMLocationListEditFlow extends GeneralActions {
 	
 	@DataProvider
 	public static Object[][] createData() {
-		return GeneralActions.getData("EditRegion");
+		return GeneralActions.getData("EditLocationlist");
 	}
 
 }

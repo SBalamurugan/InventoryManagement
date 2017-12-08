@@ -236,7 +236,7 @@ public class IMItemElements {
 		try {
 			inAction.buttonClick(driver, menu_inventory, 
 					"Click button : menu_inventory");
-			inAction.buttonClick(driver, menu_item, 
+			inAction.linkClick(driver, menu_item, 
 					"Click button : menu_masterData");
 			
 		} catch (Exception e) {
@@ -521,7 +521,7 @@ public class IMItemElements {
  * @param sInventory
  */
 public void clickInventory(String sInventory){
-	if (sInventory.equalsIgnoreCase("Yes")) {
+	if (sInventory.equalsIgnoreCase("No")) {
 		ReusableActions.selectedRadioButton(driver, togglebutton_inventory,
 				"click toggle button: togglebutton_inventory");
 	}
@@ -533,7 +533,7 @@ public void clickInventory(String sInventory){
  */
 
 public void clickActive(String sActive){
-	if (sActive.equalsIgnoreCase("Yes")) {
+	if (sActive.equalsIgnoreCase("No")) {
 		ReusableActions.selectedRadioButton(driver, togglebutton_active,
 				"click toggle button: togglebutton_active");
 	}
