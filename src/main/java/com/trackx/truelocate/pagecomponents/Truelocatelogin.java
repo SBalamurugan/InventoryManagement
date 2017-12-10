@@ -26,7 +26,8 @@ public class Truelocatelogin {
 	@FindBy(xpath = "//*[@id='password']")
 	WebElement txt_password;
 
-	@FindBy(xpath = "//*[@id='login']/div[2]/div[1]/div[2]/form/div/button")
+	
+	@FindBy(xpath = "//*[@id='login']/div[2]/div[1]/div[3]/div/form/div[2]/button")
 	WebElement btn_sigin;
 
 	@FindBy(xpath = "//*[@id='logout']/span/a")

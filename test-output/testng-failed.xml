@@ -3,15 +3,14 @@
 <suite name="Failed suite [TrackX.truelocate Suite]">
   <test name="TrackX.truelocate test(failed)">
     <classes>
-      <class name="com.trackx.truelocate.flow.FacilityEditFlow">
+      <class name="com.trackx.truelocate.flow.FacilityAdvancedFilterFlow">
         <methods>
-          <include name="facilityEditFlow" invocation-numbers="0"/>
+          <include name="userLogin"/>
           <include name="setUp"/>
-          <include name="suiteTearDown"/>
-          <include name="quitDriver"/>
+          <include name="facilityAdvancedFilterFlow"/>
           <include name="excelCreation"/>
         </methods>
-      </class> <!-- com.trackx.truelocate.flow.FacilityEditFlow -->
+      </class> <!-- com.trackx.truelocate.flow.FacilityAdvancedFilterFlow -->
     </classes>
   </test> <!-- TrackX.truelocate test(failed) -->
 </suite> <!-- Failed suite [TrackX.truelocate Suite] -->
