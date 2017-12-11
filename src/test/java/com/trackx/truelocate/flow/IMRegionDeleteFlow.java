@@ -27,7 +27,7 @@ public class IMRegionDeleteFlow extends GeneralActions {
 	
 	@BeforeClass
 	public void setUp() throws IOException {
-		driver = GeneralActions.launchBrowser(driver, "chrome");
+		driver = GeneralActions.launchBrowser(driver, "firefox");
 		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
 		imregionelements = PageFactory.initElements(driver, IMRegionElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);

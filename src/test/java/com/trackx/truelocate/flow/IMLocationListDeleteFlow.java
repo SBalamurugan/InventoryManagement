@@ -28,7 +28,7 @@ public class IMLocationListDeleteFlow extends GeneralActions {
 	
 	@BeforeClass
 	public void setUp() throws IOException {
-		driver = GeneralActions.launchBrowser(driver, "chrome");
+		driver = GeneralActions.launchBrowser(driver, "firefox");
 		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
 		imlocationlistelements = PageFactory.initElements(driver, IMLocationListElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);
