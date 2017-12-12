@@ -20,10 +20,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-<<<<<<< HEAD
-=======
+
 import org.openqa.selenium.remote.CapabilityType;
->>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterSuite;

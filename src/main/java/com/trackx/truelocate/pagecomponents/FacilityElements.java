@@ -136,11 +136,6 @@ public class FacilityElements {
 
 	@FindBy(xpath = "//*[@id=\"select2-results-10\"]/li")
 	List<WebElement> list_systemOfMeasurement;
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 	/**
 	 * View Screen Elements
 	 */
@@ -155,11 +150,7 @@ public class FacilityElements {
 
 	@FindBy(xpath = "//*[@id=\"view-form\"]/fieldset[1]/div[1]/section[4]/label[2]")
 	WebElement label_region;
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 	@FindBy(xpath = "//*[@id=\"view-form\"]/fieldset[1]/div[1]/section[5]/label[2]")
 	WebElement label_facilityType;
 
@@ -234,21 +225,12 @@ public class FacilityElements {
 	/**
 	 * Menu Elements
 	 */
-<<<<<<< HEAD
 	@FindBy(xpath = "//*[contains(text(),' Administration')]")
-	WebElement menu_administration;
-
-	@FindBy(linkText = "Facility")
-	WebElement menu_Facility;
-
-=======
-	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[10]/li/a/span")
 	WebElement menu_administration;
 
 	@FindBy(linkText = "Site")
 	WebElement menu_site;
 	
->>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 	/*
 	 * toggle button
 	 */
@@ -373,14 +355,8 @@ public class FacilityElements {
 		try {
 			inAction.buttonClick(driver, menu_administration,
 					"Click button : menu_administration");
-<<<<<<< HEAD
-			ReusableActions.mouseHover(driver, menu_administration);
-			inAction.linkClick(driver, menu_Facility,
-					"Click link: menu_Facility");
-=======
 			inAction.linkClick(driver, menu_site, 
 					"Click link: menu_site");
->>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -473,29 +449,14 @@ public class FacilityElements {
 					"Enter sContact : " + sContact);
 
 			inAction.waitForVisibilityOfElement(driver, txt_email);
-<<<<<<< HEAD
-			inAction.inputText(driver, txt_email, sEmail, "Enter sEmail : "
-					+ sEmail);
-
-			inAction.waitForVisibilityOfElement(driver, txt_latitude);
-=======
 			inAction.inputText(driver, txt_email, sEmail,
 					"Enter sEmail : " + sEmail);
 			
 			/*inAction.waitForVisibilityOfElement(driver, txt_latitude);
->>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
-			inAction.inputText(driver, txt_latitude, sLatitude,
-					"Enter sLatitude : " + sLatitude);
-
-			inAction.waitForVisibilityOfElement(driver, txt_longitude);
-			inAction.inputText(driver, txt_longitude, sLongitude,
-<<<<<<< HEAD
 					"Enter sLongitude : " + sLongitude);
 
-=======
 					"Enter sLongitude : " + sLongitude);*/
 			
->>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 			inAction.waitForVisibilityOfElement(driver, txt_geoFence);
 			inAction.inputText(driver, txt_geoFence, sGeoFence,
 					"Enter sGeoFence : " + sGeoFence);
@@ -545,7 +506,6 @@ public class FacilityElements {
 	 * 
 	 * @param sVerifiedAddress
 	 */
-<<<<<<< HEAD
 	public void clickVerifiedAddress(String sVerifiedAddress) {
 		if (sVerifiedAddress.equalsIgnoreCase("Yes")) {
 			ReusableActions.selectedRadioButton(driver,
@@ -556,11 +516,6 @@ public class FacilityElements {
 					togglebtn_verifiedAddress);
 			ReusableActions.selectedRadioButton(driver,
 					togglebtn_verifiedAddress,
-=======
-	public void clickVerifiedAddress(String sVerifiedAddress){
-		if (sVerifiedAddress.equalsIgnoreCase("No")) {
-			ReusableActions.selectedRadioButton(driver, togglebtn_verifiedAddress,
->>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 					"click toggle button: togglebtn_verifiedAddress");
 		} 
 	}
