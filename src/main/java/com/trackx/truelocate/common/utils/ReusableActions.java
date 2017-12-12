@@ -473,12 +473,15 @@ public class ReusableActions {
 
 			Actions builder = new Actions(driver);
 
-			builder.moveToElement(element).build().perform();
+			builder.moveToElement(element);
+			builder.build();
+			builder.perform();
 
 			log4jlogger.debug("Success : Mouse Over");
 			Reporter.log("Success : Mouse Over");
 
 		} catch (Throwable thr) {
+			System.out.println("*****"+thr);
 			Thread.sleep(2000);
 
 			log4jlogger.debug("Failed : Mouse Over", thr);
@@ -667,9 +670,9 @@ public class ReusableActions {
 		List<WebElement> dropdownvalues = WebElemList;
 		Thread.sleep(1000);
 		try {
-			
 	        for (WebElement option : dropdownvalues) {
 	    		Thread.sleep(1000);
+	    		System.out.println(option.getText()+"=========dropdown values");
 	            if (option.getText().equalsIgnoreCase(dropdownValue)) {
 	            	option.click();
 	                Reporter.log("Success : DropdownSelection");
@@ -677,7 +680,6 @@ public class ReusableActions {
 	            }
 			}
 		} catch (Throwable t) {
-			// Assert.fail();
 			Reporter.log("Failure : DropdownSelection");
 		}
 	}
