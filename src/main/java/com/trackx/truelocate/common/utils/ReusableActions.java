@@ -45,18 +45,10 @@ public class ReusableActions {
 	public static String fsep = System.getProperty("file.separator");
 	private static final Exception NullPointerException = null;
 
+	 
 	/**
-	 * Description: This function clicks a button element.
+	 * MouseHover Action
 	 * 
-	 * @param Webdriver
-	 *            , WebElement, msg
-	 * 
-	 * 
-	 */
-
-	// Clicks on the WebElement
-	/*
-	 * public static void click(WebElement e) { e.click(); }
 	 */
 
 	public static void mousehover(WebElement e) {
@@ -72,7 +64,10 @@ public class ReusableActions {
 
 	}
 
-	// Get the current system time
+	/**
+	 * Get the current system time
+	 * 
+	 */ 
 
 	public static String getCurrentTimeStamp() {
 		SimpleDateFormat CurrentDate = new SimpleDateFormat("MM-dd-yyyy" + "_"
@@ -118,7 +113,16 @@ public class ReusableActions {
 			return false;
 		}
 	}
-
+	
+	/**
+	 * Description: This function clicks a button element.
+	 * 
+	 * @param Webdriver
+	 *            , WebElement, msg
+	 * 
+	 * 
+	 */
+	
 	public void buttonClick(WebDriver driver, WebElement element, String msg) {
 		log4jlogger.debug(msg);
 		try {
@@ -191,7 +195,14 @@ public class ReusableActions {
 			Reporter.log("Failure : DropdownSelection");
 		}
 	}
-
+	
+	/**
+	 * Description:This function sets the value pass in text box
+	 * object.
+	 * 
+	 * @param Webdriver
+	 *            , WebElement, Value, msg
+	 */
 	public void inputText(WebDriver driver, WebElement element,
 			CharSequence value, String msg) {
 		log4jlogger.debug(msg);
@@ -578,7 +589,7 @@ public class ReusableActions {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, timeoutsec);
 			wait.until(ExpectedConditions.visibilityOf(e));
-			System.out.println("*%^$%#$@#!@!#$@%$^$%$" + ExpectedConditions.visibilityOf(e));
+			//System.out.println("*%^$%#$@#!@!#$@%$^$%$" + ExpectedConditions.visibilityOf(e));
 			//Thread.sleep(5000);
 			Reporter.log("Success : Element is  visible");
 		} catch (Throwable t) {

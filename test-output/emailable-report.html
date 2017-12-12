@@ -31,11 +31,18 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<<<<<<< HEAD
 <tr><td style="text-align:left;padding-right:2em">TrackX.truelocate test</td><td class="numi">2</td><td class="numi">2</td><td class="numi">0</td><td class="numi">0</td><td class="numi">132.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+=======
+<tr><td style="text-align:left;padding-right:2em">TrackX.truelocate test</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">67.4 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+>>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">TrackX.truelocate test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="1">com.trackx.truelocate.flow.IMRegionCreateFlow</td><td><a href="#m1"><b>regionCreateFlow</b>  </a></td><td class="numi">1</td><td>1512645766740</td><td class="numi">13102</td></tr>
 <tr><th colspan="4">TrackX.truelocate test &#8212; passed</th></tr>
+<<<<<<< HEAD
 <tr class="passedodd"><td rowspan="2">com.trackx.truelocate.flow.FacilityAdvancedFilterFlow</td><td><a href="#m1"><b>userLogin</b>  </a></td><td class="numi">1</td><td>1512556492597</td><td class="numi">10068</td></tr><tr class="passedodd"><td><a href="#m2"><b>facilityAdvancedFilterFlow</b>  </a></td><td class="numi">1</td><td>1512556502669</td><td class="numi">101645</td></tr>
 </table>
 <h1>TrackX.truelocate test</h1>
@@ -62,11 +69,46 @@ Failed : Element is not visible<br/>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>
 <h2 id="m2">com.trackx.truelocate.flow.FacilityAdvancedFilterFlow:userLogin</h2>
+=======
+<tr class="passedodd"><td rowspan="1">com.trackx.truelocate.flow.IMRegionCreateFlow</td><td><a href="#m2"><b>userclickflow</b>  </a></td><td class="numi">1</td><td>1512645740817</td><td class="numi">25917</td></tr>
+</table>
+<h1>TrackX.truelocate test</h1>
+<h2 id="m1">com.trackx.truelocate.flow.IMRegionCreateFlow:regionCreateFlow</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>Region20000931</td>
+<td>Name20000931</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="2">
+<h3>Test Messages</h3>
+Success : Element is  visible<br/>
+Success : Element is  Clickable<br/>
+Success : Element is  Clickable<br/>
+Success : Element is  visible<br/>
+<h3>Failure</h3>
+<p>expected [Region added successfully] but found [Name already in use, Please enter Unique Name]</p>
+org.testng.Assert.fail(Assert.java:94)
+<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
+<br/>at org.testng.Assert.assertEquals(Assert.java:123)
+<br/>at org.testng.Assert.assertEquals(Assert.java:176)
+<br/>at org.testng.Assert.assertEquals(Assert.java:186)
+<br/>at com.trackx.truelocate.flow.IMRegionCreateFlow.regionCreateFlow(IMRegionCreateFlow.java:86)
+<br/>25 lines not shown
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">com.trackx.truelocate.flow.IMRegionCreateFlow:userclickflow</h2>
+>>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
 <tr class="param stripe"><td>rb.admin@gmail.com</td>
 <td>Test@123</td>
 </tr>
+<tr><td style="padding-left:3em" colspan="2">
+Success : Element is  visible<br/>
+Success : Element is  visible<br/>
+Success : Element is  Clickable<br/>
+</td></tr>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

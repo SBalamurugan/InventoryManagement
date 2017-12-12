@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
@@ -27,12 +28,19 @@ public class CommonElements {
 	/**
 	 * Create screen button
 	 */
-	@FindBy(xpath = "//*[@id=\"edit-form\"]/fieldset[2]/div/section[2]/div/button[1]")
+	@FindBy(xpath= "//*[@id=\"edit-form\"]/fieldset[2]/div/section[1]/div/button[1]")
 	WebElement btn_createorupdate;
 
 	@FindBy(xpath = "//*[@id=\"edit-form\"]/fieldset[2]/div/section[1]/div/button[2]")
 	WebElement btn_cancel;
+<<<<<<< HEAD
 
+=======
+	
+	@FindBy(xpath= "//*[@id='edit-form']/fieldset[2]/div/section[2]/div/button[1]")
+	WebElement btn_update;
+	
+>>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 	/**
 	 * View Screen button
 	 */
@@ -97,6 +105,9 @@ public class CommonElements {
 	WebElement btn_advcancel;
 
 	
+	@FindBy(xpath = "//*[@id='filterSlider']/div/div/form[3]/div/div/div/div[2]/table/tbody/tr/td[1]")
+	WebElement btn_tablecode;
+	
 	/**
 	 * This method used to click create button
 	 */
@@ -123,6 +134,22 @@ public class CommonElements {
 		}
 	}
 
+	/**
+	 * This method used to click update button
+	 */
+	public void clickUpdatebutton(WebDriver driver) {
+		try {
+			inAction.waitForElementToBeClickable(driver, btn_update);
+			inAction.buttonClick(driver, btn_update, 
+					"Click button : btn_update");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
 	/**
 	 * This method used to get the total no of pages in the table
 	 * 
@@ -184,6 +211,7 @@ public class CommonElements {
 	public void clickValue(WebDriver driver, String sValue) {
 		try {
 			System.out.println("#@@@@@@@@@@@@@@@@$" + getTotalNumberOfPages());
+<<<<<<< HEAD
 			aa: for (int i = 1; i <= getTotalNumberOfPages(); i++) {
 				WebElement htmltable = driver
 						.findElement(By
@@ -202,6 +230,25 @@ public class CommonElements {
 					for (WebElement colElement : columns) {
 						System.out.println("%%%%%%%%%%%%%%%%%%"
 								+ colElement.getText());
+=======
+			aa:
+			for (int i = 1; i <= getTotalNumberOfPages(); i++) {
+
+				WebElement htmltable = driver.findElement(By
+					.xpath("//*[@id='filterSlider']/div/div/form[3]/div/div/div/div[2]/table/tbody"));
+				WebDriverWait wait = new WebDriverWait(driver, 30);
+				wait.until(ExpectedConditions.visibilityOf(htmltable));
+				List<WebElement> rows = htmltable.findElements(By.tagName("tr"));
+				Thread.sleep(4000);
+				for (WebElement rowElement : rows){
+					Thread.sleep(4000);
+					List<WebElement> columns = rowElement.findElements(By
+						.tagName("td"));
+					Thread.sleep(4000);
+			
+					for (WebElement colElement : columns){
+						System.out.println("%%%%%%%%%%%%%%%%%%" + colElement.getText());
+>>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 						Thread.sleep(1000);
 						if (colElement.getText().equalsIgnoreCase(sValue)) {
 							Thread.sleep(1000);
@@ -302,6 +349,7 @@ public class CommonElements {
 			e.printStackTrace();
 		}
 	}
+<<<<<<< HEAD
 
 	/**
 	 * This method used to click the advanced filter search button
@@ -361,6 +409,23 @@ public class CommonElements {
 			inAction.buttonClick(driver, btn_advopenclose, "Click button : btn_advopenclose");
 		} catch (Exception e) {
 			e.printStackTrace();
+=======
+	/**
+	 * This method used to validate global search/advance search filter results
+	 * 
+	 * @param sValue
+	 */
+	public boolean filtetResultValidation(String sValue) throws InterruptedException {
+		System.out.println("Msg:" + btn_tablecode.getText());
+		Thread.sleep(1000);
+		String searchresult = btn_tablecode.getText();
+		if (searchresult.equalsIgnoreCase(sValue)) {
+			Assert.assertEquals(searchresult, sValue);
+			return true;
+		} else {
+			Assert.assertNotEquals(searchresult, sValue);
+			return false;
+>>>>>>> 62e01ae6a203c1dfb7af108bf654b3bf768435d2
 		}
 	}
 }

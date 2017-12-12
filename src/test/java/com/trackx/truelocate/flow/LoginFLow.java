@@ -34,7 +34,6 @@ public class LoginFLow extends GeneralActions {
 	 * Login Checkout Flow Test Script
 	 */
 
-	
 	@Test(priority=1,dataProviderClass=Truelocatelogin.class, dataProvider="getData")
 	public void LoginFlow(String sUsername,String sPassword) throws Exception {
 		try{

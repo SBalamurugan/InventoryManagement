@@ -1,9 +1,21 @@
 package com.trackx.truelocate.pagecomponents;
 
+import java.util.List;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
 import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
@@ -37,12 +49,25 @@ public class IMRegionElements {
 	/**
 	 * Menu Elements
 	 */
-	@FindBy(xpath = "//*[@id='menuField']/ul[11]/li/a/span")
+	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[10]/li/a/span") 
 	WebElement menu_administration;
+	
+	@FindBy(xpath = "//*[contains(text(),' Administration')]")
+	 WebElement menu_administration1;
 
-	@FindBy(linkText = "Region")
+	@FindBy(linkText ="Region")
 	WebElement menu_region;
-
+	
+	/**
+	 * Edit Elements
+	 */
+	
+	@FindBy(xpath = "//*[@id=\"wid-id-0\"]/header/div/div/ul[2]/li[4]")
+	WebElement btn_pageNext;
+	
+	@FindBy(className = "pageNo")
+	WebElement pageCount;
+	
 	public IMRegionElements(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -53,35 +78,65 @@ public class IMRegionElements {
 	 */
 	public void menuClick() {
 		try {
+			//inAction.waitForVisibilityOfElement(driver, menu_administration);
 			inAction.buttonClick(driver, menu_administration,
-					"Click button : menu_inventory");
-			inAction.buttonClick(driver, menu_region,
-					"Click button : menu_masterData");
-
+					"Click button : menu_administration");
+		    inAction.waitForVisibilityOfElement(driver, menu_region);
+			inAction.linkClick(driver, menu_region,
+					"Click link : menu_region");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+	
 	/**
-	 * This method used to create Region
+	 * This method used to create/edit Region
 	 * 
 	 * @param sCode
-	 * @param sName
-	 * @param sDescription
+	 * @param sName 
 	 */
 	public void enterRegionInfo(String sCode, String sName) {
 		try {
-			// inAction.waitForVisibilityOfElement(driver, txt_code);
-			inAction.inputText(driver, txt_code, sCode, "Enter sCode : "
-					+ sCode);
-			// inAction.waitForVisibilityOfElement(driver, txt_name);
-			inAction.inputText(driver, txt_name, sName, "Enter sFirstname : "
-					+ sName);
-
+			//inAction.waitForVisibilityOfElement(driver, txt_code);
+			inAction.inputText(driver, txt_code, sCode,
+					"Enter sCode : " + sCode);
+			//inAction.waitForVisibilityOfElement(driver, txt_name);
+			inAction.inputText(driver, txt_name, sName,
+					"Enter sFirstname : " + sName);
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
 }
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+

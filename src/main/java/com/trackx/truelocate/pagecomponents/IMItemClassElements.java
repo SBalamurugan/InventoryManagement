@@ -49,10 +49,10 @@ public class IMItemClassElements {
 	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/a/span")
 	WebElement menu_inventory;
 
-	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/ul/li[4]/a")
+	@FindBy(xpath = "//*[@id='menuField']/ul[2]/li/ul/li[2]/a")
 	WebElement menu_masterData;
 	
-	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[2]/li/ul/li[4]/ul/li[1]/a")
+	@FindBy(linkText = "Item Class")
 	WebElement menu_itemClass;
 	
 	public IMItemClassElements(WebDriver driver) {
@@ -69,7 +69,7 @@ public class IMItemClassElements {
 					"Click button : menu_inventory");
 			inAction.buttonClick(driver, menu_masterData, 
 					"Click button : menu_masterData");
-			inAction.buttonClick(driver, menu_itemClass, 
+			inAction.linkClick(driver, menu_itemClass, 
 					"Click button : menu_itemClass");
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -26,7 +26,7 @@ public class IMRegionCreateFlow extends GeneralActions {
 
 	@BeforeClass
 	public void setUp() throws IOException {
-		driver = GeneralActions.launchBrowser(driver, "chrome");
+		driver = GeneralActions.launchBrowser(driver, "ie");
 		truelocatelogin = PageFactory.initElements(driver,
 				Truelocatelogin.class);
 		imregionelements = PageFactory.initElements(driver,

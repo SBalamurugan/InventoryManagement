@@ -27,7 +27,7 @@ public class FacilityCreateFlow extends GeneralActions {
 	
 	@BeforeClass
 	public void setUp() throws IOException {
-		driver = GeneralActions.launchBrowser(driver, "chrome");
+		driver = GeneralActions.launchBrowser(driver, "ie");
 		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
 		facilityElements = PageFactory.initElements(driver, FacilityElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);
@@ -89,11 +89,13 @@ public class FacilityCreateFlow extends GeneralActions {
 			String alertMessage = commonElements.alertMessage(driver);
 			Assert.assertEquals(alertMessage, constants.add_facility_successmsg);
 			if (alertMessage.equalsIgnoreCase(constants.add_facility_successmsg)) {
-				TestNGResults.put("3", new Object[] { "Facility screen",
+				TestNGResults.put("4", new Object[] { "Facility screen",
 						"Facility added successfully", "Pass" });
+				Assert.assertEquals(alertMessage, constants.add_facility_successmsg);
 			} else {
-				TestNGResults.put("3", new Object[] { "Facility screen",
+				TestNGResults.put("4", new Object[] { "Facility screen",
 						"Facility not created", "Fail" });
+				Assert.assertEquals(alertMessage, constants.add_facility_successmsg);
 			}
 		}
 		catch (Exception e) {

@@ -74,11 +74,11 @@ public class IMIdentifierCreateFlow extends GeneralActions {
 			ReusableActions.takeSnapshot(driver, className);
 			String alertMessage = commonElements.alertMessage(driver);
 			if (alertMessage.equalsIgnoreCase(constants.add_identifier_type_successmsg)) {
-				TestNGResults.put("6", new Object[] { "Item Type screen",
+				TestNGResults.put("8", new Object[] { "Item Type screen",
 						"Item Type added successfully", "Pass" });
 				Assert.assertEquals(alertMessage, constants.add_identifier_type_successmsg);
 			} else {
-				TestNGResults.put("6", new Object[] { "Item Type screen",
+				TestNGResults.put("8", new Object[] { "Item Type screen",
 						"Item Type not created", "Fail" });
 				Assert.assertEquals(alertMessage, constants.add_identifier_type_successmsg);
 			}
