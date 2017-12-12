@@ -4,16 +4,16 @@
 <test name="TrackX.truelocate test">
     <classes>
     
-     <class name="com.trackx.truelocate.flow.IMRegionCreateFlow"/> 
-  <!--   <class name="com.trackx.truelocate.flow.FacilityCreateFlow"/>  
+     <class name="com.trackx.truelocate.flow.IMRegionCreateFlow"/>  
+   <!--  <class name="com.trackx.truelocate.flow.FacilityCreateFlow"/>  
       <class name="com.trackx.truelocate.flow.IMLocationListCreateFlow"/>   
          <class name="com.trackx.truelocate.flow.IMItemClassCreateFlow"/>  
          <class name="com.trackx.truelocate.flow.IMItemTypeCreateFlow"/>  
            <class name="com.trackx.truelocate.flow.IMIdentifierCreateFlow"/>  
              <class name="com.trackx.truelocate.flow.IMItemCreateFlow"/>  
-               <class name="com.trackx.truelocate.flow.IMProvisionCreateFlow"/>  
-          <class name="com.trackx.truelocate.flow.IMRegionEditFlow"/>   
-              <class name="com.trackx.truelocate.flow.FacilityEditFlow"/> 
+               <class name="com.trackx.truelocate.flow.IMProvisionCreateFlow"/> 
+           <class name="com.trackx.truelocate.flow.IMRegionEditFlow"/>   
+           <class name="com.trackx.truelocate.flow.FacilityEditFlow"/> 
            <class name="com.trackx.truelocate.flow.IMItemClassEditFlow"/>  
           <class name="com.trackx.truelocate.flow.IMIdentifierEditFlow"/> 
                 <class name="com.trackx.truelocate.flow.IMItemTypeEditFlow"/> 
@@ -23,9 +23,9 @@
                 <class name="com.trackx.truelocate.flow.FacilityDeleteFlow"/>  
               <class name="com.trackx.truelocate.flow.IMLocationListDeleteFlow"/>   
               <class name="com.trackx.truelocate.flow.IMItemClassDeleteFlow"/>  
-              <class name="com.trackx.truelocate.flow.IMIdentifierDeleteFlow"/> 
-             <class name="com.trackx.truelocate.flow.IMItemTypeDeleteFlow"/>   -->
-         <!--   <class name="com.trackx.truelocate.flow.RegionGlobalFilterFlow"/>  -->
+              <class name="com.trackx.truelocate.flow.IMIdentifierDeleteFlow"/>
+             <class name="com.trackx.truelocate.flow.IMItemTypeDeleteFlow"/>   
+           <class name="com.trackx.truelocate.flow.RegionGlobalFilterFlow"/>  -->
          
      </classes>
 
