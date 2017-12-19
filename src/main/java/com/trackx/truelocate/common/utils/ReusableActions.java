@@ -671,8 +671,7 @@ public class ReusableActions {
 		Thread.sleep(10000);
 		try {
 	        for (WebElement option : dropdownvalues) {
-	    		Thread.sleep(10000);
-	    		System.out.println(option.getText()+"=========dropdown values");
+	    		Thread.sleep(5000);
 	            if (option.getText().equalsIgnoreCase(dropdownValue)) {
 	            	option.click();
 	                Reporter.log("Success : DropdownSelection");

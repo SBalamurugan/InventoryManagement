@@ -58,6 +58,18 @@ public class IMItemTypeElements {
 	@FindBy(linkText = "Item Type")
 	WebElement menu_itemType;
 	
+	/**
+	 * Advanced Filter Elements
+	 */
+	@FindBy(id="filtercode")
+	WebElement txt_filterCode;
+	
+	@FindBy(id="filtername")
+	WebElement txt_filterName;
+	
+	@FindBy(id="filterDescription")
+	WebElement txt_filterDescription;
+	
 	public IMItemTypeElements(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -97,6 +109,29 @@ public class IMItemTypeElements {
 			inAction.waitForVisibilityOfElement(driver, txt_description);
 			inAction.inputText(driver, txt_description, sDescription,
 					"Enter sLastname : " + sDescription);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * This method used to enter the value in the advanced filter screen
+	 * 
+	 * @param sCode
+	 * @param sName
+	 * @param sDescription
+	 */
+	public void enterAdvancedFilterInfo(String sCode, String sName, String sDescription) {
+		try {
+			inAction.waitForVisibilityOfElement(driver, txt_filterCode);
+			inAction.inputText(driver, txt_filterCode, sCode,
+					"Enter sCode : " + sCode);
+			inAction.waitForVisibilityOfElement(driver, txt_filterName);
+			inAction.inputText(driver, txt_filterName, sName,
+					"Enter sName : " + sName);
+			inAction.waitForVisibilityOfElement(driver, txt_description);
+			inAction.inputText(driver, txt_filterDescription, sDescription,
+					"Enter sDescription : " + sDescription);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

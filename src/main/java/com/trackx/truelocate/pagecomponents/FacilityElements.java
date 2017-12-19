@@ -136,6 +136,7 @@ public class FacilityElements {
 
 	@FindBy(xpath = "//*[@id=\"select2-results-10\"]/li")
 	List<WebElement> list_systemOfMeasurement;
+	
 	/**
 	 * View Screen Elements
 	 */
@@ -156,6 +157,8 @@ public class FacilityElements {
 
 	@FindBy(xpath = "//*[@id=\"view-form\"]/fieldset[1]/div[1]/section[6]/label[2]")
 	WebElement label_applicationType;
+	
+	
 	/**
 	 * View Address Section
 	 */
@@ -231,7 +234,7 @@ public class FacilityElements {
 	@FindBy(linkText = "Site")
 	WebElement menu_site;
 	
-	/*
+	/**
 	 * toggle button
 	 */
 	@FindBy(id = "inventoryManaged")
@@ -260,7 +263,6 @@ public class FacilityElements {
 
 	@FindBy(id = "s2id_autogen12")
 	WebElement adv_facilitydropdown;
-
 	
 	@FindBy(xpath = "//*[@id=\"select2-drop\"]/ul/li")
 	List<WebElement> adv_failityList;
@@ -286,7 +288,7 @@ public class FacilityElements {
 
 	@FindBy(xpath = "//*[@id=\"advFilter\"]/fieldset[1]/div/section[8]/div/label[1]/span")
 	WebElement adv_vaBoth;
-	
+
 	@FindBy(xpath = "//*[@id=\"advFilter\"]/fieldset[1]/div/section[8]/div/label[1]/input")
 	WebElement adv_vaBothChecked;
 
@@ -353,8 +355,8 @@ public class FacilityElements {
 	 */
 	public void menuClick() {
 		try {
-			inAction.buttonClick(driver, menu_administration,
-					"Click button : menu_administration");
+/*			inAction.buttonClick(driver, menu_administration,
+					"Click button : menu_administration");*/
 			inAction.linkClick(driver, menu_site, 
 					"Click link: menu_site");
 		} catch (Exception e) {
@@ -362,6 +364,13 @@ public class FacilityElements {
 		}
 	}
 
+	public void adminMenuClick() {
+		try {
+			commonElements.clickMenu(driver, "Administration");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	/**
 	 * This method used to click the facility info
 	 * 

@@ -1,6 +1,5 @@
 package com.trackx.truelocate.pagecomponents;
 
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,6 +54,18 @@ public class IMItemClassElements {
 	@FindBy(linkText = "Item Class")
 	WebElement menu_itemClass;
 	
+	/**
+	 * Advanced Filter Elements
+	 */
+	@FindBy(id="filtercode")
+	WebElement txt_filterCode;
+	
+	@FindBy(id="filtername")
+	WebElement txt_filterName;
+	
+	@FindBy(id="filterDescription")
+	WebElement txt_filterDescription;
+	
 	public IMItemClassElements(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -94,6 +105,28 @@ public class IMItemClassElements {
 			inAction.waitForVisibilityOfElement(driver, txt_description);
 			inAction.inputText(driver, txt_description, sDescription,
 					"Enter sLastname : " + sDescription);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}	
+	/**
+	 * This method used to enter the value in the advanced filter screen
+	 * 
+	 * @param sCode
+	 * @param sName
+	 * @param sDescription
+	 */
+	public void enterAdvancedFilterInfo(String sCode, String sName, String sDescription) {
+		try {
+			inAction.waitForVisibilityOfElement(driver, txt_filterCode);
+			inAction.inputText(driver, txt_filterCode, sCode,
+					"Enter sCode : " + sCode);
+			inAction.waitForVisibilityOfElement(driver, txt_filterName);
+			inAction.inputText(driver, txt_filterName, sName,
+					"Enter sName : " + sName);
+			inAction.waitForVisibilityOfElement(driver, txt_description);
+			inAction.inputText(driver, txt_filterDescription, sDescription,
+					"Enter sDescription : " + sDescription);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

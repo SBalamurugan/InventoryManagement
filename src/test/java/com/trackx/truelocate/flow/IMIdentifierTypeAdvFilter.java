@@ -13,33 +13,35 @@ import com.trackx.truelocate.common.utils.Constants;
 import com.trackx.truelocate.common.utils.GeneralActions;
 import com.trackx.truelocate.common.utils.ReusableActions;
 import com.trackx.truelocate.pagecomponents.CommonElements;
-import com.trackx.truelocate.pagecomponents.FacilityElements;
+import com.trackx.truelocate.pagecomponents.IMIdentifierTypeElements;
 import com.trackx.truelocate.pagecomponents.Truelocatelogin;
 
-public class FacilityAdvancedFilterFlow extends GeneralActions{
+public class IMIdentifierTypeAdvFilter extends GeneralActions {
 	WebDriver driver;
 	Truelocatelogin truelocatelogin;
-	FacilityElements facilityElements;
 	CommonElements commonElements;
+	IMIdentifierTypeElements imIdentifierTypeElements;
 	Constants constants = new Constants();
 	String className = this.getClass().getSimpleName();
-	
+
 	@BeforeClass
 	public void setUp() throws IOException {
-		driver = GeneralActions.launchBrowser(driver, "Firefox");
-		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
-		facilityElements = PageFactory.initElements(driver, FacilityElements.class);
+		driver = GeneralActions.launchBrowser(driver, "chrome");
+		truelocatelogin = PageFactory.initElements(driver,
+				Truelocatelogin.class);
+		imIdentifierTypeElements = PageFactory.initElements(driver,
+				IMIdentifierTypeElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);
 		ReusableActions.loadPropFileValues();
-		ReusableActions.openUrl(driver, ReusableActions.getPropFileValues("Url"));
+		ReusableActions.openUrl(driver,
+				ReusableActions.getPropFileValues("Url"));
 	}
 
 	/**
 	 * Login Script
-     */
+	 */
 	@Test(priority = 1, dataProviderClass = Truelocatelogin.class, dataProvider = "getData")
-	public void userLogin(String sUsername, String sPassword)
-			throws Exception {
+	public void userLogin(String sUsername, String sPassword) throws Exception {
 		try {
 
 			truelocatelogin.enterUsernamepassword(sUsername, sPassword);
@@ -48,7 +50,7 @@ public class FacilityAdvancedFilterFlow extends GeneralActions{
 			if (truelocatelogin.pageTitleValidation()) {
 				TestNGResults.put("2", new Object[] { "Login screen",
 						"Login successful", "Pass" });
-			}else {
+			} else {
 				TestNGResults.put("2", new Object[] { "Login screen",
 						"Login Failed", "Fail" });
 			}
@@ -56,31 +58,45 @@ public class FacilityAdvancedFilterFlow extends GeneralActions{
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
-	 * Facility Advanced Filter Search
+	 * Identifier Type Advanced Filter Functionality
+	 * 
+	 * @param sCode
+	 * @param sName
+	 * @param sDescription
+	 * @param sIsRFID
+	 * @param sProtocol
+	 * @throws Exception
 	 */
 	@Test(priority = 2, dataProvider = "filterData")
-	public void facilityAdvancedFilterFlow(String sCode, String sName, String sFacilityType, 
-			String sTimeZone, String sSystemofMeasurement, String sCity, String sState,
-			String sVerifiedAddress, String sShipFrom, String sShipTo)throws Exception {
+	public void identifierTypeAdvFilterFlow(String sCode, String sName,
+			String sIsRFID, String sProtocol, String sFromDate, String
+			sToDate) throws Exception {
 		try {
-			facilityElements.adminMenuClick();
-			facilityElements.menuClick();
+			imIdentifierTypeElements.menuClick();
 			ReusableActions.takeSnapshot(driver, className);
 			commonElements.clickAdvancedFilterOpen(driver);
 			ReusableActions.takeSnapshot(driver, className);
-			facilityElements.enterAdvancedFilterInfo(sCode, sName, sFacilityType, sTimeZone, 
-					sSystemofMeasurement, sCity, sState, sVerifiedAddress, sShipFrom, sShipTo);
+			imIdentifierTypeElements.enterAdvancedFilterInfo(sCode, sName,
+					sIsRFID, sProtocol, sFromDate, sToDate);
 			ReusableActions.takeSnapshot(driver, className);
 			commonElements.clickAdvancedSearch(driver);
 			ReusableActions.takeSnapshot(driver, className);
-		}
-		catch (Exception e) {
+			if (commonElements.filtetResultValidation(sCode)) {
+				TestNGResults.put("24", new Object[] {
+						"Identifier Type Advance Filter",
+						"Identifier Type Advance Filter successful", "Pass" });
+			} else {
+				TestNGResults.put("24", new Object[] {
+						"Identifier Type Advance Filter",
+						"Identifier Type Advance Filter", "Fail" });
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@AfterClass
 	public void quitDriver() {
 		try {
@@ -90,9 +106,9 @@ public class FacilityAdvancedFilterFlow extends GeneralActions{
 			e.printStackTrace();
 		}
 	}
-	
+
 	@DataProvider
 	public static Object[][] filterData() {
-		return GeneralActions.getData("FacilityAdvancedFilter");
+		return GeneralActions.getData("IdentifierTypeAdvFilter");
 	}
 }
