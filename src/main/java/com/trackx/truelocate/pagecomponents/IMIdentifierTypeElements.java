@@ -2,6 +2,7 @@ package com.trackx.truelocate.pagecomponents;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,7 +31,8 @@ public class IMIdentifierTypeElements {
 	@FindBy(id="createName")
 	WebElement txt_name;
 	
-		
+	@FindBy(id="isRfid-checkbox")
+	WebElement toggselection_RFID;
 	
 	@FindBy(className="onoffswitch-switch")
 	WebElement togglebutton_RFID;
@@ -112,26 +114,30 @@ public class IMIdentifierTypeElements {
 			inAction.waitForVisibilityOfElement(driver,txt_name);
 			inAction.inputText(driver, txt_name, sName,
 					"Enter sFirstname : " + sName);	
-			System.out.println("CheckRFIDStatus" + sRFID);	
-			
-			if(sRFID.equalsIgnoreCase("Yes")){		
-				clickToggleButton();
-				Thread.sleep(1000);
-				selectProtocol(sProtocol);
+			clickRFID(sRFID);
+		    selectProtocol(sProtocol);
 			}
-		} catch (Exception e) {
+		 catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	public void clickToggleButton() {
-		inAction.waitForElementToBeClickable(driver, togglebutton_RFID);
-		inAction.buttonClick(driver, togglebutton_RFID, 
-				"Click button : togglebutton_RFID");	
+		
+	/**
+	 * This method used to click RFID toggle button
+	 * 
+	 * @param sRFID
+	 */
+	public void clickRFID(String sRFID) {
+		boolean boovar = ReusableActions
+				.isElementSelected(toggselection_RFID);
+		String str = String.valueOf(boovar);
+		if (!sRFID.equalsIgnoreCase(str)
+				& StringUtils.isNotBlank(sRFID)) {
+			inAction.waitForVisibilityOfElement(driver, togglebutton_RFID);
+			ReusableActions.selectedRadioButton(driver, togglebutton_RFID,
+					"click toggle button: togglebutton_RFID");
 		}
-	
-
+	}
 	/**
 	 * This method used to select the protocol
 	 * 

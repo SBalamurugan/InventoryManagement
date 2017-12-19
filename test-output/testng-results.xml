@@ -14,6 +14,24 @@
       <![CDATA[Success : Element is  visible]]>
     </line>
     <line>
+      <![CDATA[Success : Element is  Clickable]]>
+    </line>
+    <line>
+      <![CDATA[Success : DropdownSelection]]>
+    </line>
+    <line>
+      <![CDATA[Success : Element is  Clickable]]>
+    </line>
+    <line>
+      <![CDATA[Success : DropdownSelection]]>
+    </line>
+    <line>
+      <![CDATA[Success : Element is  Clickable]]>
+    </line>
+    <line>
+      <![CDATA[Success : DropdownSelection]]>
+    </line>
+    <line>
       <![CDATA[Success : Element is  visible]]>
     </line>
     <line>
@@ -21,58 +39,25 @@
     </line>
     <line>
       <![CDATA[Success : Element is  Clickable]]>
-    </line>
-    <line>
-      <![CDATA[Failure : DropdownSelection]]>
-    </line>
-    <line>
-      <![CDATA[Success : Element is  Clickable]]>
-    </line>
-    <line>
-      <![CDATA[Success : Element is  Clickable]]>
-    </line>
-    <line>
-      <![CDATA[Success : Element is  visible]]>
-    </line>
-    <line>
-      <![CDATA[Success : Element is  visible]]>
-    </line>
-    <line>
-      <![CDATA[Success : Element is  visible]]>
-    </line>
-    <line>
-      <![CDATA[Select the respective element]]>
-    </line>
-    <line>
-      <![CDATA[Success : Element is  visible]]>
-    </line>
-    <line>
-      <![CDATA[Select the respective element]]>
-    </line>
-    <line>
-      <![CDATA[Success : Element is  visible]]>
-    </line>
-    <line>
-      <![CDATA[Select the respective element]]>
     </line>
     <line>
       <![CDATA[Success : Element is  visible]]>
     </line>
   </reporter-output>
-  <suite name="TrackX.truelocate Suite" duration-ms="168208" started-at="2017-12-12T11:55:32Z" finished-at="2017-12-12T11:58:20Z">
+  <suite name="TrackX.truelocate Suite" duration-ms="76352" started-at="2017-12-19T11:23:29Z" finished-at="2017-12-19T11:24:46Z">
     <groups>
     </groups>
-    <test name="TrackX.truelocate test" duration-ms="168208" started-at="2017-12-12T11:55:32Z" finished-at="2017-12-12T11:58:20Z">
-      <class name="com.trackx.truelocate.flow.FacilityAdvancedFilterFlow">
-        <test-method status="PASS" signature="excelCreation()[pri:0, instance:com.trackx.truelocate.flow.FacilityAdvancedFilterFlow@7a419da4]" name="excelCreation" is-config="true" duration-ms="303" started-at="2017-12-12T17:25:31Z" finished-at="2017-12-12T17:25:32Z">
+    <test name="TrackX.truelocate GlobalFilterFlow" duration-ms="76352" started-at="2017-12-19T11:23:29Z" finished-at="2017-12-19T11:24:46Z">
+      <class name="com.trackx.truelocate.flow.ProvisionAdvancedFilterFlow">
+        <test-method status="PASS" signature="excelCreation()[pri:0, instance:com.trackx.truelocate.flow.ProvisionAdvancedFilterFlow@4a7f959b]" name="excelCreation" is-config="true" duration-ms="202" started-at="2017-12-19T16:53:29Z" finished-at="2017-12-19T16:53:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- excelCreation -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.FacilityAdvancedFilterFlow@7a419da4]" name="setUp" is-config="true" duration-ms="10589" started-at="2017-12-12T17:25:32Z" finished-at="2017-12-12T17:25:42Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.trackx.truelocate.flow.ProvisionAdvancedFilterFlow@4a7f959b]" name="setUp" is-config="true" duration-ms="17913" started-at="2017-12-19T16:53:29Z" finished-at="2017-12-19T16:53:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="userLogin(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.FacilityAdvancedFilterFlow@7a419da4]" name="userLogin" duration-ms="20530" started-at="2017-12-12T17:25:42Z" data-provider="getData" finished-at="2017-12-12T17:26:03Z">
+        <test-method status="PASS" signature="userLogin(java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.ProvisionAdvancedFilterFlow@4a7f959b]" name="userLogin" duration-ms="17576" started-at="2017-12-19T16:53:47Z" data-provider="getData" finished-at="2017-12-19T16:54:05Z">
           <params>
             <param index="0">
               <value>
@@ -97,56 +82,46 @@
             </line>
           </reporter-output>
         </test-method> <!-- userLogin -->
-        <test-method status="PASS" signature="facilityAdvancedFilterFlow(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.FacilityAdvancedFilterFlow@7a419da4]" name="facilityAdvancedFilterFlow" duration-ms="130161" started-at="2017-12-12T17:26:03Z" data-provider="filterData" finished-at="2017-12-12T17:28:13Z">
+        <test-method status="PASS" signature="facilityAdvancedFilterFlow(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.trackx.truelocate.flow.ProvisionAdvancedFilterFlow@4a7f959b]" name="facilityAdvancedFilterFlow" duration-ms="33003" started-at="2017-12-19T16:54:05Z" data-provider="filterData" finished-at="2017-12-19T16:54:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[1056000.0]]>
+                <![CDATA[TEST00111]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[A B C SHIPPING SUPPL]]>
+                <![CDATA[TEST00111]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Customer]]>
+                <![CDATA[CICERO]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[ACT]]>
+                <![CDATA[CICERO]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[US]]>
+                <![CDATA[Rack2121]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[]]>
+                <![CDATA[Rack2121]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[]]>
+                <![CDATA[12-05-2017]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[yes]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[yes]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[yes]]>
+                <![CDATA[12-06-2017]]>
               </value>
             </param>
           </params>
@@ -155,6 +130,24 @@
               <![CDATA[Success : Element is  visible]]>
             </line>
             <line>
+              <![CDATA[Success : Element is  Clickable]]>
+            </line>
+            <line>
+              <![CDATA[Success : DropdownSelection]]>
+            </line>
+            <line>
+              <![CDATA[Success : Element is  Clickable]]>
+            </line>
+            <line>
+              <![CDATA[Success : DropdownSelection]]>
+            </line>
+            <line>
+              <![CDATA[Success : Element is  Clickable]]>
+            </line>
+            <line>
+              <![CDATA[Success : DropdownSelection]]>
+            </line>
+            <line>
               <![CDATA[Success : Element is  visible]]>
             </line>
             <line>
@@ -162,54 +155,21 @@
             </line>
             <line>
               <![CDATA[Success : Element is  Clickable]]>
-            </line>
-            <line>
-              <![CDATA[Failure : DropdownSelection]]>
-            </line>
-            <line>
-              <![CDATA[Success : Element is  Clickable]]>
-            </line>
-            <line>
-              <![CDATA[Success : Element is  Clickable]]>
-            </line>
-            <line>
-              <![CDATA[Success : Element is  visible]]>
-            </line>
-            <line>
-              <![CDATA[Success : Element is  visible]]>
-            </line>
-            <line>
-              <![CDATA[Success : Element is  visible]]>
-            </line>
-            <line>
-              <![CDATA[Select the respective element]]>
-            </line>
-            <line>
-              <![CDATA[Success : Element is  visible]]>
-            </line>
-            <line>
-              <![CDATA[Select the respective element]]>
-            </line>
-            <line>
-              <![CDATA[Success : Element is  visible]]>
-            </line>
-            <line>
-              <![CDATA[Select the respective element]]>
             </line>
             <line>
               <![CDATA[Success : Element is  visible]]>
             </line>
           </reporter-output>
         </test-method> <!-- facilityAdvancedFilterFlow -->
-        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.FacilityAdvancedFilterFlow@7a419da4]" name="quitDriver" is-config="true" duration-ms="6792" started-at="2017-12-12T17:28:13Z" finished-at="2017-12-12T17:28:20Z">
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.trackx.truelocate.flow.ProvisionAdvancedFilterFlow@4a7f959b]" name="quitDriver" is-config="true" duration-ms="7793" started-at="2017-12-19T16:54:38Z" finished-at="2017-12-19T16:54:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.trackx.truelocate.flow.FacilityAdvancedFilterFlow@7a419da4]" name="suiteTearDown" is-config="true" duration-ms="95" started-at="2017-12-12T17:28:20Z" finished-at="2017-12-12T17:28:20Z">
+        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:com.trackx.truelocate.flow.ProvisionAdvancedFilterFlow@4a7f959b]" name="suiteTearDown" is-config="true" duration-ms="153" started-at="2017-12-19T16:54:46Z" finished-at="2017-12-19T16:54:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteTearDown -->
-      </class> <!-- com.trackx.truelocate.flow.FacilityAdvancedFilterFlow -->
-    </test> <!-- TrackX.truelocate test -->
+      </class> <!-- com.trackx.truelocate.flow.ProvisionAdvancedFilterFlow -->
+    </test> <!-- TrackX.truelocate GlobalFilterFlow -->
   </suite> <!-- TrackX.truelocate Suite -->
 </testng-results>

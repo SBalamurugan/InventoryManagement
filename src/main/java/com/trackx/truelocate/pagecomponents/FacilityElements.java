@@ -234,6 +234,9 @@ public class FacilityElements {
 	/*
 	 * toggle button
 	 */
+	@FindBy(id = "verifiedAddress")
+	WebElement toggleselection_verifiedAddress;
+	
 	@FindBy(id = "inventoryManaged")
 	WebElement toggleselection_inventory;
 
@@ -507,17 +510,15 @@ public class FacilityElements {
 	 * @param sVerifiedAddress
 	 */
 	public void clickVerifiedAddress(String sVerifiedAddress) {
-		if (sVerifiedAddress.equalsIgnoreCase("Yes")) {
-			ReusableActions.selectedRadioButton(driver,
-					togglebtn_verifiedAddress,
-					"click toggle button: togglebtn_verifiedAddress");
-		} else {
-			inAction.waitForVisibilityOfElement(driver,
-					togglebtn_verifiedAddress);
-			ReusableActions.selectedRadioButton(driver,
-					togglebtn_verifiedAddress,
-					"click toggle button: togglebtn_verifiedAddress");
-		} 
+		boolean boovar = ReusableActions
+				.isElementSelected(toggleselection_verifiedAddress);
+		String str = String.valueOf(boovar);
+		if (!sVerifiedAddress.equalsIgnoreCase(str)
+				& StringUtils.isNotBlank(sVerifiedAddress)) {
+			inAction.waitForVisibilityOfElement(driver, togglebtn_verifiedAddress);
+			ReusableActions.selectedRadioButton(driver, togglebtn_verifiedAddress,
+					"click toggle button: sVerifiedAddress");
+		}
 	}
 
 	/**

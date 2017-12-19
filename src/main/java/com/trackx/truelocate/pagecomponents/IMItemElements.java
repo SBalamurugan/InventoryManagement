@@ -2,6 +2,7 @@ package com.trackx.truelocate.pagecomponents;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -67,13 +68,21 @@ public class IMItemElements {
 	@FindBy(xpath = "//*[@id=\"select2-results-6\"]/li")
 	List<WebElement> list_inventorytype;
 	
+	@FindBy(id = "inventoryTracked")
+    WebElement toggleselection_inventory;
+	
 	@FindBy(xpath = "//*[@id='edit-form']/fieldset[1]/div[2]/section[2]/span/label/span[2]")
     WebElement togglebutton_inventory;
+	
+	@FindBy(id = "active")
+    WebElement toggleselection_active;
 	
 	@FindBy(xpath = "//*[@id='edit-form']/fieldset[1]/div[2]/section[3]/span/label/span[2]")
     WebElement togglebutton_active;
 	
-
+	@FindBy(id = "consumable")
+    WebElement toggleselection_consumable;
+	
 	@FindBy(xpath = "//*[@id='edit-form']/fieldset[1]/div[2]/section[4]/span/label/span[2]")
     WebElement togglebutton_consumable;
 	
@@ -97,8 +106,14 @@ public class IMItemElements {
 	@FindBy(id = "createCaseUpc")
 	WebElement txt_caseUPC;
 	
+	@FindBy(id = "conveyance-checkbox")
+    WebElement toggleselection_conveyance;
+	
 	@FindBy(xpath = "//*[@id='Identification_detailsCreate']/div[2]/section[2]/span/label/span[2]")
     WebElement togglebutton_conveyance;
+	
+	@FindBy(id = "trackedByBatch")
+    WebElement toggleselection_batchcode;
 	
 	@FindBy(xpath = "//*[@id='Identification_detailsCreate']/div[2]/section[3]/span/label/span[2]")
     WebElement togglebutton_batchcode;
@@ -520,8 +535,13 @@ public class IMItemElements {
  * This method used to click the Inventory toggle button
  * @param sInventory
  */
-public void clickInventory(String sInventory){
-	if (sInventory.equalsIgnoreCase("No")) {
+	
+public void clickInventory(String sVerifiedAddress) {
+	boolean boovar = ReusableActions
+			.isElementSelected(toggleselection_inventory);
+	String str = String.valueOf(boovar);
+	if (!sVerifiedAddress.equalsIgnoreCase(str) & StringUtils.isNotBlank(sVerifiedAddress)) {
+		inAction.waitForVisibilityOfElement(driver, togglebutton_inventory);
 		ReusableActions.selectedRadioButton(driver, togglebutton_inventory,
 				"click toggle button: togglebutton_inventory");
 	}
@@ -533,7 +553,11 @@ public void clickInventory(String sInventory){
  */
 
 public void clickActive(String sActive){
-	if (sActive.equalsIgnoreCase("No")) {
+	boolean boovar = ReusableActions
+			.isElementSelected(toggleselection_active);
+	String str = String.valueOf(boovar);
+	if (!sActive.equalsIgnoreCase(str) & StringUtils.isNotBlank(sActive)) {
+		inAction.waitForVisibilityOfElement(driver, togglebutton_active);
 		ReusableActions.selectedRadioButton(driver, togglebutton_active,
 				"click toggle button: togglebutton_active");
 	}
@@ -545,7 +569,11 @@ public void clickActive(String sActive){
  */
 
 public void clickConsumable(String sConsumable){
-	if (sConsumable.equalsIgnoreCase("Yes")) {
+	boolean boovar = ReusableActions
+			.isElementSelected(toggleselection_consumable);
+	String str = String.valueOf(boovar);
+	if (!sConsumable.equalsIgnoreCase(str) & StringUtils.isNotBlank(sConsumable)) {
+		inAction.waitForVisibilityOfElement(driver, togglebutton_consumable);
 		ReusableActions.selectedRadioButton(driver, togglebutton_consumable,
 				"click toggle button: togglebutton_consumable");
 	}
@@ -557,7 +585,11 @@ public void clickConsumable(String sConsumable){
  */
 
 public void clickConveyance(String sConveyance){
-	if (sConveyance.equalsIgnoreCase("Yes")) {
+	boolean boovar = ReusableActions
+			.isElementSelected(toggleselection_conveyance);
+	String str = String.valueOf(boovar);
+	if (!sConveyance.equalsIgnoreCase(str) & StringUtils.isNotBlank(sConveyance)) {
+		inAction.waitForVisibilityOfElement(driver, togglebutton_conveyance);
 		ReusableActions.selectedRadioButton(driver, togglebutton_conveyance,
 				"click toggle button: togglebutton_conveyance");
 	}
@@ -568,7 +600,11 @@ public void clickConveyance(String sConveyance){
  */
 
 public void clickBatchcode(String sBatchcode){
-	if (sBatchcode.equalsIgnoreCase("Yes")) {
+	boolean boovar = ReusableActions
+			.isElementSelected(toggleselection_batchcode);
+	String str = String.valueOf(boovar);
+	if (!sBatchcode.equalsIgnoreCase(str) & StringUtils.isNotBlank(sBatchcode)) {
+		inAction.waitForVisibilityOfElement(driver, togglebutton_batchcode);
 		ReusableActions.selectedRadioButton(driver, togglebutton_batchcode,
 				"click toggle button: togglebutton_batchcode");
 	}

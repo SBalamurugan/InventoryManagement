@@ -26,7 +26,7 @@ public class FacilityAdvancedFilterFlow extends GeneralActions{
 	
 	@BeforeClass
 	public void setUp() throws IOException {
-		driver = GeneralActions.launchBrowser(driver, "chrome");
+		driver = GeneralActions.launchBrowser(driver, "ie");
 		truelocatelogin = PageFactory.initElements(driver, Truelocatelogin.class);
 		facilityElements = PageFactory.initElements(driver, FacilityElements.class);
 		commonElements = PageFactory.initElements(driver, CommonElements.class);
@@ -73,12 +73,21 @@ public class FacilityAdvancedFilterFlow extends GeneralActions{
 					sSystemofMeasurement, sCity, sState, sVerifiedAddress, sShipFrom, sShipTo);
 			ReusableActions.takeSnapshot(driver, className);
 			commonElements.clickAdvancedSearch(driver);
+			Thread.sleep(1000);
 			ReusableActions.takeSnapshot(driver, className);
-		}
-		catch (Exception e) {
+			if(commonElements.filtetResultValidation(sCode)){
+				TestNGResults.put("26", new Object[] { "Facility Advance Filter",
+						"Facility Advance Filter successful", "Pass" });
+			} else {
+				TestNGResults.put("26", new Object[] { "Facility Advance Filter",
+						"Facility Advance Filter", "Fail" });
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
+
 		}
 	}
+			
 	
 	@AfterClass
 	public void quitDriver() {

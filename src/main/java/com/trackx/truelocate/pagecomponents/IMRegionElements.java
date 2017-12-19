@@ -49,7 +49,7 @@ public class IMRegionElements {
 	/**
 	 * Menu Elements
 	 */
-	@FindBy(xpath = "//*[@id=\"menuField\"]/ul[10]/li/a/span") 
+	@FindBy(xpath = "//*[@id='menuField']/ul[11]/li/a/span") 
 	WebElement menu_administration;
 	
 	@FindBy(xpath = "//*[contains(text(),' Administration')]")
@@ -72,7 +72,17 @@ public class IMRegionElements {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	
+	/**
+	 * Advance Filter Elements
+	 */
+	
+	@FindBy(id = "filtercode")
+	WebElement txt_filtercode;
 
+	@FindBy(id = "filtername")
+	WebElement txt_filtername;
+	
 	/**
 	 * This method used to click Region menu
 	 */
@@ -103,6 +113,26 @@ public class IMRegionElements {
 			//inAction.waitForVisibilityOfElement(driver, txt_name);
 			inAction.inputText(driver, txt_name, sName,
 					"Enter sFirstname : " + sName);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * This method used to pass filter values
+	 * 
+	 * @param sFiltercode
+	 * @param sFiltername 
+	 */
+	public void enterAdvancedFilterInfo(String sFiltercode, String sFiltername) {
+		try {
+			//inAction.waitForVisibilityOfElement(driver, sFiltercode);
+			inAction.inputText(driver, txt_filtercode, sFiltercode,
+					"Enter sCode : " + sFiltercode);
+			//inAction.waitForVisibilityOfElement(driver, sFiltername);
+			inAction.inputText(driver, txt_filtername, sFiltername,
+					"Enter sFirstname : " + sFiltername);
 		
 		} catch (Exception e) {
 			e.printStackTrace();

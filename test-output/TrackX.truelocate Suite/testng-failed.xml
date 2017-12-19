@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TrackX.truelocate Suite]">
-  <test name="TrackX.truelocate test(failed)">
+  <test name="TrackX.truelocate GlobalFilterFlow(failed)">
     <classes>
-      <class name="com.trackx.truelocate.flow.FacilityAdvancedFilterFlow">
+      <class name="com.trackx.truelocate.flow.FacilityGlobalFilterFlow">
         <methods>
+          <include name="regionCreateFlow"/>
           <include name="suiteTearDown"/>
           <include name="setUp"/>
-          <include name="facilityAdvancedFilterFlow"/>
-          <include name="quitDriver"/>
           <include name="excelCreation"/>
+          <include name="quitDriver"/>
         </methods>
-      </class> <!-- com.trackx.truelocate.flow.FacilityAdvancedFilterFlow -->
+      </class> <!-- com.trackx.truelocate.flow.FacilityGlobalFilterFlow -->
     </classes>
-  </test> <!-- TrackX.truelocate test(failed) -->
+  </test> <!-- TrackX.truelocate GlobalFilterFlow(failed) -->
 </suite> <!-- Failed suite [TrackX.truelocate Suite] -->

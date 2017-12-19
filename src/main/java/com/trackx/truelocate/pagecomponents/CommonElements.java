@@ -402,4 +402,31 @@ public class CommonElements {
 			return false;
 		}
 	}
-}
+	/**
+	 * This method used to click calendar date
+	 * 
+	 * @param sValue
+	 */
+	public void calendar(WebDriver driver,String sValue){
+		try {
+	         driver.findElement(By.id("fromDate")).click();
+			 List<WebElement> allDates=driver.findElements(By.xpath("//*[@id='ui-datepicker-div']/table/tbody"));
+			 for(WebElement calendar:allDates)
+			 {
+				String date=calendar.getText();
+				System.out.println("result"+calendar.getText() );
+				if(date.equalsIgnoreCase("sValue")){
+					System.out.println("clicked");
+					Thread.sleep(2000);
+					calendar.click();
+					driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[3]/button[2]")).click();
+					System.out.println("success");
+					break ;
+				}
+			 }
+		 }
+			 catch (Exception e) {
+					e.printStackTrace();
+				}
+		}	
+		}
