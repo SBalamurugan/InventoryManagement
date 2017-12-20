@@ -1,8 +1,14 @@
 package com.trackx.truelocate.pagecomponents;
 
+import java.text.SimpleDateFormat;
+import java.time.Month;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -106,6 +112,8 @@ public class CommonElements {
 	
 	/**
 	 * This method used to click create button
+	 * 
+	 * @param driver
 	 */
 	public void clickCreatebutton(WebDriver driver) {
 		try {
@@ -119,6 +127,8 @@ public class CommonElements {
 
 	/**
 	 * This method used to click create button
+	 * 
+	 * @param driver
 	 */
 	public void clickCreateOrUpdatebutton(WebDriver driver) {
 		try {
@@ -132,6 +142,8 @@ public class CommonElements {
 
 	/**
 	 * This method used to click update button
+	 * 
+	 * @param driver
 	 */
 	public void clickUpdatebutton(WebDriver driver) {
 		try {
@@ -158,10 +170,11 @@ public class CommonElements {
 		return result;
 	}
 
+
 	/**
-	 * This method used get the alert message text
-	 * 
-	 * @return alert message
+	 * This method used to return the alert message
+	 * @param driver
+	 * @return alertMessage
 	 */
 	public String alertMessage(WebDriver driver) {
 		inAction.waitForVisibilityOfElement(driver, txt_alertmsg);
@@ -171,6 +184,8 @@ public class CommonElements {
 
 	/**
 	 * This method used to click the delete button in the view screen
+	 * 
+	 * @param driver
 	 */
 	public void clickDeleteButton(WebDriver driver) {
 		try {
@@ -188,6 +203,8 @@ public class CommonElements {
 
 	/**
 	 * This method used to click the edit button in the view screen
+	 * 
+	 * @param driver
 	 */
 	public void clickEditButton(WebDriver driver) {
 		try {
@@ -202,6 +219,7 @@ public class CommonElements {
 	/**
 	 * This method used to click the entered value in the table
 	 * 
+	 * @param driver
 	 * @param sValue
 	 */
 	public void clickValue(WebDriver driver, String sValue) {
@@ -402,6 +420,83 @@ public class CommonElements {
 			return false;
 		}
 	}
+	
+	/**
+	 * This method used to click the menu in all the screen
+	 * 
+	 * @param driver
+	 * @param sMenu
+	 */
+	public void clickMenu(WebDriver driver, String sMenu) {
+		try {
+			List<WebElement> rows =	driver.findElements(By.xpath("//*[@id=\"menuField\"]/ul"));
+			Thread.sleep(5000);
+			for (int i = 1; i <= rows.size(); i++) {
+				String idValue = "//*[@id='menuField']/ul[" + i +"]/li/a/span";
+				Thread.sleep(5000);
+				String menuName = driver.findElement(By.xpath(idValue))
+						.getText();
+				Thread.sleep(5000);
+				if (menuName.equalsIgnoreCase(sMenu)) {
+					/*JavascriptExecutor js = (JavascriptExecutor) driver;
+					js.executeScript("arguments[0].click();", element);*/
+					driver.findElement(By.xpath(idValue)).click();
+					Thread.sleep(5000);
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * This method used to select the date
+	 * 
+	 * @param driver
+	 * @param sDate
+	 */
+	public void selectDate(WebDriver driver, String sDate) {
+		try {
+			String date = (sDate.split(" ")[0]).split("-")[0];
+			/*
+			   String month = (sDate.split(" ")[0]).split("-")[1]; 
+			   String Year = (sDate.split(" ")[0]).split("-")[2]; 
+			   WebElement dateWidgetMonth = driver.findElement(By.className("ui-datepicker-month"));
+			   WebElement dateWidgetYear = driver.findElement(By.className("ui-datepicker-year"));
+			   WebElement dateWidget = driver.findElement(By.className("ui-datepicker-calendar"));
+			   List<WebElement> rows = dateWidget.findElements(By.tagName("tr")); 
+			   List<WebElement> columns = dateWidget.findElements(By.tagName("td"));
+			 */
+
+			Date startDate = new SimpleDateFormat("dd-MM-yyyy").parse(sDate);
+			Date today = new Date();
+			Calendar startCalendar = new GregorianCalendar();
+			startCalendar.setTime(startDate);
+			Calendar endCalendar = new GregorianCalendar();
+			endCalendar.setTime(today);
+
+			int diffYear = endCalendar.get(Calendar.YEAR)
+					- startCalendar.get(Calendar.YEAR);
+			int diffMonth = diffYear * 12 + endCalendar.get(Calendar.MONTH)
+					- startCalendar.get(Calendar.MONTH);
+			for (int i = 1; i <= diffMonth; i++) {
+				driver.findElement(By.className("ui-datepicker-prev")).click();
+			}
+			List<WebElement> allDates = driver.findElements(By
+					.xpath("//table[@class='ui-datepicker-calendar']//td"));
+
+			for (WebElement cell : allDates) {
+				if (cell.getText().equals(date)) {
+					cell.findElement(By.linkText(date)).click();
+					break;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	/**
 	 * This method used to click calendar date
 	 * 

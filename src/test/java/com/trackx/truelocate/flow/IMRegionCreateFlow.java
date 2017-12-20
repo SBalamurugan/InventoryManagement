@@ -81,17 +81,28 @@ public class IMRegionCreateFlow extends GeneralActions {
 						"Region added successfully", "Pass" });
 				Assert.assertEquals(alertMessage,
 						constants.add_region_successmsg);
+			} else if (alertMessage.equalsIgnoreCase(constants.add_region_successmsg1)) {
+					TestNGResults.put("3", new Object[] { "Region screen",
+							"Region added successfully", "Pass" });
+					Assert.assertEquals(alertMessage,
+							constants.add_region_successmsg);
+			} else if (alertMessage.equalsIgnoreCase(constants.add_region_successmsg2)) {
+						TestNGResults.put("3", new Object[] { "Region screen",
+								"Region added successfully", "Pass" });
+						Assert.assertEquals(alertMessage,
+								constants.add_region_successmsg);	
 			} else {
 				TestNGResults.put("3", new Object[] { "Region screen",
 						"Region not created", "Fail" });
 				Assert.assertEquals(alertMessage,
 						constants.add_region_successmsg);
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-
 		}
-	}
+	    catch (Exception e) {
+			e.printStackTrace();
+			
+		}
+    }
 
 	@AfterClass
 	public void quitDriver() {

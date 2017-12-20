@@ -78,5 +78,8 @@ public class Constants {
 	
 	public String delete_itemtype_successmsg="Item Type deleted successfully";
 	
+	public String add_region_successmsg1="Required field missing";
 	
+	public String add_region_successmsg2="Code already in use, Please enter Unique Code";
+		
 }
